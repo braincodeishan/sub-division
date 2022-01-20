@@ -1,35 +1,68 @@
 import React,{useState} from 'react'
-
+import Alert from '../sub-component/Alert';
+import { useNavigate } from 'react-router'
 const Register = () => {
-
+    
+    const navigate=useNavigate();
 const [username, setusername] = useState("");
 const [password, setpassword] = useState("");
 const [email, setemail] = useState("");
 const [confirmpass, setconfirmpass] = useState("");
-
+const [message,setmessage]=useState("");
+const [msgtype,setmsgtype]=useState("");
 
 const register= async ()=>{
-console.log(username,password,email)
+// console.log(username,password,email)
+const change=() => {
+    setmsgtype("");
+    setmessage("");
+    
+}
 
 const result= await fetch("http://localhost:3001/register",{
     method:"POST",
     headers:{
-        contentType:"application/json"
+        "Content-Type":"application/json"
     },
     body:JSON.stringify({
         username,
         email,
-        password,
+        password
 
     })
 })
-console.log((await result.json()))
+const res=await result.json();
+
+if(res.status===201){
+    setmsgtype("alert-success");
+    setmessage('Welcome, Redirecting you to the login page');
+    setTimeout(()=>{
+        navigate('/Login')
+    }, 2000);    
+    }
+else if(res.Error.code===11000){
+    setmsgtype("alert-danger");
+    setmessage('User is already registered, Please use a different Username');
+    setTimeout(change,2000)
+}else{
+    setmsgtype("alert-danger");
+    setmessage('Something Went Wrong...');
+    setTimeout(change,2000)
+}
+
+
+
+
+
+
 }
 
 
     return (
-        <div>
-            <section className="vh-100" style={{backgroundColor: "#eee"}}>
+        <>
+            {message!==""?<Alert msg={message} msgtype={msgtype}/>:<></>}
+            
+            <section className="csbvdb" style={{height:"70vh"}}>
                 <div className="container h-100">
                     <div className="row d-flex justify-content-center align-items-center h-100">
                         <div className="col-lg-12 col-xl-11">
@@ -105,7 +138,7 @@ console.log((await result.json()))
                     </div>
                 </div>
             </section>
-        </div>
+        </>
     )
 }
 
