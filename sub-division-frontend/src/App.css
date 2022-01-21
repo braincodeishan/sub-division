@@ -17,9 +17,11 @@ a{
 }
 
 .fdjkf{
-  background-image: url(./Assets/Images/dashboard-wave.svg);
+  /* background-image: url(./Assets/Images/dashboard-wave.svg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
+    background: rgb(2,0,36);
+    background: linear-gradient(145deg, rgba(2,0,36,1) 0%, rgba(3,3,94,1) 63%, rgba(8,142,170,1) 100%);
     height:80vh;
     padding: 100px 30px 100px 30px;
 }
@@ -41,6 +43,16 @@ a{
   justify-content: center;
   align-items: center;
 
+}
+.blob-dashboard{
+  position: absolute;
+  right:200px;
+  transform: scale(2);
+  /* z-index: -1; */
+}
+.blob-dashboard:nth-child(2){
+
+  filter: blur(50px)
 }
 
 /* Google Fonts Import Link */
@@ -282,7 +294,13 @@ top:50;
   .bx-menu{
 display: block;  
 }
-
+.blob-dashboard{
+  display: none;
+}
+.sdhjksd{
+  width: 100vw;
+  margin: 0;
+}
 
 
 }
