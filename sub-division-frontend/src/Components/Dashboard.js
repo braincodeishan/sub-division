@@ -4,7 +4,7 @@ import Blobs from './sub-component/Blobs'
 const Dashboard = () => {
     return (
         <>
-            <section class="fdjkf col-12">
+            <section class="fdjkf col-12 d-flex">
                 
 
 
