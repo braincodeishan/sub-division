@@ -1,24 +1,30 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import Blobs from './sub-component/Blobs'
+import Cards from './sub-component/Cards';
+// import { Link } from 'react-router-dom'
+// import Blobs from './sub-component/Blobs'
+import EmoVerify from './sub-component/EmoVerify';
+import Inspectionpending from './sub-component/Inspectionpending';
+
+
 const Dashboard = () => {
+    const tableHeading = ['Name of Office', 'DLI', 'Inspection Due'];
+    const tableBody = [['KGKuntla BO', '28.01.2021', 'Jan-2022'],
+                        ['Chityala BO','25.02.2021','Feb-2022'],
+                    ['Pamulapadu SO','26.03.2021','Mar-2022'],
+                    ['Pamulapadu SO','26.03.2021','Mar-2022'],
+                    ['Pamulapadu SO','26.03.2021','Mar-2022']];
     return (
         <>
             <section class="fdjkf col-12 d-flex">
+                <Inspectionpending alloted={78} allotedtillmonth={46} pending={12} irIssued={10} irPending={5} tableHeading={tableHeading} tableBody={tableBody}/>
+                <EmoVerify/> 
                 
+                
+                {/* {<Blobs />} */}
 
-
-                <div className="card col-12 col-md-12 col-lg-6">
-                    <h5 className="card-header">Inspection Details</h5>
-                    <div className="card-body">
-                        <h5 className="card-title">Targets</h5>
-                        <p className="card-text">Inspections is to be done this year is <b>X</b>.</p><p>The total inspections as per the tour program till today is <b>X</b>. </p><p>The total inspection pending till today is <b>X</b>. </p><p>IR to be issued is <b>X</b> and IR to be prepared is <b>X</b>.</p>
-
-                        {/* <Link to="#" className="btn btn-primary">View Summary</Link> */}
-                    </div>
-                </div>
-                {<Blobs/>}
-
+            </section>
+            <section className='fdjkf col-12 d-flex'>
+            <Cards classes={'col-12 col-md-12 col-lg-11 mx-auto'} header={"Paid Leaves"} title={""} text={"Paid Leave in respect of the GDS staff"} button={"/Paidleaves"} buttontext={"Lets Prepare"}/>
             </section>
         </>
     )
