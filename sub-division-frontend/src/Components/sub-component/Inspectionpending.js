@@ -3,7 +3,7 @@ import Table from './Table'
 import {Link} from 'react-router-dom'
 
 const Inspectionpending = (props) => {
-    return <div className="card col-12 col-md-12 col-lg-6">
+    return <div className="card col-12 col-md-12 col-lg-6 mx-auto">
         <h5 className="card-header">Inspection Details</h5>
         <div className="card-body">
             <h5 className="card-title">Targets</h5>

@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import HorizontalLine from './HorizontalLine';
 
 const Cards = (props) => {
-  return <div className="card mx-auto" className={props.classes}>
+
+  const finalclasses="card mx-auto"+props.classes
+  return <div className={finalclasses}>
   <h5 className="card-header">{props.header}</h5>
   <div className="card-body">
       <h5 className="card-title">{props.title}</h5>

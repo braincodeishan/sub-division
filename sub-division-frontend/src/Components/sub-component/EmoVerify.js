@@ -6,7 +6,7 @@ import Table from './Table';
 const EmoVerify = (props) => {
     const pendingCPV=[['Patiala BO','Feb-2022'],['Chityala BO', 'Apr-2022'],['Pasupula BO','Sept-2022']]
 
-    return <div className="card col-12 col-md-12 col-lg-5 mx-auto ">
+    return <div className="card col-12 col-md-12 col-lg-5 mx-auto m-3">
         <h5 className="card-header">Other Works</h5>
         <div className="card-body">
             <h5 className="card-title">eMO Verification</h5>

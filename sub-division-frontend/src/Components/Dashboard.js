@@ -15,7 +15,8 @@ const Dashboard = () => {
                     ['Pamulapadu SO','26.03.2021','Mar-2022']];
     return (
         <>
-            <section class="fdjkf col-12 d-flex">
+        <div className='fdjkf'>
+            <section className=" col-12 d-flex flex-lg-row flex-column">
                 <Inspectionpending alloted={78} allotedtillmonth={46} pending={12} irIssued={10} irPending={5} tableHeading={tableHeading} tableBody={tableBody}/>
                 <EmoVerify/> 
                 
@@ -23,9 +24,18 @@ const Dashboard = () => {
                 {/* {<Blobs />} */}
 
             </section>
-            <section className='fdjkf col-12 d-flex'>
-            <Cards classes={'col-12 col-md-12 col-lg-11 mx-auto'} header={"Paid Leaves"} title={""} text={"Paid Leave in respect of the GDS staff"} button={"/Paidleaves"} buttontext={"Lets Prepare"}/>
+            <section className='dashboard-2 col-12 d-flex flex-sm-column flex-lg-row'>
+            <div className='col-8 d-flex flex-sm-column'>
+            <Cards classes={'col-12 col-md-8 col-lg-10 mx-auto m-3 mt-5'} header={"Paid Leaves"} title={""} text={"Paid Leave in respect of the GDS staff"} button={"/Paidleaves"} buttontext={"Lets Prepare"}/>
+            <Cards classes={'col-12 col-md-8 col-lg-10 mx-auto m-3'} header={"Leave without Allowance"} title={""} text={"Leave orders in respect of the GDS staff/Postman"} button={"/LeavesOrder"} buttontext={"Lets Prepare"}/>
+            <Cards classes={'col-12 col-md-8 col-lg-10 mx-auto m-3'} header={"Seniority List"} title={""} text={"Seniority List for GDS staff"} button={"/Seniority List"} buttontext={"View Seniority List"}/>
+            </div>
+            <div className='col-4 d-flex flex-sm-column'>
+            <Cards classes={'col-12 col-md-8 col-lg-10 h-75 mx-auto m-3 mt-5'} header={"Paid Leaves"} title={""} text={"Paid Leave in respect of the GDS staff"} button={"/Paidleaves"} buttontext={"Lets Prepare"}/>
+            
+            </div>
             </section>
+            </div>
         </>
     )
 }
