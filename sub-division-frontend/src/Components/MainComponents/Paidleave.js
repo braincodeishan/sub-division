@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Paidleave = () => {
+const PaidLeave = () => {
     return (
         <div>
             This is paid leave page
@@ -8,4 +8,4 @@ const Paidleave = () => {
     )
 }
 
-export default Paidleave
+export default PaidLeave

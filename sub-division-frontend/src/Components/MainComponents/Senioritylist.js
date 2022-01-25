@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Senioritylist = () => {
+const SeniorityList = () => {
     return (
         <div>
             This is seniority list page
@@ -8,4 +8,4 @@ const Senioritylist = () => {
     )
 }
 
-export default Senioritylist
+export default SeniorityList

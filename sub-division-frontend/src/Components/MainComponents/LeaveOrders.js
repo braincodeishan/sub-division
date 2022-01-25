@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LWAorders = () => {
+const LeaveOrders = () => {
     return (
         <div>
             This is LWA order page
@@ -8,4 +8,4 @@ const LWAorders = () => {
     )
 }
 
-export default LWAorders
+export default LeaveOrders

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Putoff = () => {
+const PutOff = () => {
     return (
         <div>
             This is Putoff duty page
@@ -8,4 +8,4 @@ const Putoff = () => {
     )
 }
 
-export default Putoff
+export default PutOff

@@ -62,10 +62,10 @@ else if(res.Error.code===11000){
         <>
             {message!==""?<Alert msg={message} msgtype={msgtype}/>:<></>}
             
-            <section className="csbvdb" style={{height:"70vh"}}>
-                <div className="container h-100">
+            <section className="csbvdb pt-5 pb-5" >
+                <div className="container mx-auto col-12">
                     <div className="row d-flex justify-content-center align-items-center h-100">
-                        <div className="col-lg-12 col-xl-11">
+                        <div className="col-lg-12 col-xl-11 col-12">
                             <div className="card text-black" style={{borderRadius: "25px"}}>
                                 <div className="card-body p-md-5">
                                     <div className="row justify-content-center">

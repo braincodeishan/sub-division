@@ -9,14 +9,26 @@ a{
     background-image: url(./Assets/Images/wave.svg);
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
+
+.mh-75vh{
+  max-height: 75vh;
+}
+.minh-50{
+  min-height: 62%;
+}
+.mh-96{
+  max-height: 96%;
+}
+
 
 .sdhjksd{
     width:calc(100vw-230px);
     margin-left: 78px;
 }
 
-.fdjkf{
+.Dashboard{
   /* background-image: url(./Assets/Images/dashboard-wave.svg);
     background-repeat: no-repeat;
     background-size: cover; */
@@ -24,7 +36,7 @@ a{
     background: rgb(2,0,36);
     background: linear-gradient(145deg, rgba(2,0,36,1) 0%, rgba(3,3,94,1) 63%, rgba(8,142,170,1) 100%);
     min-height:80vh;
-    padding: 100px 30px 30px 30px;
+    /* padding: 100px 30px 30px 30px; */
 }
 
 .tremtysa1{
@@ -55,15 +67,77 @@ a{
 
   filter: blur(50px)
 }
+#notfound {
+  position: relative;
+  height: 60vh;
+}
+#notfound .notfound {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  max-width: 410px;
+  /* width: 100%; */
+  text-align: center;
+}
+.notfound .notfound-404 {
+  height: 280px;
+  position: relative;
+  z-index: -1;
+}
+.notfound .notfound-404 h1 {
+  font-family: montserrat,sans-serif;
+  font-size: 230px;
+  margin: 0;
+  font-weight: 900;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background: url(https://colorlib.com/etc/404/colorlib-error-404-10/img/bg.jpg) no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: cover;
+  background-position: center;
+  
+}
+.notfound h2 {
+  font-family: montserrat,sans-serif;
+  color: #000;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+.notfound p {
+  font-family: montserrat,sans-serif;
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+.notfound a {
+  font-family: montserrat,sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #0046d5;
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 40px;
+  color: #fff;
+  font-weight: 700;
+  -webkit-box-shadow: 0 4px 15px -5px #0046d5;
+  box-shadow: 0 4px 15px -5px #0046d5;
+}
 
-/* .dashboard-2{
-  background-color: #050219;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23404' stroke-width='3.9'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23505'%3E%3Ccircle cx='769' cy='229' r='17'/%3E%3Ccircle cx='539' cy='269' r='17'/%3E%3Ccircle cx='603' cy='493' r='17'/%3E%3Ccircle cx='731' cy='737' r='17'/%3E%3Ccircle cx='520' cy='660' r='17'/%3E%3Ccircle cx='309' cy='538' r='17'/%3E%3Ccircle cx='295' cy='764' r='17'/%3E%3Ccircle cx='40' cy='599' r='17'/%3E%3Ccircle cx='102' cy='382' r='17'/%3E%3Ccircle cx='127' cy='80' r='17'/%3E%3Ccircle cx='370' cy='105' r='17'/%3E%3Ccircle cx='578' cy='42' r='17'/%3E%3Ccircle cx='237' cy='261' r='17'/%3E%3Ccircle cx='390' cy='382' r='17'/%3E%3C/g%3E%3C/svg%3E");
 
 
-  /* background: url('./Assets/Images/dasshboard-star.svg');
-  background-repeat: no-repeat;
-  background-size: cover */
 
 
 /* Google Fonts Import Link */
@@ -281,9 +355,9 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 .bx-menu{
 position: absolute;
-display: none;
-left :50;
-top:50;
+display: block;
+left :80px;
+top:20px;
   color: #11101d;
   font-size: 35px;
 }
@@ -299,9 +373,9 @@ top:50;
   /* .sidebar.close .nav-links li .sub-menu{
     display: none;
   } */
-  .sidebar{
+  /* .sidebar{
       display: none;
-  }
+  } */
   .bx-menu{
 display: block;  
 }

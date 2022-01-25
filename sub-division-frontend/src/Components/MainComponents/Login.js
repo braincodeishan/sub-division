@@ -58,7 +58,7 @@ const Login = () => {
     return (
         <div>
             {message !== "" ? <Alert msg={message} msgtype={msgtype} /> : <></>}
-            <section className="csbvdb" style={{ padding:"200px 30px 200px 30px" }}>
+            <section className="csbvdb pt-5 pb-5" >
                 <div className="container h-100 ">
                     <div className="row d-flex justify-content-center align-items-center h-100">
                         <div className="col-lg-12 col-xl-11">
