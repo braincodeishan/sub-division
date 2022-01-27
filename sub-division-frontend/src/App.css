@@ -154,7 +154,7 @@ a{
   top: 0;
   left: 0;
   height: 100vh;
-  width: 230px;
+  width: 300px;
   background: #11101d;
   z-index: 100;
   transition: all 0.5s ease;
@@ -167,7 +167,31 @@ a{
   width: 100%;
   display: flex;
   align-items: center;
+  position: relative;
 }
+.sidebar.close .logo-details i{
+  opacity: 0;
+}
+.sidebar .logo-details #btn{
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  /* font-size: 22px; */
+  /* transition: all 0.4s ease; */
+  font-size: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.sidebar .logo-details #btn{
+  text-align: right;
+}
+.sidebar.close .logo-details #btn{
+  text-align: center;
+}
+
 .sidebar .logo-details i{
   font-size: 30px;
   color: #fff;
@@ -175,6 +199,7 @@ a{
   min-width: 78px;
   text-align: center;
   line-height: 50px;
+  
 }
 .sidebar .logo-details .logo_name{
   font-size: 22px;
@@ -203,6 +228,7 @@ a{
   position: relative;
   list-style: none;
   transition: all 0.4s ease;
+  margin-top: 5px;
 }
 .sidebar .nav-links li:hover{
   background: #1d1b31;
@@ -248,7 +274,7 @@ a{
 }
 .sidebar .nav-links li .sub-menu{
   padding: 6px 6px 14px 80px;
-  margin-top: -10px;
+  margin-top: 0px;
   background: #1d1b31;
   display: none;
 }
@@ -306,7 +332,7 @@ a{
 .sidebar .profile-details{
   position: fixed;
   bottom: 0;
-  width: 260px;
+  width: 300px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -348,27 +374,35 @@ a{
 .sidebar.close .profile-details .job{
   display: none;
 }
+.sidebar.close .profile-details .bxs-user{
+  display: block;
+}
 .sidebar .profile-details .job{
   font-size: 12px;
 }
+.sidebar .profile-details .bx-log-out:hover{
+  background-color: rgba(7, 9, 31, 0.829);
+  border-radius: 5px;
+}
 
 
-.bx-menu{
-position: absolute;
+/* .bx-menu{
+position: relative;
 display: block;
-left :80px;
-top:20px;
-  color: #11101d;
+/* left :80px;
+top:20px; */
+  /* color: #ffffff;
   font-size: 35px;
-}
-.bx-menu{
-  margin: 0 15px;
-  cursor: pointer;
-}
-.home-section .home-content .text{
+  z-index: 100;
+} */
+/* .bx-menu{ */
+  /* margin: 0 15px; */
+  /* cursor: pointer; */
+/* }  */
+/* .home-section .home-content .text{
   font-size: 26px;
   font-weight: 600;
-}
+} */
 @media (max-width: 900px) {
   /* .sidebar.close .nav-links li .sub-menu{
     display: none;
@@ -376,9 +410,9 @@ top:20px;
   /* .sidebar{
       display: none;
   } */
-  .bx-menu{
+  /* .bx-menu{
 display: block;  
-}
+} */
 .blob-dashboard{
   display: none;
 }

@@ -1,36 +1,87 @@
-import React from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import LoginContext from '../../Contexts/LoginContext';
 import { Link } from 'react-router-dom'
+
 const Navbar = () => {
-  const  sidebarclass="sidebar"
-  const sidebarclose = ()=>{
+  const Login = useContext(LoginContext)
+  const [sidebarclass, setsidebarclass] = useState("close");
+  const [menu, setmenu] = useState("bx-menu");
+
+  useEffect(() => {
+    let arrow = document.querySelectorAll(".arrow");
+    for (var i = 0; i < arrow.length; i++) {
+      arrow[i].addEventListener("click", (e) => {
+        let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+        arrowParent.classList.toggle("showMenu");
+      });
+    }
+    // let sidebar=document.getElementById("sidebar")
+    // let hambtn=document.getElementById("btn")
     
+    // document.addEventListener("click",(e)=>{
+    //   console.log(e);
+    //   console.log(e.target.id);
+    //   console.log(e.target.view.x);
+    //   console.log(e.target.view.y);
+    //   if(e.target.screenX>300){
+    //     console.log("clicked outside sidebar")
+    //   }
+      
+      
+    // })
+
+  }, []);
+
+  const logOut = () => {
+    localStorage.removeItem("token")
+    localStorage.removeItem("username")
+    Login.changelogin(false);
+  }
+
+
+
+
+  const showLogin = () => {
+    if (!Login.isLoggedin) {
+      return (<li>
+        <div className="iocn-link">
+          <Link to="#">
+            <i class='bx bxs-key bx-tada' ></i>
+            <span className="link_name">Login</span>
+          </Link>
+          <i className='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul className="sub-menu">
+          <li><Link className="link_name" to="#">Login</Link></li>
+          <li><Link to="/Register">Register</Link></li>
+          <li><Link to="/Login">Login</Link></li>
+
+        </ul>
+      </li>);
+    }
+  }
+
+  const sidebarclose = () => {
+    if (sidebarclass === "close") {
+      setsidebarclass("");
+      setmenu("bx-menu-alt-right")
+    } else {
+      setsidebarclass("close");
+      setmenu("bx-menu")
+    }
   }
   return (
     <>
-      <div className={"sidebar"+sidebarclass}>
+      <div className={"sidebar " + sidebarclass} id='sidebar'>
         <div className="logo-details">
-        {/* <i class='bx bxl-magento bx-flashing' ></i> */}
-        {/* <i class='bx bxs-brain bx-spin' ></i> */}
-          <i className='bx bxl-c-plus-plus'></i>
-          <span className="logo_name">CodingLab</span>
-          <i class='bx bx-menu' id="btn" onClick={sidebarclose}></i>
+          <i class='bx bxl-magento bx-spin' ></i>
+          {/* <i class='bx bxs-brain bx-spin' ></i> */}
+          {/* <i className='bx bxl-c-plus-plus'></i> */}
+          <span className="logo_name">GoPost</span>
+          <i class={'bx ' + menu} id="btn" onClick={sidebarclose}></i>
         </div>
         <ul className="nav-links">
-        <li>
-            <div className="iocn-link">
-              <Link to="#">
-              <i class='bx bxs-key bx-tada' ></i>
-                <span className="link_name">Login</span>
-              </Link>
-              <i className='bx bxs-chevron-down arrow' ></i>
-            </div>
-            <ul className="sub-menu">
-              <li><Link className="link_name" to="#">Login</Link></li>
-              <li><Link to="/Register">Register</Link></li>
-              <li><Link to="/Login">Login</Link></li>
-              
-            </ul>
-          </li>
+          {showLogin()}
           <li>
             <Link to="/Dashboard">
               <i className='bx bx-grid-alt' ></i>
@@ -82,8 +133,8 @@ const Navbar = () => {
             </div>
             <ul className="sub-menu">
               <li><Link className="link_name" to="#">Mail Overseer</Link></li>
-              <li><Link to="/MOMVS">MO Monthly Visit Statement</Link></li>
-              
+              <li><Link to="/MOMVS">MO Visit Statement</Link></li>
+
             </ul>
           </li>
           {/* <li>
@@ -105,7 +156,7 @@ const Navbar = () => {
               <li><Link className="link_name" to="/Targets">Targets And Acheivement</Link></li>
             </ul>
           </li>
-          
+
           <li>
             <Link to="#">
               <i className='bx bx-compass' ></i>
@@ -136,18 +187,19 @@ const Navbar = () => {
           <li>
             <div className="profile-details">
               <div className="profile-content">
-                {/* <!--<img src="image/profile.jpg" alt="profileImg">--> */}
+                <i class='bx bxs-user' ></i>
+                {/* <img src="image/profile.jpg" alt="profileImg"/> */}
               </div>
               <div className="name-job">
-                <div className="profile_name">Prem Shahi</div>
-                <div className="job">Web Desginer</div>
+                <div className="profile_name">Ishan Dev</div>
+                <div className="job">Inspector Post</div>
               </div>
-              <i className='bx bx-log-out' ></i>
+              <i className='bx bx-log-out' onClick={() => { logOut() }}></i>
             </div>
           </li>
         </ul>
       </div>
-      
+
     </>
   )
 }

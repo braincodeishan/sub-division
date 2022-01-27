@@ -1,6 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 const Notices = () => {
+  
   return <div>This is notices Page</div>;
 };
 

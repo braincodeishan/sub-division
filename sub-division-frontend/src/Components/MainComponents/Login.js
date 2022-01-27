@@ -9,16 +9,41 @@ const Login = () => {
     const [password, setpassword] = useState("");
     const [message, setmessage] = useState("");
     const [msgtype, setmsgtype] = useState("");
+
+
+
     const Login = useContext(LoginContext)
     const navigate = useNavigate();
-
-
-
     useEffect(() => {
+        const token = localStorage.getItem('token')
+        if (token) {
+            tokenver(token);
+        }
+
+
+
         if (Login.isLoggedin) {
             navigate('/Dashboard')
         }
+
     })
+
+    const tokenver= async(token)=>{
+        const result = await fetch("http://localhost:3001/tokenverify", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                token
+            })
+        })
+        const res = await result.json();
+        if (res.status === 200) {
+            
+            Login.changelogin(true)
+        } 
+    }
 
 
     const logmein = async () => {
@@ -36,16 +61,16 @@ const Login = () => {
         const res = await result.json();
         if (res.status === 200) {
             setmsgtype("alert-success");
-            setmessage('Welcome '+res.username);
+            setmessage('Welcome ' + res.username);
 
             setTimeout(() => {
                 localStorage.setItem("token", res.token)
                 localStorage.setItem("username", res.username)
-                
-                Login.changelogin(true) 
+
+                Login.changelogin(true)
 
             }, 2000);
-            
+
 
         } else {
             setmsgtype("alert-danger");

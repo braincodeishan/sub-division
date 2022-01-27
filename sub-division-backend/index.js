@@ -12,8 +12,10 @@ var port=process.env.PORT;
 const uri=process.env.URI;
 const enckey=process.env.ENCKEY;
 app.use(express.json());
-
 app.use(express.urlencoded({ extended: false }));
+
+
+
 
 app.use(cors({
   origin: '*'
@@ -48,7 +50,32 @@ app.post('/login', async (req, res) => {
 
 
 
+
   })
+
+
+
+  app.post('/tokenverify', async (req, res) => {
+    const {token}=req.body;
+      
+      const restoken=await JWT.verify(token,enckey)
+      if(restoken){
+      res.send({status:200, Error:'Login Successful'})
+  
+    }else{
+      res.send({status:400, Error:'Login unsuccessful, Invalid Username/Password'})
+    }
+  
+    
+  
+  
+  
+  
+    })
+
+
+
+
 app.post('/register', async(req, res) => {
     const {username,email,password}=req.body;
     console.log(req.body);
