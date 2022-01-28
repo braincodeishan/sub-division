@@ -13,12 +13,12 @@ const OtherWorks = (props) => {
             <h5 className="card-title">eMO Verification</h5>
             <p className="card-text">25 eMO Verification of the month</p>
 
-            <Link to="/EMOPrep" className="btn btn-primary">Lets Prepare<i class="fa fa-chevron-right mx-2" aria-hidden="true"></i></Link>
+            <Link to="/EMOPrep" className="btn btn-primary">Lets Prepare<i className="fa fa-chevron-right mx-2" aria-hidden="true"></i></Link>
             <HorizontalLine lineno={2}/>
             <h5 className="card-title">Cent% Verification</h5>
             <p className="card-text">Pending Cent% Verification</p>
             <Table heading={['Office Name','Due Date']} body={pendingCPV}/>
-            <Link to="#" className="btn btn-primary">Lets Prepare<i class="fa fa-chevron-right mx-2" aria-hidden="true"></i></Link>
+            <Link to="#" className="btn btn-primary">Lets Prepare<i className="fa fa-chevron-right mx-2" aria-hidden="true"></i></Link>
         </div>
     </div>;
 };

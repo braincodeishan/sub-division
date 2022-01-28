@@ -30,7 +30,7 @@ function MainApp() {
 
   return (
     <>
-      <div class="sdhjksd">
+      <div className="sdhjksd">
         <LoginProvider>
           <Header />
           <Navbar />

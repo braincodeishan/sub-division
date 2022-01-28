@@ -3,8 +3,8 @@ import Tablebody from './Tablebody';
 
 const Table = (props) => {
     return <>
-        <table class="table">
-            <thead class="thead-dark">
+        <table className="table">
+            <thead className="thead-dark">
                 <tr>
                     {props.heading.map((val) => {
                         return <th scope="col">{val}</th>
@@ -12,8 +12,8 @@ const Table = (props) => {
                 </tr>
             </thead>
             <tbody>
-                {props.body.map((val)=>{
-                   return <Tablebody body={val}/>
+                {props.body.map((val,index)=>{
+                   return <Tablebody body={val} key={index}/>
                 })
                 }
             </tbody>

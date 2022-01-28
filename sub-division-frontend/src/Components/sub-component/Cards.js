@@ -13,7 +13,7 @@ const Cards = (props) => {
       {(index>0)?<HorizontalLine/>:<></>}
       <h5 className="card-title">{props.title[index]}</h5>
       <p className="card-text">{text}</p>
-      <Link to={props.button[0]} className="btn btn-primary">{props.buttontext[index]}<i class="fa fa-chevron-right mx-2" aria-hidden="true"></i></Link>
+      <Link to={props.button[0]} className="btn btn-primary">{props.buttontext[index]}<i className="fa fa-chevron-right mx-2" aria-hidden="true"></i></Link>
       </>)
     })}
       

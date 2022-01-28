@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 
 
 import Cards from './sub-component/Cards';
@@ -11,6 +11,18 @@ import Inspectionpending from './sub-component/Inspectionpending';
 
 
 const Dashboard = () => {
+
+    useEffect(() => {
+        
+        tokenver();
+            
+    });
+    const tokenver= async()=>{
+        const result = await fetch("http://localhost:3001/tokenverify");
+        const res = await result.json();
+        console.log(res);
+    }
+    
     
 
     const tableHeading = ['Name of Office', 'DLI', 'Inspection Due'];
@@ -32,12 +44,12 @@ const Dashboard = () => {
             </section>
             <section className='dashboard-2 col-12 d-flex flex-column flex-lg-row mt-5'>
             <div className='col-12 col-lg-8 d-flex flex-column'>
-            <Cards classes={'col-12 col-sm-10 col-lg-10 mx-auto m-3'} header={"Paid Leaves"} title={[""]} text={["Paid Leave in respect of the GDS staff"]} button={["/PaidLeave"]} buttontext={["Lets Prepare"]}/>
-            <Cards classes={'col-12 col-sm-10 col-lg-10 mx-auto m-3'} header={"Leave without Allowance"} title={[""]} text={["Leave orders in respect of the GDS staff/Postman"]} button={["/LeaveOrders"]} buttontext={["Lets Prepare"]}/>
-            <Cards classes={'col-12 col-sm-10 col-lg-10 mx-auto m-3'} header={"Seniority List"} title={[""]} text={["Seniority List for GDS staff"]} button={["/SeniorityList"]} buttontext={["View Seniority List"]}/>
+            <Cards key={0} classes={'col-12 col-sm-10 col-lg-10 mx-auto m-3'} header={"Paid Leaves"} title={[""]} text={["Paid Leave in respect of the GDS staff"]} button={["/PaidLeave"]} buttontext={["Lets Prepare"]}/>
+            <Cards key={1} classes={'col-12 col-sm-10 col-lg-10 mx-auto m-3'} header={"Leave without Allowance"} title={[""]} text={["Leave orders in respect of the GDS staff/Postman"]} button={["/LeaveOrders"]} buttontext={["Lets Prepare"]}/>
+            <Cards key={2} classes={'col-12 col-sm-10 col-lg-10 mx-auto m-3'} header={"Seniority List"} title={[""]} text={["Seniority List for GDS staff"]} button={["/SeniorityList"]} buttontext={["View Seniority List"]}/>
             </div>
             <div className='col-12 col-lg-4 d-flex flex-column '>
-            <Cards classes={'col-12 col-sm-10 col-lg-10 mx-auto minh-50 mh-96 m-3 overflow-auto '} header={"Notices"} title={["",""]} text={["New recruitment rules with respect to GDS are applicable since 21.02.2022","Transfer Results for GDS"]} button={["/Notices"]} buttontext={["Lets Explore","View Transfer Results"]}/>
+            <Cards key={3} classes={'col-12 col-sm-10 col-lg-10 mx-auto minh-50 mh-96 m-3 overflow-auto '} header={"Notices"} title={["",""]} text={["New recruitment rules with respect to GDS are applicable since 21.02.2022","Transfer Results for GDS"]} button={["/Notices"]} buttontext={["Lets Explore","View Transfer Results"]}/>
             
             </div>
             </section>

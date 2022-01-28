@@ -46,7 +46,7 @@ const Navbar = () => {
       return (<li>
         <div className="iocn-link">
           <Link to="#">
-            <i class='bx bxs-key bx-tada' ></i>
+            <i className='bx bxs-key bx-tada' ></i>
             <span className="link_name">Login</span>
           </Link>
           <i className='bx bxs-chevron-down arrow' ></i>
@@ -74,11 +74,11 @@ const Navbar = () => {
     <>
       <div className={"sidebar " + sidebarclass} id='sidebar'>
         <div className="logo-details">
-          <i class='bx bxl-magento bx-spin' ></i>
-          {/* <i class='bx bxs-brain bx-spin' ></i> */}
+          <i className='bx bxl-magento bx-spin' ></i>
+          {/* <i className='bx bxs-brain bx-spin' ></i> */}
           {/* <i className='bx bxl-c-plus-plus'></i> */}
           <span className="logo_name">GoPost</span>
-          <i class={'bx ' + menu} id="btn" onClick={sidebarclose}></i>
+          <i className={'bx ' + menu} id="btn" onClick={sidebarclose}></i>
         </div>
         <ul className="nav-links">
           {showLogin()}
@@ -187,7 +187,7 @@ const Navbar = () => {
           <li>
             <div className="profile-details">
               <div className="profile-content">
-                <i class='bx bxs-user' ></i>
+                <i className='bx bxs-user' ></i>
                 {/* <img src="image/profile.jpg" alt="profileImg"/> */}
               </div>
               <div className="name-job">

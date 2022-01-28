@@ -10,8 +10,8 @@ const Inspectionpending = (props) => {
             <p className="card-text">Inspections is to be done this year is <b>{props.alloted}</b>.</p><p>The total inspections as per the tour program till today is <b>{props.allotedtillmonth}</b>. </p><p>The total inspection pending till today is <b>{props.pending}</b>. </p><p>IR to be issued is <b>{props.irIssued}</b> and IR to be prepared is <b>{props.irPending}</b>.</p>
 
             {/* <Link to="#" className="btn btn-primary">View Summary</Link> */}
-            <Table heading={props.tableHeading} body={props.tableBody} />
-            <Link to="/TourProgram" class="d-flex justify-content-center align-items-center">Click here to know more <i class="fa fa-chevron-right mx-2" aria-hidden="true"></i></Link>
+            <Table heading={props.tableHeading} body={props.tableBody} key={5}/>
+            <Link to="/TourProgram" className="d-flex justify-content-center align-items-center">Click here to know more <i className="fa fa-chevron-right mx-2" aria-hidden="true"></i></Link>
         </div>
     </div>
 };

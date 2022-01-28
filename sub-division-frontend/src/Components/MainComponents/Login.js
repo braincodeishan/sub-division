@@ -14,44 +14,33 @@ const Login = () => {
 
     const Login = useContext(LoginContext)
     const navigate = useNavigate();
+    // useEffect(() => {
+    //     // tokenver();
+    // })
     useEffect(() => {
-        const token = localStorage.getItem('token')
-        if (token) {
-            tokenver(token);
-        }
-
-
-
         if (Login.isLoggedin) {
             navigate('/Dashboard')
         }
+    },[Login.isLoggedin])
 
-    })
-
-    const tokenver= async(token)=>{
-        const result = await fetch("http://localhost:3001/tokenverify", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                token
-            })
-        })
-        const res = await result.json();
-        if (res.status === 200) {
+    // const tokenver= async()=>{
+    //     const result = await fetch("http://localhost:3001/tokenverify");
+    //     const res = await result.json();
+    //     if (res.status === 200) {
             
-            Login.changelogin(true)
-        } 
-    }
+    //         Login.changelogin(true)
+    //     } 
+    // }
 
 
     const logmein = async () => {
         const result = await fetch("http://localhost:3001/login", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+            
             },
+            
             body: JSON.stringify({
                 username,
                 password
@@ -64,8 +53,8 @@ const Login = () => {
             setmessage('Welcome ' + res.username);
 
             setTimeout(() => {
-                localStorage.setItem("token", res.token)
-                localStorage.setItem("username", res.username)
+                // localStorage.setItem("token", res.token)
+                // localStorage.setItem("username", res.username)
 
                 Login.changelogin(true)
 
@@ -92,7 +81,7 @@ const Login = () => {
                                     <div className="row justify-content-center">
                                         <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                                            <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+                                            <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign in</p>
 
                                             <form className="mx-1 mx-md-4">
 
