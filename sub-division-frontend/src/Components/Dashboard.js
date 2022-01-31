@@ -12,18 +12,7 @@ import Inspectionpending from './sub-component/Inspectionpending';
 
 const Dashboard = () => {
 
-    useEffect(() => {
         
-        tokenver();
-            
-    });
-    const tokenver= async()=>{
-        const result = await fetch("http://localhost:3001/tokenverify");
-        const res = await result.json();
-        console.log(res);
-    }
-    
-    
 
     const tableHeading = ['Name of Office', 'DLI', 'Inspection Due'];
     const tableBody = [['KGKuntla BO', '28.01.2021', 'Jan-2022'],

@@ -23,6 +23,7 @@ import Settings from "./Components/EditingComponents/Settings";
 import Contact from "./Components/EditingComponents/Contact";
 import ProtectedRoutes from "./Contexts/ProtectedRoutes";
 import Navbar from "./Components/Navbars/Navbar";
+import Loading from "./Components/sub-component/Loading"
 
 
 function MainApp() {
@@ -52,6 +53,7 @@ function MainApp() {
               <Route exact path="/Notices" element={<Notices />} />
               <Route exact path="/Settings" element={<Settings />} />
               <Route exact path="/Contact" element={<Contact />} />
+              <Route exact path="/Loading" element={<Loading/>} />
 
               <Route path="*" element={<Notfound />} />
             </Route>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import LoginContext from '../../Contexts/LoginContext';
 import { Link } from 'react-router-dom'
+import Alert from '../sub-component/Alert';
 
 const Navbar = () => {
   const Login = useContext(LoginContext)
@@ -32,9 +33,21 @@ const Navbar = () => {
 
   }, []);
 
-  const logOut = () => {
-    localStorage.removeItem("token")
-    localStorage.removeItem("username")
+  const logOut = async() => {
+    const logout= await fetch("http://localhost:3001/logout", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+
+            },
+            credentials: "include",
+
+        });
+        if(logout.status===200){
+            
+            <Alert msg={"Logged Out"} msgtype={"alert-success"} />
+            
+        }
     Login.changelogin(false);
   }
 

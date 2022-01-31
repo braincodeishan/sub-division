@@ -35,7 +35,7 @@ const Footer = () => {
                         <h6 className="text-uppercase font-weight-bold">Assigned Targets</h6>
                         <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{width: "60px"}} />
                         <p>
-                             <Link to="#">SB Targets </Link>
+                             <Link to="/loading">SB Targets </Link>
                         </p>
                         <p>
                              <Link to="#">Insurance Targets </Link>

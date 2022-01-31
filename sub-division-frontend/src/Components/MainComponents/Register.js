@@ -24,6 +24,7 @@ const result= await fetch("http://localhost:3001/register",{
     headers:{
         "Content-Type":"application/json"
     },
+    credentials:"include",
     body:JSON.stringify({
         username,
         email,

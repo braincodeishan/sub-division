@@ -9,28 +9,42 @@ const Login = () => {
     const [password, setpassword] = useState("");
     const [message, setmessage] = useState("");
     const [msgtype, setmsgtype] = useState("");
-
+    
 
 
     const Login = useContext(LoginContext)
     const navigate = useNavigate();
-    // useEffect(() => {
-    //     // tokenver();
-    // })
+
+    useEffect(() => {
+        if(!Login.isLoggedin){
+        tokenver();
+        }
+    })
+
     useEffect(() => {
         if (Login.isLoggedin) {
-            navigate('/Dashboard')
+            setTimeout(() => {
+                navigate('/Dashboard')
+            }, 10000);
         }
-    },[Login.isLoggedin])
+    }, [Login.isLoggedin])
 
-    // const tokenver= async()=>{
-    //     const result = await fetch("http://localhost:3001/tokenverify");
-    //     const res = await result.json();
-    //     if (res.status === 200) {
-            
-    //         Login.changelogin(true)
-    //     } 
-    // }
+    const tokenver = async () => {
+        const result = await fetch("http://localhost:3001/tokenverify", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+
+            },
+            credentials: "include",
+
+        });
+        const res = await result.json();
+        if (res.status === 200) {
+
+            Login.changelogin(true)
+        }
+    }
 
 
     const logmein = async () => {
@@ -38,28 +52,26 @@ const Login = () => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-            
+                "Accept": "application/json",
+
+
+
             },
-            
+            credentials: "include",
+
             body: JSON.stringify({
                 username,
                 password
 
             })
         })
+
         const res = await result.json();
-        if (res.status === 200) {
+
+        if (result.status === 200) {
             setmsgtype("alert-success");
             setmessage('Welcome ' + res.username);
-
-            setTimeout(() => {
-                // localStorage.setItem("token", res.token)
-                // localStorage.setItem("username", res.username)
-
-                Login.changelogin(true)
-
-            }, 2000);
-
+            Login.changelogin(true)
 
         } else {
             setmsgtype("alert-danger");
