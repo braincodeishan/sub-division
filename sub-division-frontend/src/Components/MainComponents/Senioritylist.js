@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import Table from '../sub-component/Table';
+import Table from '../sub-component/SeniorityList/Table';
 import HorizontalLine from '../sub-component/HorizontalLine'
 
 const SeniorityList = () => {
-    const [data, setdata] = useState();
-    const [cadre, setCadre] = useState("GDSBPM");
-    const heading = ["Serial No", "Name of the Employee", "Cadre", "Office Name", "Category", "Date Of Birth", "Date of Joining", "Date of Retirement"]
-    // useEffect(() => {
-    //     seniorityData();
-    // },[]);
+    const [data, setdata] = useState([]);
+    const [cadre, setCadre] = useState("");
+    const [employeeID, setemployeeID]=useState("");
+    const heading = ["Serial No", "Employee ID","Name of the Employee", "Cadre", "Office Name", "Category", "Date Of Birth", "Date of Joining", "Date of Retirement","Modify","Delete"]
+    useEffect(() => {
+        seniorityData();
+    },[cadre]);
 
     const seniorityData = async () => {
         const res = await fetch("http://localhost:3001/senioritylist", {
@@ -24,14 +25,13 @@ const SeniorityList = () => {
         const result = await res.json();
         console.log(result);
         if (result) {
-            setdata(result);
+            setdata(result.data);
         }
 
     }
-    const cadreChange = (e) => {
-        setCadre(e.target.value);
-        seniorityData();
-
+    
+    const emp=()=>{
+        setemployeeID()
     }
 
     return (
@@ -41,10 +41,10 @@ const SeniorityList = () => {
                     <h1 className='text-light'>Seniority List</h1>
                 </div>
 
-                <div className='container p-5 bg-light d-flex justify-content-center align-items-center'>
-                    <div className='col-4'>
-                        <select className="form-select form-select-lg mb-3 col-4" aria-label=".form-select-lg example" onChange={(e) => { cadreChange(e) }} >
-                            <option value="">Please select the Cadre</option>
+                <div className='container-fluid p-5 bg-light d-flex justify-content-center align-items-center'>
+                    <div className='col-2'>
+                        <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" onChange={(e) => {setCadre(e.target.value)}} value={cadre}>
+                            <option value="" selected>Please select the Cadre</option>
                             <option value="GDSBPM">GDS - BPM</option>
                             <option value="GDSABPM">GDS - ABPM</option>
                             <option value="Postman">Postman Overseer</option>
@@ -57,9 +57,9 @@ const SeniorityList = () => {
                         </select>
                     </div>
                 </div>
-                <div className='container'>
+                <div className='container-fluid col-8 minh-40vh'>
                     {
-                        data && <Table heading={heading} body={data.data} />
+                        (data.length > 0) && <Table heading={heading} body={data} employee={}/>
                     }
                 </div>
                 <HorizontalLine lineno={3} />

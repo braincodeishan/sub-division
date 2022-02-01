@@ -11,14 +11,17 @@ a{
     background-size: cover;
     
 }
-
-.mh-75vh{
+.maxh-75vh{
   max-height: 75vh;
 }
-.minh-50{
+.minh-40vh{
+  min-height: 40vh;
+}
+
+.minh-62P{
   min-height: 62%;
 }
-.mh-96{
+.maxh-96P{
   max-height: 96%;
 }
 

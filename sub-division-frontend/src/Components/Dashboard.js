@@ -38,7 +38,7 @@ const Dashboard = () => {
             <Cards key={2} classes={'col-12 col-sm-10 col-lg-10 mx-auto m-3'} header={"Seniority List"} title={[""]} text={["Seniority List for GDS staff"]} button={["/SeniorityList"]} buttontext={["View Seniority List"]}/>
             </div>
             <div className='col-12 col-lg-4 d-flex flex-column '>
-            <Cards key={3} classes={'col-12 col-sm-10 col-lg-10 mx-auto minh-50 mh-96 m-3 overflow-auto '} header={"Notices"} title={["",""]} text={["New recruitment rules with respect to GDS are applicable since 21.02.2022","Transfer Results for GDS"]} button={["/Notices"]} buttontext={["Lets Explore","View Transfer Results"]}/>
+            <Cards key={3} classes={'col-12 col-sm-10 col-lg-10 mx-auto minh-62P maxh-96P m-3 overflow-auto '} header={"Notices"} title={["",""]} text={["New recruitment rules with respect to GDS are applicable since 21.02.2022","Transfer Results for GDS"]} button={["/Notices"]} buttontext={["Lets Explore","View Transfer Results"]}/>
             
             </div>
             </section>

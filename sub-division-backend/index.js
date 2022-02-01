@@ -99,23 +99,23 @@ app.post('/contact', async (req, res) => {
 app.post('/senioritylist', async (req, res) => {
   try{
     const cadre=req.body.cadre;
-    console.log(req.body)
+    // console.log(req.body.cadre)
     let abc;
     
     if(cadre==="GDSBPM"){
-      abc=[["1","ishan","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"],["1","saurabh","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"]]
+      abc=[["1","10253160","ishan","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"],["2","10253160","saurabh","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"]]
     }else if(cadre==="GDSABPM"){
-      abc=[["1","hsajhska","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"],["1","soyab","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"]]
+      abc=[["1","10253160","hsajhska","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"],["2","10253160","soyab","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"]]
     }else if(cadre==="Postman"){
-      abc=[["1","isagdsgfdhan","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"],["1","asadgfdgdfg","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"]]      
+      abc=[["1","10253160","isagdsgfdhan","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"],["2","10253160","asadgfdgdfg","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"]]      
     }else if(cadre==="MO"){
-      abc=[["1","idsfsfdsshan","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"],["1","fdsfdsfdsf","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"]]
+      abc=[["1","10253160","idsfsfdsshan","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"],["2","10253160","fdsfdsfdsf","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"]]
     }else if(cadre==="PA"){
-      abc=[["1","ishrtetan","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"],["1","oiuoiiuiu","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"]]
+      abc=[["1","10253160","ishrtetan","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"],["2","10253160","oiuoiiuiu","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"]]
     }else if(cadre==="SA"){
-      abc=[["1","ishxvvcxvcan","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"],["1","bvcvcbvcbc","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"]]  
+      abc=[["1","10253160","ishxvvcxvcan","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"],["2","10253160","bvcvcbvcbc","Inspector","PMG Kurnool","OBC","26.01.1993","21.06.2018","21.06.2023"]]  
     }else{
-      abc=[""];
+      abc=[];
     }
     
   res.status(200).json({data:abc});
