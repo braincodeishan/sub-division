@@ -7,11 +7,37 @@ const Myschema=new mongoose.Schema({
         unique:true,
         required:true
     },
-    name:String,
-    dob:Date,
-    dateOfJoining:Date,
+    personalInfo:{
+        name:String,
+        employeeID:Number,
+        dob:Date,
+        email:String,
+        phoneNumber:Number,
+        alternateNumber:Number
+    },
+    professionalInfo:{
+        dateOfJoining:Date,
+        dateOfRetirement:Date,
+        cadre:String,
+        payScale:String,
+        basicPay:Number,
+        transferTaken:Number
+    },
     
-    email:String,
+    office:{
+        circle:String,
+        Region:String,
+        Division:String,
+        officeName:String,
+        officeID:Number,
+    },
+    
+    leave:{
+        casualLeave:Number,
+        earnedLeave:Number,
+        RH:Number,
+        halfPayLeave:Number
+    },
     password:String
 })
 

@@ -22,8 +22,7 @@ const Footer = () => {
 
                         <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{width: "60px"}} />
 
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus dolorum neque consequatur eos illo
-                            tempore minima amet aspernatur. Esse, officiis.</p>
+                        <p><b>GoPost</b> is web based app made for facilatitating DOP routine items to get the information flow easy as well as convinient saving time.</p>
 
                     </div>
 
@@ -97,7 +96,7 @@ const Footer = () => {
 
 
 
-            <div className="footer-copyright text-center py-3">© 2020 Copyright:
+            <div className="footer-copyright text-center py-3">© 2022 Copyright:
                 <Link to="#"> Indiapost </Link>
             </div>
 

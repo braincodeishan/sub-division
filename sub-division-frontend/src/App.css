@@ -61,6 +61,7 @@ a{
   z-index: 1001;
 }
 
+
 .Loading{
   background-color: rgba(0,0,0,0.9);
   position : fixed;
@@ -159,6 +160,13 @@ a{
   background-size: cover;
   background-repeat:  no-repeat;
   
+}
+.Seniority-bg{
+  background: url(./Assets/Images/seniority.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 300px;
+
 }
 
 

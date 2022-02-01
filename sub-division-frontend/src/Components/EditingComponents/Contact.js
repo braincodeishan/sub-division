@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Alert from '../sub-component/Alert';
-import Cards from '../sub-component/Cards';
 import HorizontalLine from '../sub-component/HorizontalLine';
 import Loading from '../sub-component/Loading';
 const Contact = () => {
@@ -17,7 +16,7 @@ const Contact = () => {
     
 
     const finalEmail = email + "@" + server;
-    if (!userName || !email || !server || !formmessage) {
+    if (!userName.trim() || !email.trim() || !server.trim() || !formmessage.trim()) {
       setalertClass("alert-danger");
       setmessage("Some Field might have been left Vacant. Kindly fill all the fields")
       setTimeout(() => {
