@@ -24,7 +24,7 @@ const Dashboard = () => {
         <>
         <div className='p-5 Dashboard'>
             <section className=" col-12 d-flex flex-lg-row flex-column">
-                <Inspectionpending alloted={78} allotedtillmonth={46} pending={12} irIssued={10} irPending={5} tableHeading={tableHeading} tableBody={tableBody}/>
+                <Inspectionpending alloted={78} allotedtillmonth={46} pending={12} irIssued={10} irPending={5} tableHeading={tableHeading} tableBody={tableBody} />
                 <OtherWorks/> 
                 
                 

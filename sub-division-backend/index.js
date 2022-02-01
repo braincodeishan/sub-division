@@ -11,7 +11,7 @@ const cookieParser = require("cookie-parser");
 
 // const bodyparser=require('body-parser');
 var port = process.env.PORT;
-const uri = process.env.URI;
+const uri = process.env.URIL;
 const enckey = process.env.ENCKEY;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -29,10 +29,11 @@ mongoose.connect(uri)
     console.log('db connected successfully');
   })
   .catch((error) => {
-    console.log(error);
+    console.log("Something wrong happened"+error);
   })
 
 app.post('/login', async (req, res) => {
+  try{
   const { username, password } = req.body;
 
   const result = await User.findOne({ username: username });
@@ -50,6 +51,9 @@ app.post('/login', async (req, res) => {
   } else {
     res.status(400).json({ Error: 'Login unsuccessful, Invalid Username/Password' })
   }
+}catch(err){
+  console.log("Something went wrong in login"+err)
+}
 
 })
 
@@ -76,8 +80,20 @@ app.get('/tokenverify', async (req, res) => {
 })
 
 app.get('/logout', async (req, res) => {
+  try{
   res.clearCookie('login-token');
   res.status(200).json({data:"Logged out"});
+  }catch(err){
+    console.log("Something went wrong in Logout"+err)
+  }
+})
+
+app.post('/contact', async (req, res) => {
+  try{
+  res.status(200).json({data:"Logged out"});
+  }catch(err){
+    console.log("Something went wrong in Logout"+err)
+  }
 })
 
 
@@ -103,15 +119,12 @@ app.post('/register', async (req, res) => {
         password: hash
       })
 
-      newUser.save()
-        .then((result) => {
-
+      const regresult=newUser.save()
+        if(regresult){
           res.send({ status: 201, Error: "User is registered" })
-        })
-        .catch((err) => {
-          res.send({ status: 400, Error: err })
-
-        })
+        }else{
+          res.send({ status: 400, Error: "Something Went Wrong/Please try again" })
+        }
 
 
 

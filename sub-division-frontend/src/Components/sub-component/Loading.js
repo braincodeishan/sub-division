@@ -8,7 +8,7 @@ const Loading = () => {
 
     return (
         <>
-            <div className='tremtysa2'>
+            <div className='Loading'>
                 <HashLoader size={75} color={"#FFFFFF"} />
             </div>
 

@@ -2,14 +2,16 @@ import React, { useState, useEffect, useContext } from 'react'
 import { useNavigate } from 'react-router'
 import LoginContext from '../../Contexts/LoginContext';
 import Alert from '../sub-component/Alert';
+import Loading from "../sub-component/Loading"
+
 const Login = () => {
 
 
     const [username, setusername] = useState("");
     const [password, setpassword] = useState("");
     const [message, setmessage] = useState("");
-    const [msgtype, setmsgtype] = useState("");
-    
+    const [alertClass, setalertClass] = useState("");
+    const [isLoading,setisLoading]=useState(false)
 
 
     const Login = useContext(LoginContext)
@@ -17,19 +19,23 @@ const Login = () => {
 
     useEffect(() => {
         if(!Login.isLoggedin){
+            
         tokenver();
         }
-    })
+    },[Login.isLoggedin])
 
     useEffect(() => {
         if (Login.isLoggedin) {
             setTimeout(() => {
+                setisLoading(false)
                 navigate('/Dashboard')
-            }, 10000);
+                
+            }, 2000);
         }
     }, [Login.isLoggedin])
 
     const tokenver = async () => {
+        setisLoading(true)
         const result = await fetch("http://localhost:3001/tokenverify", {
             method: "GET",
             headers: {
@@ -41,13 +47,15 @@ const Login = () => {
         });
         const res = await result.json();
         if (res.status === 200) {
-
             Login.changelogin(true)
+        }else{
+            setisLoading(false)
         }
     }
 
 
     const logmein = async () => {
+        setisLoading(true);
         const result = await fetch("http://localhost:3001/login", {
             method: "POST",
             headers: {
@@ -69,12 +77,12 @@ const Login = () => {
         const res = await result.json();
 
         if (result.status === 200) {
-            setmsgtype("alert-success");
-            setmessage('Welcome ' + res.username);
+            setalertClass("alert-success");
+            setmessage('Welcome ' + res.username.toUpperCase()+" !");
             Login.changelogin(true)
 
         } else {
-            setmsgtype("alert-danger");
+            setalertClass("alert-danger");
             setmessage(res.Error);
         }
 
@@ -83,7 +91,8 @@ const Login = () => {
 
     return (
         <div>
-            {message !== "" ? <Alert msg={message} msgtype={msgtype} /> : <></>}
+            {isLoading && <Loading/>}
+            {message !== "" && <Alert msg={message} alertClass={alertClass} /> }
             <section className="csbvdb pt-5 pb-5" >
                 <div className="container h-100 ">
                     <div className="row d-flex justify-content-center align-items-center h-100">

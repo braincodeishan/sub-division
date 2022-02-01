@@ -7,6 +7,10 @@ const Myschema=new mongoose.Schema({
         unique:true,
         required:true
     },
+    name:String,
+    dob:Date,
+    dateOfJoining:Date,
+    
     email:String,
     password:String
 })

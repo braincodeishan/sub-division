@@ -1,12 +1,14 @@
 import React from 'react'
 
 const Alert = (props) => {
-    const classes="alert "+ props.msgtype+ " alert-dismissible position-absolute mx-auto fade show";
+    const classes="alert "+ props.alertClass+ " alert-dismissible position-fixed fade show alert-main ";
     return (
         <>
+        <div className='Alert-bg'>
          <div className={classes} role="alert">
                 {props.msg}
             </div>   
+            </div>
         </>
     )
 }
