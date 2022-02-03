@@ -9,8 +9,7 @@ const Login = () => {
 
     const [username, setusername] = useState("");
     const [password, setpassword] = useState("");
-    const [message, setmessage] = useState("");
-    const [alertClass, setalertClass] = useState("");
+    const [alert, setalert] = useState({status:400,message:""});
     const [isLoading,setisLoading]=useState(false)
 
 
@@ -19,8 +18,7 @@ const Login = () => {
 
     useEffect(() => {
         if(!Login.isLoggedin){
-            
-        tokenver();
+            tokenver();
         }
     },[Login.isLoggedin])
 
@@ -29,7 +27,6 @@ const Login = () => {
             setTimeout(() => {
                 setisLoading(false)
                 navigate('/Dashboard')
-                
             }, 2000);
         }
     }, [Login.isLoggedin])
@@ -77,13 +74,15 @@ const Login = () => {
         const res = await result.json();
 
         if (result.status === 200) {
-            setalertClass("alert-success");
-            setmessage('Welcome ' + res.username.toUpperCase()+" !");
+            setalert({status:200,message:'Welcome ' + res.name.toUpperCase()+" !"});
             Login.changelogin(true)
 
         } else {
-            setalertClass("alert-danger");
-            setmessage(res.Error);
+            setalert({status:400,message:res.Error});
+            setTimeout(() => {
+                setalert({status:400,message:""})
+                setisLoading(false)
+            }, 2000);
         }
 
     }
@@ -92,7 +91,7 @@ const Login = () => {
     return (
         <div>
             {isLoading && <Loading/>}
-            {message !== "" && <Alert msg={message} alertClass={alertClass} /> }
+            {alert.message !== "" && <Alert alert={alert}/> }
             <section className="csbvdb pt-5 pb-5" >
                 <div className="container h-100 ">
                     <div className="row d-flex justify-content-center align-items-center h-100">

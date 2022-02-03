@@ -1,11 +1,5 @@
-import React,{useEffect} from 'react'
-
-
+import React from 'react'
 import Cards from './sub-component/Cards';
-
-
-// import { Link } from 'react-router-dom'
-// import Blobs from './sub-component/Blobs'
 import OtherWorks from './sub-component/OtherWorks';
 import Inspectionpending from './sub-component/Inspectionpending';
 

@@ -7,20 +7,18 @@ const Contact = () => {
   const [userName, setuserName] = useState("");
   const [email, setemail] = useState("");
   const [server, setserver] = useState("");
-  const [formmessage, setformmessage] = useState("");
-  const [alertClass, setalertClass] = useState("");
   const [message, setmessage] = useState("");
+  const [alert, setalert] = useState({status:400,message:""});
   const [isLoading, setisLoading] = useState(false)
 
   const contactSubmit = async () => {
     
 
     const finalEmail = email + "@" + server;
-    if (!userName.trim() || !email.trim() || !server.trim() || !formmessage.trim()) {
-      setalertClass("alert-danger");
-      setmessage("Some Field might have been left Vacant. Kindly fill all the fields")
+    if (!userName.trim() || !email.trim() || !server.trim() || !message.trim()) {
+      setalert({status:400,message:"Some Field might have been left Vacant. Kindly fill all the fields"})
       setTimeout(() => {
-        setmessage("")
+        setalert({status:400,message:""})
       }, 2000);
     }else{
       setisLoading(true)
@@ -37,15 +35,15 @@ const Contact = () => {
       })
     })
     if (res.status === 200) {
-      setalertClass("alert-success");
-      setmessage('Your Request has been submitted Successfully! We will revert you back Shortly');
+      setalert({status:200,message:'Your Request has been submitted Successfully! We will revert you back Shortly'});
+      
     }
     else {
-      setalertClass("alert-danger");
-      setmessage('Something went wrong ! Please Try again');
+      setalert({status:400,message:'Something went wrong ! Please Try again'});
+      
     }
     setTimeout(() => {
-      setmessage("")
+      setalert({status:400,message:""})
       setisLoading(false);
     }, 2000);
 
@@ -54,7 +52,7 @@ const Contact = () => {
 
   return <>
     {isLoading && <Loading />}
-    {message !== "" && <Alert msg={message} alertClass={alertClass} />}
+    {alert.message !== "" && <Alert alert={alert}/>}
     <section className=''>
       <div className='container-fluid Contact d-flex justify-content-center align-items-center'>
         <h1 className='text-light '>Contact US</h1>
@@ -83,7 +81,7 @@ const Contact = () => {
 
           <div className="input-group">
             <span className="input-group-text">Message</span>
-            <textarea className="form-control" onChange={(e) => setformmessage(e.target.value)} value={formmessage}></textarea>
+            <textarea className="form-control" onChange={(e) => setmessage(e.target.value)} value={message}></textarea>
           </div>
           <button type="button" className="btn btn-success m-3 float-end" onClick={contactSubmit}>Submit</button>
 

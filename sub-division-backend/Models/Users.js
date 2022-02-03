@@ -10,7 +10,7 @@ const Myschema=new mongoose.Schema({
     personalInfo:{
         name:String,
         employeeID:Number,
-        dob:Date,
+        dateOfBirth:Date,
         email:String,
         phoneNumber:Number,
         alternateNumber:Number

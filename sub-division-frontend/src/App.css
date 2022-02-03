@@ -25,6 +25,12 @@ a{
   max-height: 96%;
 }
 
+.cursor-pointer{
+  cursor: pointer;
+}
+.font-30px{
+  font-size: 30px;
+}
 
 .sdhjksd{
     width:calc(100vw-230px);
@@ -170,6 +176,21 @@ a{
   background-size: cover;
   min-height: 300px;
 
+}
+.EmployeeChange{
+  top:0;
+  left:0;
+  width: 100vw;
+  height:100vh;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+.EmployeeChangeClose{
+position: absolute;
+top:20px;
+right:20px;
+font-size: 50px;
+color: #fff
 }
 
 

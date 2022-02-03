@@ -9,12 +9,12 @@ const Cards = (props) => {
     <h5 className="card-header">{props.header}</h5>
     <div className="card-body">
       {props.text.map((text, index) => {
-        return (<>
+        return (<div key={index}>
           {(index > 0) ? <HorizontalLine /> : <></>}
           <h5 className="card-title">{props.title[index]}</h5>
           <p className="card-text">{text}</p>
           <Link to={props.button[0]} className="btn btn-primary">{props.buttontext[index]}<i className="fa fa-chevron-right mx-2" aria-hidden="true"></i></Link>
-        </>)
+        </div>)
       })}
 
     </div>

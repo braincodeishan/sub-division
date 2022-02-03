@@ -2,7 +2,7 @@ import React from 'react';
 import Tablebody from './Tablebody';
 
 const Table = (props) => {
-    console.log("entered table")
+    // console.log("entered table")
     return <>
         <table className="table text-center">
             <thead className="thead-dark">
@@ -14,7 +14,7 @@ const Table = (props) => {
             </thead>
             <tbody>
                 {props.body.map((val,index)=>{
-                   return <Tablebody body={val} key={index} employee={props.employee}/>
+                   return <Tablebody body={val} key={index} employeeEdit={props.employeeEdit} employeeDel={props.employeeDel}/>
                 })
                 }
             </tbody>

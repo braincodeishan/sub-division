@@ -1,12 +1,18 @@
 import React from 'react'
 
 const Alert = (props) => {
-    const classes="alert "+ props.alertClass+ " alert-dismissible position-fixed fade show alert-main ";
+    let classes;
+    if(props.alert.status===200){
+        classes="alert alert-success alert-dismissible position-fixed fade show alert-main ";
+    }else{
+        classes="alert alert-danger alert-dismissible position-fixed fade show alert-main ";
+    }
+    
     return (
         <>
         <div className='Alert-bg'>
          <div className={classes} role="alert">
-                {props.msg}
+                {props.alert.message}
             </div>   
             </div>
         </>
