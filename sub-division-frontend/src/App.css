@@ -1,9 +1,62 @@
+@media print {
+
+  .headingBreak{
+    page-break-before: always;
+    break-before: always;
+  }
+
+  .printNone{
+    display: none;
+  }
+
+}
 body{
     overflow-x: hidden;
+}
+.span{
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  margin: 10px;
+}
+.span *{
+  margin-left: 10px;
+  margin-right: 10px;
+  
+}
+.table th, .table td{
+  padding:5px;
+  border: 1px #000 solid;
+  height:20px;
+}
+
+.table1 td{
+  padding:5px;
+  border: 1px #000 solid;
+  
 }
 a{
     text-decoration: none;
     color:#000;
+}
+.popup{
+  background-color: #fff;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  
+  overflow-x: hidden;
+  z-index: 100000;
+}
+
+
+.text_center{
+  text-align: center;
+  
+}
+.text_right{
+  text-align: right;
 }
 .csbvdb{
     background-image: url(./Assets/Images/wave.svg);
@@ -439,6 +492,8 @@ color: #fff
   background-color: rgba(7, 9, 31, 0.829);
   border-radius: 5px;
 }
+
+
 
 
 /* .bx-menu{

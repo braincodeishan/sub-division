@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
-        <footer className="page-footer container font-small unique-color-dark ">
+        <footer className="page-footer container font-small unique-color-dark printNone">
 
 
 

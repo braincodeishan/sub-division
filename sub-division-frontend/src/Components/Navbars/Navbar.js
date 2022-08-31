@@ -85,7 +85,7 @@ const Navbar = () => {
   }
   return (
     <>
-      <div className={"sidebar " + sidebarclass} id='sidebar'>
+      <div className={"printNone sidebar " + sidebarclass} id='sidebar'>
         <div className="logo-details">
           <i className='bx bxl-magento bx-spin' ></i>
           {/* <i className='bx bxs-brain bx-spin' ></i> */}
@@ -134,6 +134,7 @@ const Navbar = () => {
               <li><Link to="/TourProgram">Tour Program</Link></li>
               <li><Link to="/IRS">Inspection Reports</Link></li>
               <li><Link to="/CPV">Cent % Verification</Link></li>
+              <li><Link to="/Recruitment">Recruitment</Link></li>
             </ul>
           </li>
           <li>
@@ -201,7 +202,6 @@ const Navbar = () => {
             <div className="profile-details">
               <div className="profile-content">
                 <i className='bx bxs-user' ></i>
-                {/* <img src="image/profile.jpg" alt="profileImg"/> */}
               </div>
               <div className="name-job">
                 <div className="profile_name">Ishan Dev</div>

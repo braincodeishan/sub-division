@@ -24,6 +24,7 @@ import Contact from "./Components/EditingComponents/Contact";
 import ProtectedRoutes from "./Contexts/ProtectedRoutes";
 import Navbar from "./Components/Navbars/Navbar";
 import Loading from "./Components/sub-component/Loading"
+import Recruitment from "./Components/MainComponents/Recruitment";
 
 
 function MainApp() {
@@ -43,6 +44,7 @@ function MainApp() {
               <Route exact path="/Dashboard" element={<Dashboard />} />
               <Route exact path="/Diary" element={<Diary />} />
               <Route exact path="/IRS" element={<IRS />} />
+              <Route exact path="/Recruitment" element={<Recruitment />} />
               <Route exact path="/LeaveOrders" element={<LeaveOrders />} />
               <Route exact path="/Paidleave" element={<PaidlLeave />} />
               <Route exact path="/Putoff" element={<PutOff />} />
