@@ -10,6 +10,16 @@
   }
 
 }
+
+.pageCenter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cursorPointer{
+  cursor: pointer;
+}
 body{
     overflow-x: hidden;
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import TextField from '@mui/material/TextField';
 const IRPage6 = () => {
   return (
+    <div style={{width:'70%'}}>
     <table className='table'>
             <tr>
                 <td>Signal Strength</td>
@@ -39,7 +40,11 @@ const IRPage6 = () => {
                 <td>Number of Letterboxes</td>
                 <td><TextField id="standard-basic" variant="standard" /></td>
             </tr>
-            <tr>
+            
+            
+        </table>
+        <table className='table'>
+        <tr>
                 <td>Articles in bag on Inspection day</td>
                 <td><TextField id="standard-basic" label='SP' variant="standard" /></td>
                 <td><TextField id="standard-basic" label='RL' variant="standard" /></td>
@@ -48,8 +53,8 @@ const IRPage6 = () => {
                 <td><TextField id="standard-basic" label='ORD'  variant="standard" /></td>
                 <td><TextField id="standard-basic" label='VP/COD'  variant="standard" /></td>
             </tr>
-            
         </table>
+        </div>
   )
 }
 

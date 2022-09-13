@@ -2,6 +2,7 @@ import React from 'react'
 import TextField from '@mui/material/TextField';
 const IRPage5 = () => {
   return (
+    <div style={{width:'70%'}}>
     <table className='table'>
             <tr>
                 <th>Name of the Record</th>
@@ -37,6 +38,7 @@ const IRPage5 = () => {
             </tr>
             
         </table>
+        </div>
     
 
 

@@ -8,62 +8,26 @@ import IRPage3 from '../sub-component/IR/IRPage3'
 import IRPage4 from '../sub-component/IR/IRPage4'
 import IRPage5 from '../sub-component/IR/IRPage5'
 import IRPage6 from '../sub-component/IR/IRPage6'
+import IRPage7 from '../sub-component/IR/IRPage7'
 
 const IRS = () => {
     const [page, setPage] = useState(1);
     return (
-        <div className='container'>
-            <span className='span'>
-                <div>
-                <ArrowCircleLeftIcon
-                    style={{ cursor: 'pointer' }}
-                    onClick={()=>{
-                        if(page===1){
-                            setPage(10);
-                            return;
-                        }
-                        setPage(page-1);
-                    }}
-                />
-                </div>
-                {
-                    page === 1 && <IRPage1/>
-                    
-                }
-                {
-                    page === 2 && <IRPage2/>
-                    
-                }
-                {
-                    page === 3 && <IRPage3/>
-                    
-                }
-                {
-                    page === 4 && <IRPage4/>
-                    
-                }
-                {
-                    page === 5 && <IRPage5/>
-                    
-                }
-                {
-                    page === 6 && <IRPage6/>
-                    
-                }
-                <div>
-                <ArrowCircleRightIcon
-                    style={{ cursor: 'pointer' }}
-                    onClick={()=>{
-                        if(page===10){
-                            setPage(1);
-                            return;
-                        }
-                        setPage(page+1);
-                    }}
-                />
-                </div>
-            </span>
+        <div className='container pageCenter'>
+            <>
+                <IRPage1 />
 
+                <IRPage2 />
+
+                <IRPage3 />
+
+                <IRPage4 />
+
+                <IRPage5 />
+
+                <IRPage6 />
+                <IRPage7 />
+            </>
         </div>
     )
 }

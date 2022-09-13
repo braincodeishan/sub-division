@@ -37,8 +37,8 @@ const Recruitment = () => {
 
     return (
         <>
-            <div className='container'>
-                {!showData ? <div className='container'>
+            <div className='container pageCenter'>
+                {!showData ? <div>
                     <table className='table1'>
                         <tr>
                             <td>
