@@ -25,6 +25,7 @@ import ProtectedRoutes from "./Contexts/ProtectedRoutes";
 import Navbar from "./Components/Navbars/Navbar";
 import Loading from "./Components/sub-component/Loading"
 import Recruitment from "./Components/MainComponents/Recruitment";
+import UpdateData from "./Components/sub-component/Data Upload/UpdateData";
 
 
 function MainApp() {
@@ -56,6 +57,7 @@ function MainApp() {
               <Route exact path="/Settings" element={<Settings />} />
               <Route exact path="/Contact" element={<Contact />} />
               <Route exact path="/Loading" element={<Loading/>} />
+              <Route exact path="/UpdateData" element={<UpdateData/>} />
 
               <Route path="*" element={<Notfound />} />
             </Route>

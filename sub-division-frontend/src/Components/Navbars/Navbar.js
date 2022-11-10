@@ -197,6 +197,7 @@ const Navbar = () => {
             </Link>
             <ul className="sub-menu blank">
               <li><Link className="link_name" to="/Settings">Setting</Link></li>
+              <li><Link to="/UpdateData">Data Upload</Link></li>
             </ul>
           </li>
           <li>
