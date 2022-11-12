@@ -1,15 +1,4 @@
-@media print {
 
-  .headingBreak{
-    page-break-before: always;
-    break-before: always;
-  }
-
-  .printNone{
-    display: none;
-  }
-
-}
 
 .pageCenter{
   display: flex;
@@ -503,9 +492,28 @@ color: #fff
   border-radius: 5px;
 }
 
+.spacer1{
+  height: 10px;
+}
+.spacer2{
+  height: 20px;
+}
+.spacer3{
+  height: 30px;
+}
+.spacer4{
+  height: 40px;
+}
+.spacer5{
+  height: 50px;
+}
 
-
-
+.grey{
+  background-color: grey;
+}
+.offWhite{
+  background-color: rgb(226, 226, 226);
+}
 /* .bx-menu{
 position: relative;
 display: block;

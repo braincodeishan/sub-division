@@ -1,0 +1,20 @@
+/* FOR THE PRINT OF THE MEDIA */
+
+@media print {
+
+    .headingBreak{
+      page-break-before: always;
+      break-before: always;
+    }
+  
+    .printNone{
+      display: none;
+    }
+  
+  }
+
+/* BACKGROUND SOLID COLORS */
+
+.bg-grey-100{
+background-color: rgb(255, 255, 255);
+}
