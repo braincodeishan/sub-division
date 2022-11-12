@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import LoginProvider from './Contexts/LoginProvider';
+import { useMisc } from "../src/Contexts/LoginProvider";
 
 
 import Header from "./Components/Headers/Header";
@@ -23,17 +24,21 @@ import Settings from "./Components/EditingComponents/Settings";
 import Contact from "./Components/EditingComponents/Contact";
 import ProtectedRoutes from "./Contexts/ProtectedRoutes";
 import Navbar from "./Components/Navbars/Navbar";
-import Loading from "./Components/sub-component/Loading"
 import Recruitment from "./Components/MainComponents/Recruitment";
 import UpdateData from "./Components/sub-component/Data Upload/UpdateData";
-
+import Loading from "./Components/sub-component/Loading";
+import { SnackbarAlert } from "./Components/sub-component/Alert";
 
 function MainApp() {
-
+  const {alert, setAlert, loading}= useMisc();
 
   return (
     <>
       <div className="sdhjksd">
+        {alert.show && <SnackbarAlert {...alert} setopenSnack={setAlert} />}
+        {
+          loading && <Loading />
+        }
         <LoginProvider>
           <Header />
           <Navbar />
@@ -48,7 +53,7 @@ function MainApp() {
               <Route exact path="/Recruitment" element={<Recruitment />} />
               <Route exact path="/LeaveOrders" element={<LeaveOrders />} />
               <Route exact path="/Paidleave" element={<PaidlLeave />} />
-              <Route exact path="/Putoff" element={<PutOff />} />
+              <Route exact path="/PutOff" element={<PutOff />} />
               <Route exact path="/Senioritylist" element={<SeniorityList />} />
               <Route exact path="/TABills" element={<TABills />} />
               <Route exact path="/EMOPrep" element={<EMOPrep />} />
@@ -56,8 +61,8 @@ function MainApp() {
               <Route exact path="/Notices" element={<Notices />} />
               <Route exact path="/Settings" element={<Settings />} />
               <Route exact path="/Contact" element={<Contact />} />
-              <Route exact path="/Loading" element={<Loading/>} />
-              <Route exact path="/UpdateData" element={<UpdateData/>} />
+              <Route exact path="/Loading" element={<Loading />} />
+              <Route exact path="/UpdateData" element={<UpdateData />} />
 
               <Route path="*" element={<Notfound />} />
             </Route>

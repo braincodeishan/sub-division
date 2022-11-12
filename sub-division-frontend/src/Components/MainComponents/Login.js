@@ -1,17 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { useNavigate } from 'react-router'
 import LoginContext from '../../Contexts/LoginContext';
-import Alert from '../sub-component/Alert';
-import Loading from "../sub-component/Loading"
-
+import { useMisc } from '../../Contexts/LoginProvider';
 const Login = () => {
 
 
     const [username, setusername] = useState("");
     const [password, setpassword] = useState("");
-    const [alert, setalert] = useState({status:400,message:""});
-    const [isLoading,setisLoading]=useState(false)
-
+    const { setLoading, alertSuccess, alertDanger } = useMisc();
 
     const Login = useContext(LoginContext)
     const navigate = useNavigate();
@@ -25,14 +21,14 @@ const Login = () => {
     useEffect(() => {
         if (Login.isLoggedin) {
             setTimeout(() => {
-                setisLoading(false)
+                setLoading(false)
                 navigate('/Dashboard')
             }, 2000);
         }
     }, [Login.isLoggedin])
 
     const tokenver = async () => {
-        setisLoading(true)
+        setLoading(true)
         const result = await fetch("http://localhost:3001/tokenverify", {
             method: "GET",
             headers: {
@@ -46,52 +42,51 @@ const Login = () => {
         if (res.status === 200) {
             Login.changelogin(true)
         }else{
-            setisLoading(false)
+            setLoading(false)
         }
     }
 
 
     const logmein = async () => {
-        setisLoading(true);
-        const result = await fetch("http://localhost:3001/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-
-
-
-            },
-            credentials: "include",
-
-            body: JSON.stringify({
-                username,
-                password
-
+        
+        setLoading(true);
+            const result = await fetch("http://localhost:3001/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+    
+    
+    
+                },
+                credentials: "include",
+    
+                body: JSON.stringify({
+                    username,
+                    password
+    
+                })
             })
-        })
-
-        const res = await result.json();
-
-        if (result.status === 200) {
-            setalert({status:200,message:'Welcome ' + res.name.toUpperCase()+" !"});
-            Login.changelogin(true)
-
-        } else {
-            setalert({status:400,message:res.Error});
-            setTimeout(() => {
-                setalert({status:400,message:""})
-                setisLoading(false)
-            }, 2000);
-        }
+    
+            const res = await result.json();
+    
+            if (result.status === 200) {
+                alertSuccess('Welcome ' + res.username.toUpperCase()+" !");
+                Login.changelogin(true)
+                
+    
+            } else {
+                alertDanger({status:400,message:res.error});
+                setLoading(false)
+            }
+        
+        
 
     }
 
 
     return (
         <div>
-            {isLoading && <Loading/>}
-            {alert.message !== "" && <Alert alert={alert}/> }
             <section className="csbvdb pt-5 pb-5" >
                 <div className="container h-100 ">
                     <div className="row d-flex justify-content-center align-items-center h-100">

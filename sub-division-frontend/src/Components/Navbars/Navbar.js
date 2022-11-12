@@ -117,7 +117,7 @@ const Navbar = () => {
               <li><Link to="/PaidLeave">Paid Leave</Link></li>
               <li><Link to="/LeaveOrders">LWA Orders</Link></li>
               <li><Link to="/SeniorityList">Seniority List</Link></li>
-              <li><Link to="/Putt_Off_Memo">Putt Off Memo</Link></li>
+              <li><Link to="/PutOff">Putt Off Memo</Link></li>
             </ul>
           </li>
           <li>

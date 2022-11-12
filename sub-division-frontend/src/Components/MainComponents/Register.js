@@ -1,73 +1,68 @@
-import React,{useState} from 'react'
-import Alert from '../sub-component/Alert';
+import React, { useState } from 'react'
+import axios from 'axios'
+import { useMisc } from '../../Contexts/LoginProvider'
 import { useNavigate } from 'react-router'
 const Register = () => {
-    
-    const navigate=useNavigate();
-const [username, setusername] = useState("");
-const [password, setpassword] = useState("");
-const [email, setemail] = useState("");
-const [confirmpass, setconfirmpass] = useState("");
-const [message,setmessage]=useState("");
-const [msgtype,setmsgtype]=useState("");
 
-const register= async ()=>{
-// console.log(username,password,email)
-const change=() => {
-    setmsgtype("");
-    setmessage("");
-    
-}
+    const navigate = useNavigate();
+    const [username, setusername] = useState("");
+    const [password, setpassword] = useState("");
+    const [email, setemail] = useState("");
+    const [confirmpass, setconfirmpass] = useState("");
+    const { setLoading, alertSuccess, alertDanger } = useMisc();
 
-const result= await fetch("http://localhost:3001/register",{
-    method:"POST",
-    headers:{
-        "Content-Type":"application/json"
-    },
-    credentials:"include",
-    body:JSON.stringify({
-        username,
-        email,
-        password
+    const registerUser = async () => {
 
-    })
-})
-const res=await result.json();
+        const result = await axios({
+            method: "POST",
+            url: "http://localhost:3001/register",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            credentials: "include",
+            data: {
+                username,
+                email,
+                password
 
-if(res.status===201){
-    setmsgtype("alert-success");
-    setmessage('Welcome, Redirecting you to the login page');
-    setTimeout(()=>{
-        navigate('/Login')
-    }, 2000);    
+            }
+        })
+        
+        console.log(result)
+        if (result.status === 201) {
+            
+            alertSuccess('Welcome, Redirecting you to the login page');
+            setTimeout(() => {
+                navigate('/Login')
+            }, 2000);
+        }
+        else if (result.Error.code === 11000) {
+            
+            alertDanger('User is already registered, Please use a different Username');
+            
+        } else {
+            
+            alertDanger('Something Went Wrong...');
+            
+        }
+
+
+
+
+
+
     }
-else if(res.Error.code===11000){
-    setmsgtype("alert-danger");
-    setmessage('User is already registered, Please use a different Username');
-    setTimeout(change,2000)
-}else{
-    setmsgtype("alert-danger");
-    setmessage('Something Went Wrong...');
-    setTimeout(change,2000)
-}
-
-
-
-
-
-
-}
 
 
     return (
         <>
-            {message!==""?<Alert msg={message} msgtype={msgtype}/>:<></>}
             
+
             <section className="csbvdb pt-5 pb-5" >
                 <div className="container mx-auto col-12">
                     <div className="row d-flex justify-content-center align-items-center h-100">
                         <div className="col-lg-12 col-xl-11 col-12">
-                            <div className="card text-black" style={{borderRadius: "25px"}}>
+                            <div className="card text-black" style={{ borderRadius: "25px" }}>
                                 <div className="card-body p-md-5">
                                     <div className="row justify-content-center">
                                         <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
@@ -79,15 +74,15 @@ else if(res.Error.code===11000){
                                                 <div className="d-flex flex-row align-items-center mb-4">
                                                     <i className="fas fa-user fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0">
-                                                        <input type="text" id="form3Example1c" name="Username" className="form-control" onChange={(e)=>{setusername(e.target.value)}} value={username}/>
-                                                        <label className="form-label" htmlFor="form3Example1c" >Your Name</label>
+                                                        <input type="text" id="form3Example1c" name="Username" className="form-control" onChange={(e) => { setusername(e.target.value) }} value={username} />
+                                                        <label className="form-label" htmlFor="form3Example1c" >UserName</label>
                                                     </div>
                                                 </div>
 
                                                 <div className="d-flex flex-row align-items-center mb-4">
                                                     <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0">
-                                                        <input type="email" id="form3Example3c" className="form-control" onChange={(e)=>{setemail(e.target.value)}} value={email}/>
+                                                        <input type="email" id="form3Example3c" className="form-control" onChange={(e) => { setemail(e.target.value) }} value={email} />
                                                         <label className="form-label" htmlFor="form3Example3c">Your Email</label>
                                                     </div>
                                                 </div>
@@ -95,7 +90,7 @@ else if(res.Error.code===11000){
                                                 <div className="d-flex flex-row align-items-center mb-4">
                                                     <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0">
-                                                        <input type="password" id="form3Example4c" className="form-control" onChange={(e)=>{setpassword(e.target.value)}} value={password}/>
+                                                        <input type="password" id="form3Example4c" className="form-control" onChange={(e) => { setpassword(e.target.value) }} value={password} />
                                                         <label className="form-label" htmlFor="form3Example4c">Password</label>
                                                     </div>
                                                 </div>
@@ -103,7 +98,7 @@ else if(res.Error.code===11000){
                                                 <div className="d-flex flex-row align-items-center mb-4">
                                                     <i className="fas fa-key fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0">
-                                                        <input type="password" id="form3Example4cd" className="form-control" onChange={(e)=>{setconfirmpass(e.target.value)}} value={confirmpass}/>
+                                                        <input type="password" id="form3Example4cd" className="form-control" onChange={(e) => { setconfirmpass(e.target.value) }} value={confirmpass} />
                                                         <label className="form-label" htmlFor="form3Example4cd">Repeat your password</label>
                                                     </div>
                                                 </div>
@@ -121,7 +116,7 @@ else if(res.Error.code===11000){
                                                 </div>
 
                                                 <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                                    <button type="button" className="btn btn-primary btn-lg" onClick={register}>Register</button>
+                                                    <button type="button" className="btn btn-primary btn-lg" onClick={registerUser}>Register</button>
                                                 </div>
 
                                             </form>
@@ -129,7 +124,7 @@ else if(res.Error.code===11000){
                                         </div>
                                         <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
-                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" className="img-fluid" alt="Sample"/>
+                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" className="img-fluid" alt="Sample" />
 
                                         </div>
                                     </div>

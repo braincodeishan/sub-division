@@ -1,4 +1,6 @@
 import React from 'react'
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 
 const Alert = (props) => {
     let classes;
@@ -20,3 +22,29 @@ const Alert = (props) => {
 }
 
 export default Alert
+
+
+const Alertc = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+  
+
+export const SnackbarAlert = (props) => {
+           
+    const handleClose = (event, reason) => {
+      if (reason === 'clickaway') {
+        return;
+      }
+  
+      props.setopenSnack((prev)=>{
+        return {...prev,'show':false}
+      })
+    };
+  return (
+    <Snackbar open={props.show} autoHideDuration={6000} onClose={handleClose} anchorOrigin={{vertical:'top',horizontal :'center'}}>
+        <Alertc onClose={handleClose} severity={props.severity} sx={{ width: '100%' }}>
+          {props.message}
+        </Alertc>
+      </Snackbar>
+  )
+}
