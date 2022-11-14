@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react'
 import LoginContext from '../../Contexts/LoginContext';
 import { Link } from 'react-router-dom'
-import Alert from '../sub-component/Alert';
+import { useMisc } from '../../Contexts/LoginProvider';
 
 const Navbar = () => {
   const Login = useContext(LoginContext)
   const [sidebarclass, setsidebarclass] = useState("close");
   const [menu, setmenu] = useState("bx-menu");
-
+  const {alertSuccess}=useMisc();
   useEffect(() => {
     let arrow = document.querySelectorAll(".arrow");
     for (var i = 0; i < arrow.length; i++) {
@@ -16,20 +16,7 @@ const Navbar = () => {
         arrowParent.classList.toggle("showMenu");
       });
     }
-    // let sidebar=document.getElementById("sidebar")
-    // let hambtn=document.getElementById("btn")
-    
-    // document.addEventListener("click",(e)=>{
-    //   console.log(e);
-    //   console.log(e.target.id);
-    //   console.log(e.target.view.x);
-    //   console.log(e.target.view.y);
-    //   if(e.target.screenX>300){
-    //     console.log("clicked outside sidebar")
-    //   }
-      
-      
-    // })
+  
 
   }, []);
 
@@ -44,9 +31,7 @@ const Navbar = () => {
 
         });
         if(logout.status===200){
-            
-            <Alert msg={"Logged Out"} msgtype={"alert-success"} />
-            
+            alertSuccess('Logged Out')
         }
     Login.changelogin(false);
   }

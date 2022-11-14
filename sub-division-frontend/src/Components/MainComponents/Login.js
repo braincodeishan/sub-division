@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import { useNavigate } from 'react-router'
 import LoginContext from '../../Contexts/LoginContext';
 import { useMisc } from '../../Contexts/LoginProvider';
+import axios from 'axios'
 const Login = () => {
 
 
@@ -29,8 +30,9 @@ const Login = () => {
 
     const tokenver = async () => {
         setLoading(true)
-        const result = await fetch("http://localhost:3001/tokenverify", {
+        const result = await axios({
             method: "GET",
+            url:"http://localhost:3001/tokenverify",
             headers: {
                 "Content-Type": "application/json",
 
@@ -38,8 +40,8 @@ const Login = () => {
             credentials: "include",
 
         });
-        const res = await result.json();
-        if (res.status === 200) {
+        console.log(result)
+        if (result.data.status === 200) {
             Login.changelogin(true)
         }else{
             setLoading(false)
@@ -48,37 +50,39 @@ const Login = () => {
 
 
     const logmein = async () => {
-        
-        setLoading(true);
-            const result = await fetch("http://localhost:3001/login", {
+        try{
+            setLoading(true);
+            const result = await axios({
                 method: "POST",
+                url:"http://localhost:3001/login",
                 headers: {
                     "Content-Type": "application/json",
                     "Accept": "application/json",
     
-    
-    
                 },
                 credentials: "include",
     
-                body: JSON.stringify({
+                data: {
                     username,
                     password
     
-                })
+                }
             })
-    
-            const res = await result.json();
-    
-            if (result.status === 200) {
-                alertSuccess('Welcome ' + res.username.toUpperCase()+" !");
+            console.log(result)
+            if (result.data.status === 200) {
+                alertSuccess('Welcome ' + result.data.username.toUpperCase()+" !");
                 Login.changelogin(true)
                 
     
             } else {
-                alertDanger({status:400,message:res.error});
+                alertDanger('Something Went Wrong...');
                 setLoading(false)
             }
+        }catch(e){
+            alertDanger('Something Went Wrong...');
+            setLoading(false)
+        }
+        
         
         
 
