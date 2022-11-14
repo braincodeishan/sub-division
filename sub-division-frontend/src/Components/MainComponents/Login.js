@@ -75,7 +75,7 @@ const Login = () => {
                 
     
             } else {
-                alertDanger('Something Went Wrong...');
+                alertDanger('Something Went Wrong..');
                 setLoading(false)
             }
         }catch(e){

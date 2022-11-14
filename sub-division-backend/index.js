@@ -43,7 +43,7 @@ app.post('/login', async (req, res) => {
           maxAge: 86400000,
           httpOnly: true
         })
-        res.status(200).json({ data: 'Login Successful', token: token, username: result.username })
+        res.status(200).json({ data: 'Login Successful', token: token, username: result.username, status:200})
       } else {
         res.status(400).json({ error: 'Login unsuccessful, Invalid Username/Password' })
       }
@@ -76,7 +76,7 @@ app.get('/logout', async (req, res) => {
     res.status(200).json({ data: "Logged out" });
   } catch (err) {
 
-    res.status(400).json({ data: "Something went wrong in Logout" + err });
+    res.status(200).json({ data: "Something went wrong in Logout" + err });
   }
 })
 
