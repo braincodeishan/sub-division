@@ -164,6 +164,7 @@ const Navbar = () => {
             </Link>
             <ul className="sub-menu blank">
               <li><Link className="link_name" to="#">Explore</Link></li>
+              <li><Link to="/AdditionalCharge">Additional Charge Order</Link></li>
             </ul>
           </li>
           <li>
