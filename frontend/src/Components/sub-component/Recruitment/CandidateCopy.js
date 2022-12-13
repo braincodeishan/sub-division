@@ -15,7 +15,7 @@ const CandidateCopy = ({ data, setShowData }) => {
     return (
       <div className='headings'>
         <h5 className='text_center'>Department of Post :: Government of India </h5>
-        <h6 className='text_center'>Office of Inspector Post, Phoolpur Sub Division, Phoolpur - 276304</h6>
+        <h6 className='text_center'>Office of Inspector Post, Lalganj Sub Division, Lalganj - 276202</h6>
       </div>
     )
   }
@@ -23,7 +23,7 @@ const CandidateCopy = ({ data, setShowData }) => {
     return (
       <div className='headingBreak'>
         <h5 className='text_center'>Department of Post :: Government of India </h5>
-        <h6 className='text_center'>Office of Inspector Post, Phoolpur Sub Division, Phoolpur - 276304</h6>
+        <h6 className='text_center'>Office of Inspector Post, Lalganj Sub Division, Lalganj - 276202</h6>
       </div>
     )
   }
@@ -32,15 +32,15 @@ const CandidateCopy = ({ data, setShowData }) => {
     return (
       <div style={{ marginTop: '40px' }}>
           <p className='text_right'>Inspector Post</p>
-          <p className='text_right'>Phoolpur Sub Division</p>
-          <p className='text_right'>Phoolpur - 276304</p>
+          <p className='text_right'>Lalganj Sub Division</p>
+          <p className='text_right'>Lalganj - 276202</p>
         </div>
 
     )
   }
   const caseMark = () => {
     return (
-      <p style={{ fontWeight: '600' }} className='text_center'>NO: IP/Phoolpur/{data.post}/Cycle - dated at Phoolpur the {date}</p>
+      <p style={{ fontWeight: '600' }} className='text_center'>NO: IP/Lalganj/{data.post}/Cycle - dated at Lalganj the {date}</p>
 
     )
   }
@@ -63,7 +63,7 @@ const CandidateCopy = ({ data, setShowData }) => {
           <p style={{ fontWeight: '600' }} className='text_center'>Sub: Submission of Original Documents for verification in connection with GDS Recruitment.</p>
         </div>
         <div style={{ marginTop: '40px' }}>
-          <p>The Following documents are hereby submitted to Office of Inspector Post, Phoolpur Sub Division, Phoolpur 276304 for verification of the documents from the original source for further processing of the candidature.</p>
+          <p>The Following documents are hereby submitted to Office of Inspector Post, Lalganj Sub Division, Lalganj 276202 for verification of the documents from the original source for further processing of the candidature.</p>
           <table className='table'>
             <tr>
               <th>Name Of the Certificate</th>
