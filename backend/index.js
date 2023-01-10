@@ -124,7 +124,7 @@ app.post('/senioritylist/edit', async (req, res) => {
 })
 
 app.post('/register', async (req, res) => {
-  const { username, email, password } = req.body;
+  const dataReceived = req.body;
 
   if (!username) {
     res.status(204).json({ data: "Something went wrong" })
@@ -134,11 +134,11 @@ app.post('/register', async (req, res) => {
   }
   else {
     try {
-      const hash = await bcrypt.hash(password, 10);
+      const hash = await bcrypt.hash(dataReceived.password, 10);
 
       const newUser = new User({
-        username: username,
-        personalInfo:{email: email},
+        username: dataReceived.username,
+        personalInfo:{email: dataReceived.email},
         password: hash
       })
       const regresult = newUser.save()

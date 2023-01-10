@@ -108,7 +108,7 @@ const Login = () => {
                                                     <i className="fas fa-user fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0">
                                                         <input type="text" id="form3Example1c" name="Username" className="form-control" onChange={(e) => { setusername(e.target.value) }} value={username} />
-                                                        <label className="form-label" htmlFor="form3Example1c" >User Name</label>
+                                                        <label className="form-label" htmlFor="form3Example1c" >Employee ID</label>
                                                     </div>
                                                 </div>
 

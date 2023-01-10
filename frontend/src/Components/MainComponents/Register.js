@@ -8,6 +8,11 @@ const Register = () => {
     const [username, setusername] = useState("");
     const [password, setpassword] = useState("");
     const [email, setemail] = useState("");
+    const [post, setPost] = useState("");
+    const [circle, setCircle] = useState("");
+    const [region, setRegion] = useState("");
+    const [Division, setDivision] = useState("");
+    const [subDivision, setSubDivision] = useState("");
     const [confirmpass, setconfirmpass] = useState("");
     const { setLoading, alertSuccess, alertDanger } = useMisc();
 
@@ -27,23 +32,23 @@ const Register = () => {
 
             }
         })
-        
+
         console.log(result)
         if (result.status === 201) {
-            
+
             alertSuccess('Welcome, Redirecting you to the login page');
             setTimeout(() => {
                 navigate('/Login')
             }, 2000);
         }
         else if (result.Error.code === 11000) {
-            
+
             alertDanger('User is already registered, Please use a different Username');
-            
+
         } else {
-            
+
             alertDanger('Something Went Wrong...');
-            
+
         }
 
 
@@ -56,7 +61,7 @@ const Register = () => {
 
     return (
         <>
-            
+
 
             <section className="csbvdb pt-5 pb-5" >
                 <div className="container mx-auto col-12">
@@ -75,7 +80,7 @@ const Register = () => {
                                                     <i className="fas fa-user fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0">
                                                         <input type="text" id="form3Example1c" name="Username" className="form-control" onChange={(e) => { setusername(e.target.value) }} value={username} />
-                                                        <label className="form-label" htmlFor="form3Example1c" >UserName</label>
+                                                        <label className="form-label" htmlFor="form3Example1c" >Employee ID</label>
                                                     </div>
                                                 </div>
 
@@ -86,7 +91,86 @@ const Register = () => {
                                                         <label className="form-label" htmlFor="form3Example3c">Your Email</label>
                                                     </div>
                                                 </div>
-
+                                                <div className="d-flex flex-row align-items-center mb-4">
+                                                    <i className="fas fa-pencil fa-lg me-3 fa-fw"></i>
+                                                    <div className="form-outline flex-fill mb-0">
+                                                        <select class="form-control form-control-lg" onChange={(e) => { setPost(e.target.value) }} >
+                                                            <option selected>Select...</option>
+                                                            <option value={'INSPECTOR POST'}>Inspector</option>
+                                                            <option value={'ASSISTANT SUPERTINDENT OF POST OFFICES'}>ASPOs</option>
+                                                            <option value={'SUPERTINDENT OF POST OFFICES'}>SPOs</option>
+                                                            <option value={'SENIOR SUPERTINDENT OF POST OFFICES'}>SSPOs</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                        </select>
+                                                        <label className="form-label" htmlFor="form3Example3c">Post</label>
+                                                    </div>
+                                                </div>
+                                                <div className="d-flex flex-row align-items-center mb-4">
+                                                    <i className="fas fa-pencil fa-lg me-3 fa-fw"></i>
+                                                    <div className="form-outline flex-fill mb-0">
+                                                        <select class="form-control form-control-lg">
+                                                            <option>Select...</option>
+                                                            <option>Andhra Pradesh</option>
+                                                            <option>Uttar Pradesh</option>
+                                                            <option>Madhya Pradesh</option>
+                                                            <option>Jharkhand</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                            <option>Large select</option>
+                                                        </select>
+                                                        <label className="form-label" htmlFor="form3Example3c">Circle</label>
+                                                    </div>
+                                                </div>
+                                                <div className="d-flex flex-row align-items-center mb-4">
+                                                    <i className="fas fa-pencil fa-lg me-3 fa-fw"></i>
+                                                    <div className="form-outline flex-fill mb-0">
+                                                        <select class="form-control form-control-lg">
+                                                            <option>Select...</option>
+                                                            
+                                                        </select>
+                                                        <label className="form-label" htmlFor="form3Example3c">Region</label>
+                                                    </div>
+                                                </div>
+                                                <div className="d-flex flex-row align-items-center mb-4">
+                                                    <i className="fas fa-pencil fa-lg me-3 fa-fw"></i>
+                                                    <div className="form-outline flex-fill mb-0">
+                                                        <select class="form-control form-control-lg">
+                                                            <option>Select...</option>
+                                                            
+                                                        </select>
+                                                        <label className="form-label" htmlFor="form3Example3c">Division</label>
+                                                    </div>
+                                                </div>
+                                                <div className="d-flex flex-row align-items-center mb-4">
+                                                    <i className="fas fa-pencil fa-lg me-3 fa-fw"></i>
+                                                    <div className="form-outline flex-fill mb-0">
+                                                        <select class="form-control form-control-lg">
+                                                            <option>Select...</option>
+                                                            
+                                                        </select>
+                                                        <label className="form-label" htmlFor="form3Example3c">Sub Division</label>
+                                                    </div>
+                                                </div>
                                                 <div className="d-flex flex-row align-items-center mb-4">
                                                     <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0">

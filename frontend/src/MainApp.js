@@ -23,6 +23,7 @@ import Notices from "./Components/MainComponents/Notices";
 import Settings from "./Components/EditingComponents/Settings";
 import Contact from "./Components/EditingComponents/Contact";
 import AdditionalCharge from "./Components/MainComponents/AdditionalCharge";
+import ChargeReport from "./Components/sub-component/ChargeReport/ChargeReport";
 import ProtectedRoutes from "./Contexts/ProtectedRoutes";
 import Navbar from "./Components/Navbars/Navbar";
 import Recruitment from "./Components/MainComponents/Recruitment";
@@ -65,6 +66,7 @@ function MainApp() {
               <Route exact path="/Loading" element={<Loading />} />
               <Route exact path="/UpdateData" element={<UpdateData />} />
               <Route exact path="/AdditionalCharge" element={<AdditionalCharge />} />
+              <Route exact path="/ChargeReport" element={<ChargeReport />} />
 
               <Route path="*" element={<Notfound />} />
             </Route>
