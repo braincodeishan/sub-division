@@ -6,7 +6,7 @@ import ShowChargeReport from './ShowChargeReport';
 
 const ChargeReport = () => {
     
-    const [showData, setShowData] = useState(false);
+    const [showData, setShowData] = useState(true);
     
     
     
