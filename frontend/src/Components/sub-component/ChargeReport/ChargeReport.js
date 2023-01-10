@@ -140,7 +140,7 @@ const ChargeReport = () => {
                     <Button variant="contained"
                         style={{ margin: '10px' }}
                         onClick={() => {
-                            setShowData(true)
+                            setShowData(false)
                         }}
                     >Generate Charge Report</Button>
 
