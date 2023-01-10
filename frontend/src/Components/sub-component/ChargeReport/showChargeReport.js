@@ -1,9 +1,9 @@
 import React from 'react'
 
-const showChargeReport = () => {
+const ShowChargeReport = () => {
   return (
-    <div>showChargeReport</div>
+    <div>ShowChargeReport</div>
   )
 }
 
-export default showChargeReport
+export default ShowChargeReport

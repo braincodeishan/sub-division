@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import showChargeReport from './showChargeReport';
+import ShowChargeReport from './ShowChargeReport';
 
 const ChargeReport = () => {
     
@@ -13,7 +13,7 @@ const ChargeReport = () => {
     return (
         <>
             <div className='container'>
-               {showData &&  <div className='row'>
+               {showData ?  <div className='row'>
                     <h3 className='d-flex-column-center'>Generate Charge Report to Print</h3>
                     <Box
                         sx={{
@@ -147,8 +147,7 @@ const ChargeReport = () => {
                     </div>
                     
 
-                </div> }
-                {!showData && <showChargeReport /> }
+                </div> :<ShowChargeReport /> }
 
             </div>
         </>
