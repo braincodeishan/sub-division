@@ -22,7 +22,7 @@ import TourProgram from "./Components/MainComponents/TourProgram";
 import Notices from "./Components/MainComponents/Notices";
 import Settings from "./Components/EditingComponents/Settings";
 import Contact from "./Components/EditingComponents/Contact";
-import AdditionalCharge from "./Components/MainComponents/AdditionalCharge";
+import AdditionalCharge from "./Components/sub-component/AdditionalCharge/AdditionalCharge";
 import ChargeReport from "./Components/sub-component/ChargeReport/ChargeReport";
 import ProtectedRoutes from "./Contexts/ProtectedRoutes";
 import Navbar from "./Components/Navbars/Navbar";

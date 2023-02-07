@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
@@ -8,8 +9,10 @@ import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { IconButton } from '@mui/material';
+import ShowAdditionalChargeOrder from './ShowAdditionalChargeOrder'
 const AdditionalCharge = () => {
-    const [attach, setAttach] = useState(['0', '99', '99'])
+    const [attach, setAttach] = useState({id:0})
+    const [showData, setShowData] = useState(true);
     const [discharge, setDischarge] = React.useState('');
     const [post, setPost] = React.useState('');
     const handleChange = (e) => {
@@ -19,7 +22,8 @@ const AdditionalCharge = () => {
     return (
         <>
             <div className='container'>
-                <div className='row'>
+                
+                {showData ? <div className='row'>
                     <Box
                         sx={{
                             border: '1px solid rgba(0,0,0,0.5)',
@@ -72,7 +76,18 @@ const AdditionalCharge = () => {
                             <div className="col d-flex-column-center">
                                 <IconButton onClick={()=>{
                                     setAttach((prev)=>{
-                                        return [...prev, 0]
+                                        const length = prev.length
+                                        const abc= prev.filter((item,index) => {
+                                            console.log("index"+index);
+                                            console.log("length"+length-1);
+                                            if(index!==length-1){
+                                                
+                                                return item;
+                                            }
+                                        })
+                                        console.log(abc);
+                                        return abc;
+                                        
                                     })
                                 }}>
                                     <RemoveCircleIcon />
@@ -110,11 +125,29 @@ const AdditionalCharge = () => {
 
 
                                 })}
+                                <IconButton onClick={()=>{
+                                    setAttach((prev)=>{
+                                        // return prev.map((item, index)=>{
+                                        //     return item
+                                        // })
+                                        return [...prev, 0]
+                                    })
+                                }}>
                                 <AddCircleIcon />
+                                </IconButton>
                             </div>
                         </div>
                     </Box>
-                </div>
+                    <div className="d-flex-column-center">
+                    <Button variant="contained"
+                        style={{ margin: '10px' }}
+                        onClick={() => {
+                            setShowData(false)
+                        }}
+                    >Generate Order</Button>
+
+                    </div>
+                </div>:<ShowAdditionalChargeOrder/>}
 
             </div>
         </>

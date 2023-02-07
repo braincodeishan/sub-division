@@ -2,9 +2,9 @@
 
 @media print {
 
-    .headingBreak{
-      page-break-before: always;
-      break-before: always;
+    .printBreak{
+      page-break-after: always;
+      break-after: always;
     }
   
     .printNone{
@@ -43,4 +43,30 @@ background-color: rgb(255, 255, 255);
 }
 .justify-content-center{
   justify-content: center!important;
+}
+
+.bold{
+  font-weight: 600;
+}
+.underline{
+  text-decoration: underline;
+}
+
+.font10{
+  font-size: 10pt;
+}
+.font11{
+  font-size: 11pt;
+}
+.font12{
+  font-size: 12pt;
+}
+.font14{
+  font-size: 14pt;
+}
+.font16{
+  font-size: 16pt;
+}
+.font18{
+  font-size: 18pt;
 }
