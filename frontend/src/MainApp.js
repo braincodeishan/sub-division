@@ -28,6 +28,7 @@ import ProtectedRoutes from "./Contexts/ProtectedRoutes";
 import Navbar from "./Components/Navbars/Navbar";
 import Recruitment from "./Components/MainComponents/Recruitment";
 import UpdateData from "./Components/sub-component/Data Upload/UpdateData";
+import PostData from "./Components/sub-component/PostData/PostData";
 import Loading from "./Components/sub-component/Loading";
 import { SnackbarAlert } from "./Components/sub-component/Alert";
 
@@ -67,6 +68,7 @@ function MainApp() {
               <Route exact path="/UpdateData" element={<UpdateData />} />
               <Route exact path="/AdditionalCharge" element={<AdditionalCharge />} />
               <Route exact path="/ChargeReport" element={<ChargeReport />} />
+              <Route exact path="/PostData" element={<PostData />} />
 
               <Route path="*" element={<Notfound />} />
             </Route>

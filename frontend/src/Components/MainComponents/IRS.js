@@ -9,12 +9,14 @@ import IRPage4 from '../sub-component/IR/IRPage4'
 import IRPage5 from '../sub-component/IR/IRPage5'
 import IRPage6 from '../sub-component/IR/IRPage6'
 import IRPage7 from '../sub-component/IR/IRPage7'
+import IRFinal from '../sub-component/IR/Report/IRFinal';
 
 const IRS = () => {
     const [page, setPage] = useState(1);
+    const [abc,setAbc] = useState(true);
     return (
         <div className='container pageCenter'>
-            <>
+            {abc?<div>
                 <IRPage1 />
 
                 <IRPage2 />
@@ -27,7 +29,7 @@ const IRS = () => {
 
                 <IRPage6 />
                 <IRPage7 />
-            </>
+            </div>:<IRFinal data={{}}/>}
         </div>
     )
 }

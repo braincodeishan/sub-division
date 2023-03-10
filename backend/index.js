@@ -7,6 +7,12 @@ const app = express();
 const bcrypt = require('bcrypt');
 const JWT = require('jsonwebtoken')
 const User = require('./Models/Users')
+const Gds = require('./Models/Gds');
+var multer      = require('multer');  
+var path        = require('path');  
+var bodyParser  = require('body-parser');  
+// var csvModel    = require('./models/csv');  
+var csv         = require('csvtojson'); 
 const cookieParser = require("cookie-parser");
 var port = process.env.PORT;
 const uri = process.env.URIL;
@@ -14,11 +20,22 @@ const enckey = process.env.ENCKEY;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-
+var storage = multer.diskStorage({  
+  destination:(req,file,cb)=>{  
+  cb(null,'./public/uploads');  
+  },  
+  filename:(req,file,cb)=>{  
+  cb(null,file.originalname);  
+  }  
+  });  
+  var uploads = multer({storage:storage});
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: '*',
+  // origin: 'http://localhost:3000',
   credentials: true,
 }));
+
+app.use(bodyParser.urlencoded({extended:false}));  
 
 mongoose.connect(uri)
   .then((res) => {
@@ -114,6 +131,21 @@ app.post('/senioritylist', async (req, res) => {
     res.status(400).json({ data: "Something went while fetching date" });
   }
 })
+
+app.post('/gdsCsv',uploads.single('csv'), async (req,res)=>{
+  try{
+    console.log("entered");
+    csv()  
+    .fromFile(req.file.path)  
+    .then((jsonObj)=>{  
+    console.log(jsonObj);  
+    })
+  }
+  catch(e){
+
+  }
+})
+
 
 app.post('/senioritylist/edit', async (req, res) => {
   try {
