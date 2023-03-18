@@ -32,6 +32,7 @@ var storage = multer.diskStorage({
 app.use(cors({
   origin: '*',
   origin: 'http://localhost:3000',
+  origin: 'https://worksnap.ml',
   credentials: true,
 }));
 
