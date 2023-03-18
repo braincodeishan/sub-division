@@ -186,6 +186,10 @@ app.post('/register', async (req, res) => {
   }
 })
 
+app.get("/",(req,res)=>{
+  res.send("Hello world, let's go Cloud");
+})
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
