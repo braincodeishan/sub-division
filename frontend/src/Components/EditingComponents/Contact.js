@@ -22,7 +22,7 @@ const Contact = () => {
       }, 2000);
     }else{
       setisLoading(true)
-    const res = await fetch("http://localhost:3001/contact", {
+    const res = await fetch(process.env.REACT_APP_SERVER+"/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

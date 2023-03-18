@@ -9,7 +9,7 @@ const EmployeeChange = (props) => {
     const [alert, setalert] = useState({ status: 400, message: "" })
 
     const EmployeeEditbtn = async () => {
-        const res = await fetch("http://localhost:3001/senioritylist/edit", {
+        const res = await fetch(process.env.REACT_APP_SERVER+"/senioritylist/edit", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

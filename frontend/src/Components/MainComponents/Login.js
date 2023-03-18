@@ -32,7 +32,7 @@ const Login = () => {
         setLoading(true)
         const result = await axios({
             method: "GET",
-            url:"http://localhost:3001/tokenverify",
+            url:process.env.REACT_APP_SERVER+"/tokenverify",
             headers: {
                 "Content-Type": "application/json",
 
@@ -54,7 +54,7 @@ const Login = () => {
             setLoading(true);
             const result = await axios({
                 method: "POST",
-                url:"http://localhost:3001/login",
+                url:process.env.REACT_APP_SERVER+"/login",
                 headers: {
                     "Content-Type": "application/json",
                     "Accept": "application/json",

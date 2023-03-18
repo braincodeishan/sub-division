@@ -31,7 +31,7 @@ var storage = multer.diskStorage({
   var uploads = multer({storage:storage});
 app.use(cors({
   origin: '*',
-  // origin: 'http://localhost:3000',
+  origin: 'http://localhost:3000',
   credentials: true,
 }));
 
@@ -89,6 +89,7 @@ app.get('/tokenverify', async (req, res) => {
 
 app.get('/logout', async (req, res) => {
   try {
+    console.log("hit");
     res.clearCookie('login-token');
     res.status(200).json({ data: "Logged out" });
   } catch (err) {

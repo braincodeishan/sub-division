@@ -21,7 +21,7 @@ const Navbar = () => {
   }, []);
 
   const logOut = async() => {
-    const logout= await fetch("http://localhost:3001/logout", {
+    const logout= await fetch(process.env.REACT_APP_SERVER+"/logout", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -170,7 +170,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/Contact">
-              
+
               <i className='bx bx-history'></i>
               <span className="link_name">Contact Us</span>
             </Link>

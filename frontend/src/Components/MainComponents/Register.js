@@ -20,7 +20,7 @@ const Register = () => {
 
         const result = await axios({
             method: "POST",
-            url: "http://localhost:3001/register",
+            url: process.env.REACT_APP_SERVER+"/register",
             headers: {
                 "Content-Type": "application/json"
             },

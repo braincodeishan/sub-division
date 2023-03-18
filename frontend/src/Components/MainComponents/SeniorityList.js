@@ -13,7 +13,7 @@ const SeniorityList = () => {
     },[cadre]);
 
     const seniorityData = async () => {
-        const res = await fetch("http://localhost:3001/senioritylist", {
+        const res = await fetch(process.env.REACT_APP_SERVER+"/senioritylist", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
