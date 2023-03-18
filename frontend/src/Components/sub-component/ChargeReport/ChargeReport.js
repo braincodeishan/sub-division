@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import ShowChargeReport from '../ChargeReport/ShowChargeReport';
+import ShowChargeReport from '../../../Components/sub-component/ChargeReport/ShowChargeReport';
 
 
 const ChargeReport = () => {
