@@ -170,6 +170,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/Contact">
+              
               <i className='bx bx-history'></i>
               <span className="link_name">Contact Us</span>
             </Link>
