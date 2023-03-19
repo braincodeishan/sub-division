@@ -11,12 +11,18 @@ const Gds = require('./Models/Gds');
 var multer      = require('multer');  
 var path        = require('path');  
 var bodyParser  = require('body-parser');  
+const https = require('https');
 // var csvModel    = require('./models/csv');  
+const fs = require('fs');
 var csv         = require('csvtojson'); 
 const cookieParser = require("cookie-parser");
 var port = process.env.PORT;
 const uri = process.env.URIL;
 const enckey = process.env.ENCKEY;
+
+
+
+// app starting 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -35,6 +41,13 @@ app.use(cors({
   origin: 'https://worksnap.ml',
   credentials: true,
 }));
+
+var key = fs.readFileSync(__dirname + '/ssl/code.key');
+var cert = fs.readFileSync(__dirname + '/ssl/code.crt');
+var options = {
+  key: key,
+  cert: cert
+};
 
 app.use(bodyParser.urlencoded({extended:false}));  
 
@@ -191,6 +204,12 @@ app.get("/",(req,res)=>{
   res.send("Hello world, let's go Cloud");
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+var server = https.createServer(options, app);
+
+server.listen(port, () => {
+  console.log("server starting on port : " + port)
+});
+
+// app.listen(3002, () => {
+  // console.log(`Example app listening at http://localhost:${port}`)
+// })
