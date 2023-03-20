@@ -204,12 +204,12 @@ app.get("/",(req,res)=>{
   res.send("Hello world, let's go Cloud");
 })
 
-var server = https.createServer(options, app);
+// var server = https.createServer(options, app);
 
-server.listen(port, () => {
-  console.log("server starting on port : " + port)
-});
+// server.listen(port, () => {
+  // console.log("server starting on port : " + port)
+// });
 
-// app.listen(3002, () => {
-  // console.log(`Example app listening at http://localhost:${port}`)
-// })
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
