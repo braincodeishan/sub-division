@@ -2,16 +2,18 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useMisc } from '../../Contexts/LoginProvider'
 import { useNavigate } from 'react-router'
+
 const Register = () => {
 
     const navigate = useNavigate();
     const [username, setusername] = useState("");
+    const [name, setName] = useState("");
     const [password, setpassword] = useState("");
     const [email, setemail] = useState("");
     const [post, setPost] = useState("");
-    const [circle, setCircle] = useState("");
+    const [circle, setCircle] = useState([]);
     const [region, setRegion] = useState("");
-    const [Division, setDivision] = useState("");
+    const [division, setDivision] = useState("");
     const [subDivision, setSubDivision] = useState("");
     const [confirmpass, setconfirmpass] = useState("");
     const { setLoading, alertSuccess, alertDanger } = useMisc();
@@ -20,14 +22,20 @@ const Register = () => {
 
         const result = await axios({
             method: "POST",
-            url: process.env.REACT_APP_SERVER+"/register",
+            url: process.env.REACT_APP_SERVER + "/register",
             headers: {
                 "Content-Type": "application/json"
             },
             credentials: "include",
             data: {
                 username,
+                name,
                 email,
+                post,
+                circle,
+                region,
+                division,
+                subDivision,
                 password
 
             }
@@ -83,7 +91,13 @@ const Register = () => {
                                                         <label className="form-label" htmlFor="form3Example1c" >Employee ID</label>
                                                     </div>
                                                 </div>
-
+                                                <div className="d-flex flex-row align-items-center mb-4">
+                                                    <i className="fas fa-user fa-lg me-3 fa-fw"></i>
+                                                    <div className="form-outline flex-fill mb-0">
+                                                        <input type="text" id="form3Example1c" name="Username" className="form-control" onChange={(e) => { setName(e.target.value) }} value={name} />
+                                                        <label className="form-label" htmlFor="form3Example1c" >Name</label>
+                                                    </div>
+                                                </div>
                                                 <div className="d-flex flex-row align-items-center mb-4">
                                                     <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0">
@@ -100,10 +114,7 @@ const Register = () => {
                                                             <option value={'ASSISTANT SUPERTINDENT OF POST OFFICES'}>ASPOs</option>
                                                             <option value={'SUPERTINDENT OF POST OFFICES'}>SPOs</option>
                                                             <option value={'SENIOR SUPERTINDENT OF POST OFFICES'}>SSPOs</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
+
                                                         </select>
                                                         <label className="form-label" htmlFor="form3Example3c">Post</label>
                                                     </div>
@@ -111,32 +122,52 @@ const Register = () => {
                                                 <div className="d-flex flex-row align-items-center mb-4">
                                                     <i className="fas fa-pencil fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0">
-                                                        <select class="form-control form-control-lg">
+                                                        <select class="form-control form-control-lg"
+                                                            onChange={async (e) => {
+                                                                setLoading(true);
+                                                                setCircle(e.target.value)
+                                                                // const circle = e.target.value;
+                                                                // const result = await axios({
+                                                                //     method: "POST",
+                                                                //     url: process.env.REACT_APP_SERVER + "/getRegion",
+                                                                //     headers: {
+                                                                //         "Content-Type": "application/json"
+                                                                //     },
+                                                                //     data: {
+                                                                //         circle,
+                                                                //     }
+
+                                                                // })
+                                                                // if (result) {
+                                                                    // setRegion(result.data);
+                                                                //     console.log(result.data);
+                                                                // }
+                                                                setLoading(false);
+                                                            }}>
                                                             <option>Select...</option>
-                                                            <option>Andhra Pradesh</option>
-                                                            <option>Uttar Pradesh</option>
-                                                            <option>Madhya Pradesh</option>
+                                                            <option value={'Andhra Pradesh'}>Andhra Pradesh</option>
+                                                            <option>Assam</option>
+                                                            <option>Bihar</option>
+                                                            <option>Chattisgarh</option>
+                                                            <option>Delhi</option>
+                                                            <option>Gujrat</option>
+                                                            <option>Haryana</option>
+                                                            <option>Himanchal Pradesh</option>
+                                                            <option>Jammu Kashmir</option>
                                                             <option>Jharkhand</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
-                                                            <option>Large select</option>
+                                                            <option>Karnataka</option>
+                                                            <option>Kerala</option>
+                                                            <option>Madhya Pradesh</option>
+                                                            <option>Maharastra</option>
+                                                            <option>North East</option>
+                                                            <option>Odhisa</option>
+                                                            <option>Punjab</option>
+                                                            <option>Rajasthan</option>
+                                                            <option>Tamil Nadu</option>
+                                                            <option>Telangana</option>
+                                                            <option>Uttar Pradesh</option>
+                                                            <option>Uttarakhand</option>
+                                                            <option>West Bengal</option>
                                                         </select>
                                                         <label className="form-label" htmlFor="form3Example3c">Circle</label>
                                                     </div>
@@ -144,32 +175,47 @@ const Register = () => {
                                                 <div className="d-flex flex-row align-items-center mb-4">
                                                     <i className="fas fa-pencil fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0">
+                                                        <input type="text" id="form3Example1c" name="Region" className="form-control" onChange={(e) => { setRegion(e.target.value) }} value={region} />
+                                                        <label className="form-label" htmlFor="form3Example1c" >Region</label>
+                                                    </div>
+                                                    {/* <div className="form-outline flex-fill mb-0">
                                                         <select class="form-control form-control-lg">
                                                             <option>Select...</option>
-                                                            
+                                                            {region.map((val,index)=>{
+                                                                return <option key={index}>{val.region}</option>
+                                                            })}
+
                                                         </select>
                                                         <label className="form-label" htmlFor="form3Example3c">Region</label>
-                                                    </div>
+                                                    </div> */}
                                                 </div>
                                                 <div className="d-flex flex-row align-items-center mb-4">
                                                     <i className="fas fa-pencil fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0">
+                                                        <input type="text" id="form3Example1c" name="Division" className="form-control" onChange={(e) => { setDivision(e.target.value) }} value={division} />
+                                                        <label className="form-label" htmlFor="form3Example1c" >Division</label>
+                                                    </div>
+                                                    {/* <div className="form-outline flex-fill mb-0">
                                                         <select class="form-control form-control-lg">
                                                             <option>Select...</option>
-                                                            
+
                                                         </select>
                                                         <label className="form-label" htmlFor="form3Example3c">Division</label>
-                                                    </div>
+                                                    </div> */}
                                                 </div>
                                                 <div className="d-flex flex-row align-items-center mb-4">
                                                     <i className="fas fa-pencil fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0">
+                                                        <input type="text" id="form3Example1c" name="Subdivision" className="form-control" onChange={(e) => { setSubDivision(e.target.value) }} value={subDivision} />
+                                                        <label className="form-label" htmlFor="form3Example1c" >Sub Division</label>
+                                                    </div>
+                                                    {/* <div className="form-outline flex-fill mb-0">
                                                         <select class="form-control form-control-lg">
                                                             <option>Select...</option>
-                                                            
+
                                                         </select>
                                                         <label className="form-label" htmlFor="form3Example3c">Sub Division</label>
-                                                    </div>
+                                                    </div> */}
                                                 </div>
                                                 <div className="d-flex flex-row align-items-center mb-4">
                                                     <i className="fas fa-lock fa-lg me-3 fa-fw"></i>

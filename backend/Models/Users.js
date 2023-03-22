@@ -9,7 +9,7 @@ const Myschema=new mongoose.Schema({
     },
     personalInfo:{
         name:String,
-        employeeID:Number,
+        post:String,
         dateOfBirth:Date,
         email:String,
         phoneNumber:Number,
@@ -26,9 +26,9 @@ const Myschema=new mongoose.Schema({
     
     office:{
         circle:String,
-        Region:String,
-        Division:String,
-        officeName:String,
+        region:String,
+        division:String,
+        subDivision:String,
         officeID:Number,
     },
     

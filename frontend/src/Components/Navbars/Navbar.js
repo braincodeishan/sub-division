@@ -7,7 +7,7 @@ const Navbar = () => {
   const Login = useContext(LoginContext)
   const [sidebarclass, setsidebarclass] = useState("close");
   const [menu, setmenu] = useState("bx-menu");
-  const {alertSuccess}=useMisc();
+  const { alertSuccess } = useMisc();
   useEffect(() => {
     let arrow = document.querySelectorAll(".arrow");
     for (var i = 0; i < arrow.length; i++) {
@@ -16,23 +16,29 @@ const Navbar = () => {
         arrowParent.classList.toggle("showMenu");
       });
     }
-  
+
 
   }, []);
 
-  const logOut = async() => {
-    const logout= await fetch(process.env.REACT_APP_SERVER+"/logout", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
+  const logOut = async () => {
+    Login.setName("")
+    Login.setPost("")
+    Login.setCircle("")
+    Login.setRegion("")
+    Login.setDivision("")
+    Login.setSubDivision("")
+    const logout = await fetch(process.env.REACT_APP_SERVER + "/logout", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
 
-            },
-            credentials: "include",
+      },
+      credentials: "include",
 
-        });
-        if(logout.status===200){
-            alertSuccess('Logged Out')
-        }
+    });
+    if (logout.status === 200) {
+      alertSuccess('Logged Out')
+    }
     Login.changelogin(false);
   }
 
@@ -195,8 +201,8 @@ const Navbar = () => {
                 <i className='bx bxs-user' ></i>
               </div>
               <div className="name-job">
-                <div className="profile_name">Ishan Dev</div>
-                <div className="job">Inspector Post</div>
+                <div className="profile_name">{Login.name}</div>
+                <div className="job">{Login.post}</div>
               </div>
               <i className='bx bx-log-out' onClick={() => { logOut() }}></i>
             </div>

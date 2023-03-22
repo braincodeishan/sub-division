@@ -16,6 +16,7 @@ const https = require('https');
 const fs = require('fs');
 var csv         = require('csvtojson'); 
 const cookieParser = require("cookie-parser");
+const {Region,Division,SubDivision} =require("./Models/Dependency")
 var port = process.env.PORT;
 const uri = process.env.URIL;
 const enckey = process.env.ENCKEY;
@@ -37,8 +38,8 @@ var storage = multer.diskStorage({
   var uploads = multer({storage:storage});
 app.use(cors({
   origin: '*',
-  origin: 'http://localhost:3000',
-  origin: 'https://worksnap.ml',
+  origin: process.env.ORIGIN,
+  // origin: 'https://worksnap.ml',
   credentials: true,
 }));
 
@@ -63,7 +64,7 @@ app.post('/login', async (req, res) => {
   try {
     const { username, password } = req.body;
     const result = await User.findOne({ username: username });
-    console.log(result);
+    // console.log(result);
     if (result!=null) {
       const compare = await bcrypt.compare(password, result.password);
       console.log(compare);
@@ -74,7 +75,7 @@ app.post('/login', async (req, res) => {
           maxAge: 86400000,
           httpOnly: true
         })
-        res.status(200).json({ data: 'Login Successful', token: token, username: result.username, status:200})
+        res.status(200).json({ data: 'Login Successful', token: token, userData: result, status:200})
       } else {
         res.status(400).json({ error: 'Login unsuccessful, Invalid Username/Password' })
       }
@@ -173,10 +174,10 @@ app.post('/senioritylist/edit', async (req, res) => {
 app.post('/register', async (req, res) => {
   const dataReceived = req.body;
 
-  if (!username) {
+  if (!dataReceived.username) {
     res.status(204).json({ data: "Something went wrong" })
   }
-  else if (username.length < 5) {
+  else if (dataReceived.username.length < 5) {
     res.status(400).json({ data: "Username is small" })
   }
   else {
@@ -185,7 +186,13 @@ app.post('/register', async (req, res) => {
 
       const newUser = new User({
         username: dataReceived.username,
-        personalInfo:{email: dataReceived.email},
+        personalInfo:{name:dataReceived.name,
+          post:dataReceived.post,
+          email: dataReceived.email},
+        office:{circle:dataReceived.circle,
+          region:dataReceived.region,
+          division:dataReceived.division,
+          subDivision:dataReceived.subDivision},
         password: hash
       })
       const regresult = newUser.save()
@@ -204,6 +211,34 @@ app.get("/",(req,res)=>{
   res.send("Hello world, let's go Cloud");
 })
 
+app.post("/getRegion",async(req,res)=>{
+  try{
+    const result = await Region.find({ circle: req.body.circle });
+    res.status(200).send(result);
+  }catch(e){
+    res.status(404).send("Something Went Wrong");
+  }
+  
+})
+
+app.post("/getDivision",async(req,res)=>{
+  try{
+    const result = await Division.find({ region: req.body.region });
+    res.status(200).send(result);
+  }catch(e){
+    res.status(404).send("Something Went Wrong");
+  }
+  
+})
+app.post("/getSubDivision",async(req,res)=>{
+  try{
+    const result = await SubDivision.find({ division: req.body.division });
+    res.status(200).send(result);
+  }catch(e){
+    res.status(404).send("Something Went Wrong");
+  }
+  
+})
 // var server = https.createServer(options, app);
 
 // server.listen(port, () => {

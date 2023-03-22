@@ -70,8 +70,14 @@ const Login = () => {
             })
             console.log(result)
             if (result.data.status === 200) {
-                alertSuccess('Welcome ' + result.data.username.toUpperCase()+" !");
+                alertSuccess('Welcome ' + result.data.userData.personalInfo.name.toUpperCase()+" !");
                 Login.changelogin(true)
+                Login.setName(result.data.userData.personalInfo.name)
+                Login.setPost(result.data.userData.personalInfo.post)
+                Login.setCircle(result.data.userData.office.circle)
+                Login.setRegion(result.data.userData.office.region)
+                Login.setDivision(result.data.userData.office.division)
+                Login.setSubDivision(result.data.userData.office.subDivision)
                 
     
             } else {
@@ -81,6 +87,7 @@ const Login = () => {
         }catch(e){
             alertDanger('Something Went Wrong...');
             setLoading(false)
+            console.log(e);
         }
         
         

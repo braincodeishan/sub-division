@@ -18,7 +18,7 @@ const CandidateCopy = ({ data, setShowData }) => {
 
   const caseMark = () => {
     return (
-      <p style={{ fontWeight: '600' }} className='text_center'>NO: IP/Lalganj/{data.post}/Cycle - dated at Lalganj the {date}</p>
+      <p style={{ fontWeight: '600' }} className='text_center'>NO: IP/Phoolpur/{data.post}/Cycle - dated at Phoolpur the {/*date*/} 22.02.2023</p>
 
     )
   }
@@ -42,7 +42,7 @@ const CandidateCopy = ({ data, setShowData }) => {
             <p style={{ fontWeight: '600' }} className='text_center'>Sub: Submission of Original Documents for verification in connection with GDS Recruitment.</p>
           </div>
           <div style={{ marginTop: '40px' }}>
-            <p>The Following documents are hereby submitted to Office of Inspector Post, Lalganj Sub Division, Lalganj 276202 for verification of the documents from the original source for further processing of the candidature.</p>
+            <p>The Following documents are hereby submitted to Office of Inspector Post, Phoolpur Sub Division, Phoolpur 276202 for verification of the documents from the original source for further processing of the candidature.</p>
             <table className='table'>
               <tr>
                 <th>Name Of the Certificate</th>

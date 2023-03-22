@@ -13,6 +13,13 @@ const useMisc=()=>{
 const LoginProvider = (props) => {
 
     const [isLoggedin, setisLoggedin] = useState(false);
+    const [name, setName] = useState("");
+    const [post, setPost] = useState("");
+    
+    const [circle, setCircle] = useState("");
+    const [region, setRegion] = useState("");
+    const [division, setDivision] = useState("");
+    const [subDivision, setSubDivision] = useState("");
 
 
     const changelogin = async (val) => {
@@ -21,7 +28,7 @@ const LoginProvider = (props) => {
 
     }
     return (
-        <LoginContext.Provider value={{ isLoggedin, changelogin }}>
+        <LoginContext.Provider value={{ isLoggedin, changelogin,name, setName,post, setPost, circle,setCircle,region,setRegion,division,setDivision,subDivision,setSubDivision }}>
             {props.children}
         </LoginContext.Provider>
 

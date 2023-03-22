@@ -11,7 +11,7 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { IconButton } from '@mui/material';
 import ShowAdditionalChargeOrder from './ShowAdditionalChargeOrder'
 const AdditionalCharge = () => {
-    const [attach, setAttach] = useState({id:0})
+    const [attach, setAttach] = useState([{id:0}])
     const [showData, setShowData] = useState(true);
     const [discharge, setDischarge] = React.useState('');
     const [post, setPost] = React.useState('');

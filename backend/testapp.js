@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const env = require('dotenv').config();
 const app = express();
 const Office = require('./Models/Office')
+const {Region} = require('./Models/Dependency')
 const Offices = require('./json')
 const SO = require('./Models/SO')
 const cookieParser = require("cookie-parser");
@@ -14,7 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: '*',
   credentials: true,
 }));
 
@@ -27,9 +28,9 @@ mongoose.connect(uri)
   })
 
 
-// const myOffice = new Office({
-//   name:"Kurnool HO",
-//   FinacleCode:"51800101"
+// const myRegion = new Region({
+//   circle:"Andhra Pradesh",
+//     region:"Visakhapatnam",
 // })
 // myOffice.save()
 // .then((res)=>{
@@ -39,11 +40,21 @@ mongoose.connect(uri)
 //   console.log(err);
 // })
 
-Office.insertMany(Offices)
-  .then((res) => {
-    console.log(res);
+// myRegion.save()
+//   .then((res) => {
+//     console.log(res);
     
-  })
-  .catch((err) => {
-    console.log(err);
-  })
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   })
+
+app.get("/",(req,res)=>{
+  const {circle,region,division,subdivision}=req.body;
+  console.log(circle,region,division,subdivision);
+})
+
+
+app.listen(3002, () => {
+  console.log(`Example app listening at http://localhost:3002`)
+})
