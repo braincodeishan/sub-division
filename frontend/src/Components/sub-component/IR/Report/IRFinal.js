@@ -4,8 +4,8 @@ import { Signatory } from '../../MiniComponent/MiniComponent';
 const IRFinal = ({ pageS1, pageS2, pageS3, pageS4, pageS5, pageS6, pageS6DTR, sb26f, ms87f, sb28f, plif, ssbook, sbrd, ssatd, txn, plipass, pli, page6Selects }) => {
     return (
         <div className='IRFinal'>
-            <div className='text_center'><b><u>शाखा डाकघर {pageS1.BO} अधीनस्थ {pageS1.AO} उपडाकघर का वार्षिक निरीक्षण रिपोर्ट { } दिनांक {pageS1.DLI}</u></b></div>
-            <div>{"12.04.2023"} को {pageS1.BO} शाखा डाकघर , {pageS1.AO} उप डाकघर का अचानक दौरा किया और वर्ष {pageS1.DLI} के लिए अपना वार्षिक निरीक्षण किया। इस कार्यालय का पिछला डाक निरीक्षक {pageS1.DLIby} द्वारा {pageS1.DLI} को अंतिम बार निरीक्षण किया गया था।</div>
+            <div className='text_center'><b><u>शाखा डाकघर {pageS1.BO} अधीनस्थ {pageS1.AO} उपडाकघर का वार्षिक निरीक्षण रिपोर्ट {} दिनांक {pageS1.inspectionDate}</u></b></div>
+            <div>{pageS1.inspectionDate} को {pageS1.BO} शाखा डाकघर , {pageS1.AO} उप डाकघर का अचानक दौरा किया और वर्ष {pageS1.inspectionDate.substring(pageS1.inspectionDate.length - 4)} के लिए अपना वार्षिक निरीक्षण किया। इस कार्यालय का पिछला डाक निरीक्षक {pageS1.DLIby} द्वारा {pageS1.DLI} को अंतिम बार निरीक्षण किया गया था।</div>
 
 
             <br />

@@ -10,6 +10,7 @@ import MenuItem from '@mui/material/MenuItem';
 const IRS = () => {
     var newArray;
     const [page1, setPage1] = useState({
+        inspectionDate:"",
         BO: "",
         AO: "",
         HO: "",
@@ -487,6 +488,13 @@ const IRS = () => {
                             <th>Information</th>
                             <th>Details</th>
                         </tr>
+                        <tr>
+                            <td><p className='Details'>Inspection date</p></td>
+                            <td><TextField id="standard-basic" label="Inspection date" variant="standard" name='inspectionDate'
+                                onBlur={(e) => updateTextbox(e,  setPage1)}
+
+                            /></td>
+                            </tr>
                         <tr>
                             <td><p className='Details'>Name of The BO</p></td>
                             <td><TextField id="standard-basic" label="BO Name" variant="standard" name='BO'
