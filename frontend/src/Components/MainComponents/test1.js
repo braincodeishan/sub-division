@@ -8,144 +8,13 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 
 const IRS = () => {
-    var newArray;
-    const [page1, setPage1] = useState({
-        BO: "",
-        AO: "",
-        HO: "",
-        facilityID: "",
-        profitCenter: "",
-        BOopening: "",
-        DLISSP: "",
-        DLI: "",
-        DLIby: "",
-        SubsequentVisit: "",
-        MOVisit: ""
-    });
-    const [page2, setPage2] = useState({
-        rom: "1130 HRS",
-        dom: "1145 HRS",
-        lbc: "1345 HRS",
-        dispatch: "1400 HRS",
-        MAB_min: "RS 3500",
-        MAB_max: "RS 5000",
-        PSAB_min: "RS 200",
-        PSAB_max: "RS 1000",
-        location: "",
-        mailArrangement: "सहायक शाखा डाकपाल द्वारा ",
-        village: "",
-        panchayat: ""
-    });
-    const [page3, setPage3] = useState([{
-        Name: "",
-        Designation: "",
-        Community: "",
-        EmployeeId: "",
-        TRCA: "",
-        DOB: "",
-        DOJ: ""
-    },
-    {
-        Name: "",
-        Designation: "",
-        Community: "",
-        EmployeeId: "",
-        TRCA: "",
-        DOB: "",
-        DOJ: ""
-    },
-    {
-        Name: "",
-        Designation: "",
-        Community: "",
-        EmployeeId: "",
-        TRCA: "",
-        DOB: "",
-        DOJ: ""
-    }]);
-    const [page4, setPage4] = useState({
-        complaintAvailable: true,
-        complaintMaintained: true,
-        postmarksAvailable: true,
-        postmarksMaintained: true,
-        stockAvailable: true,
-        stockMaintained: true,
-        enumerationAvailable: false,
-        enumerationMaintained:  false,
-        yearlyvaluereturnsAvailable: false,
-        yearlyvaluereturnsMaintained:  false,
-        errorbookAvailable: true,
-        errorbookMaintained: true,
-        villagesortinglistAvailable: false,
-        villagesortinglistMaintained:  false,
-        routelistAvailable: false,
-        routelistMaintained:  false
-
-    });
-    const [page5, setPage5] = useState({
-        mcd: "उपलब्ध नहीं है ",
-        imeiNumber: "उपलब्ध नहीं है ",
-        kaifa: "उपलब्ध नहीं है ",
-        barcode: "उपलब्ध नहीं है ",
-        ippbphone: "उपलब्ध नहीं है ",
-        solar: "उपलब्ध नहीं है ",
-        sim: "उपलब्ध नहीं है "
-    });
-    const [page6, setPage6] = useState({
-        signal: 0,
-
-        articleDeposit: "",
-        articleBeyondPrescribedPeriod: "",
-        Missent: "",
-        VParticle: "",
-        noLetterBox: "",
-        sp: "",
-        rl: "",
-        parcel: "",
-        emo: "",
-        ord: "",
-        vpcod: "",
-
-        cash: 0,
-        ps: 0,
-        rs: 0,
-        dtrTallied: true,
-        emoPayment: "",
-
-
-    });
-    const [page6DTR, setPage6DTR] = useState([
-        {
-            date: "",
-            boBal: "",
-            dtrBal: ""
-        },
-        {
-            date: "",
-            boBal: "",
-            dtrBal: ""
-        },
-        {
-            date: "",
-            boBal: "",
-            dtrBal: ""
-        },
-        {
-            date: "",
-            boBal: "",
-            dtrBal: ""
-        },
-        {
-            date: "",
-            boBal: "",
-            dtrBal: ""
-        },
-        {
-            date: "",
-            boBal: "",
-            dtrBal: ""
-        }
-    ]);
+    const [pageS1, setPageS1] = useState({});
+    const [pageS2, setPageS2] = useState({});
+    const [pageS3, setPageS3] = useState({});
+    const [pageS4, setPageS4] = useState({});
+    const [pageS5, setPageS5] = useState({});
+    const [pageS6, setPageS6] = useState({});
+    const [pageS6DTR, setPageS6DTR] = useState({});
     const [abc, setAbc] = useState(true);
     const [sb26f, setsb26f] = useState([{
         bookNo: "",
@@ -440,7 +309,83 @@ const IRS = () => {
         }
     ])
 
-    const [page6Selects, setPage6Selects] = useState({
+    const page1 = {
+        BO: "",
+        AO: "",
+        HO: "",
+        facilityID: "",
+        profitCenter: "",
+        BOopening: "",
+        DLISSP: "",
+        DLI: "",
+        DLIby: "",
+        SubsequentVisit: "",
+        MOVisit: ""
+    }
+    const page2 = {
+        rom: "1130 HRS",
+        dom: "1145 HRS",
+        lbc: "1345 HRS",
+        dispatch: "1400 HRS",
+        MAB_min: "RS 3500",
+        MAB_max: "RS 5000",
+        PSAB_min: "RS 200",
+        PSAB_max: "RS 1000",
+        location: "",
+        mailArrangement: "सहायक शाखा डाकपाल द्वारा ",
+        village: ""
+    }
+    const page3 = [
+        {
+            Name: "",
+            Designation: "",
+            Community: "",
+            EmployeeId: "",
+            TRCA: "",
+            DOB: "",
+            DOJ: ""
+        },
+        {
+            Name: "",
+            Designation: "",
+            Community: "",
+            EmployeeId: "",
+            TRCA: "",
+            DOB: "",
+            DOJ: ""
+        },
+        {
+            Name: "",
+            Designation: "",
+            Community: "",
+            EmployeeId: "",
+            TRCA: "",
+            DOB: "",
+            DOJ: ""
+        }
+    ]
+    const page4 = {
+        complaint: [true, true],
+        postmarks: [true, true],
+        stock: [true, true],
+        enumeration: [false, false],
+        yearlyvaluereturns: [false, false],
+        errorbook: [true, true],
+        villagesortinglist: [false, false],
+        routelist: [false, false]
+
+    }
+    const page5 = {
+        mcd: "उपलब्ध नहीं है ",
+        imeiNumber: "उपलब्ध नहीं है ",
+        kaifa: "उपलब्ध नहीं है ",
+        barcode: "उपलब्ध नहीं है ",
+        ippbphone: "उपलब्ध नहीं है ",
+        solar: "उपलब्ध नहीं है ",
+        sim: "उपलब्ध नहीं है "
+    }
+
+    const [pageS6Selects, setPageS6Selects] = useState({
         solarAvailable: false,
         solarInstallationReport: false,
         solarworking: false,
@@ -448,31 +393,196 @@ const IRS = () => {
         rollout: false,
     })
 
-    const updateArrayState = (e, index, changeState) => {
-        changeState((prev) => {
-            return prev.map((item, i) => {
-                if (index === i) {
-                    return { ...item, [e.target.name]: e.target.value };
-                } else {
-                    return item;
-                }
-            })
+   
+
+
+    const page6 = {
+        signal: 0,
+
+        articleDeposit: "",
+        articleBeyondPrescribedPeriod: "",
+        Missent: "",
+        VParticle: "",
+        noLetterBox: "",
+        sp: "",
+        rl: "",
+        parcel: "",
+        emo: "",
+        ord: "",
+        vpcod: "",
+
+        cash: 0,
+        ps: 0,
+        rs: 0,
+        dtrTallied: true,
+        emoPayment: "",
+
+
+    }
+    var page6DTR = [
+        {
+            date: "",
+            boBal: "",
+            dtrBal: ""
+        },
+        {
+            date: "",
+            boBal: "",
+            dtrBal: ""
+        },
+        {
+            date: "",
+            boBal: "",
+            dtrBal: ""
+        },
+        {
+            date: "",
+            boBal: "",
+            dtrBal: ""
+        },
+        {
+            date: "",
+            boBal: "",
+            dtrBal: ""
+        },
+        {
+            date: "",
+            boBal: "",
+            dtrBal: ""
+        }
+    ]
+    var newArray;
+    
+    const updateState = (index) => (e) => {
+        newArray = page6DTR.map((item, i) => {
+            if (index === i) {
+                return { ...item, [e.target.name]: e.target.value };
+            } else {
+                return item;
+            }
         });
+        page6DTR = newArray;
     };
 
 
-    const updateTextbox = (e, changeState) => {
-        changeState((prev)=>{
-            return {...prev,[e.target.name]:e.target.value}
-        })
-        
-    }
+    const updateSB26 = (index) => (e) => {
+        newArray = sb26f.map((item, i) => {
 
-    const updateCheckBox = (e,changeState)=>{
-        changeState((prev)=>{
-            return {...prev, [e.target.name]:e.target.checked}
-        })
-    }
+            if (index === i) {
+                return { ...item, [e.target.name]: e.target.value };
+            } else {
+                return item;
+            }
+
+        });
+        setsb26f(newArray)
+    };
+
+    const updateSB28 = (index) => (e) => {
+        newArray = sb28f.map((item, i) => {
+            if (index === i) {
+                return { ...item, [e.target.name]: e.target.value };
+            } else {
+                return item;
+            }
+        });
+        setsb28f(newArray);
+    };
+
+    const updatePLI2 = (index) => (e) => {
+        newArray = plif.map((item, i) => {
+            if (index === i) {
+                return { ...item, [e.target.name]: e.target.value };
+            } else {
+                return item;
+            }
+        });
+        setplif(newArray);
+    };
+
+    const updateMS87 = (index) => (e) => {
+        newArray = ms87f.map((item, i) => {
+            if (index === i) {
+                return { ...item, [e.target.name]: e.target.value };
+            } else {
+                return item;
+            }
+        });
+        setms87f(newArray);
+    };
+
+    const page7 = {}
+
+    const updateSSbook = (index) => (e) => {
+        newArray = ssbook.map((item, i) => {
+            if (index === i) {
+                return { ...item, [e.target.name]: e.target.value };
+            } else {
+                return item;
+            }
+        });
+        setSSBook(newArray);
+    };
+
+    const updatesbrd = (index) => (e) => {
+        newArray = sbrd.map((item, i) => {
+            if (index === i) {
+                return { ...item, [e.target.name]: e.target.value };
+            } else {
+                return item;
+            }
+        });
+        setSBRD(newArray);
+    };
+
+    const updatessatd = (index) => (e) => {
+        newArray = ssatd.map((item, i) => {
+            if (index === i) {
+                return { ...item, [e.target.name]: e.target.value };
+            } else {
+                return item;
+            }
+        });
+        setSSATD(newArray);
+    };
+
+
+    const updatetxn = (index) => (e) => {
+        newArray = txn.map((item, i) => {
+            if (index === i) {
+                return { ...item, [e.target.name]: e.target.value };
+            } else {
+                return item;
+            }
+        });
+        setTXN(newArray);
+    };
+
+    const updateplipass = (index) => (e) => {
+        newArray = plipass.map((item, i) => {
+            if (index === i) {
+                return { ...item, [e.target.name]: e.target.value };
+            } else {
+                return item;
+            }
+        });
+        setplipass(newArray);
+    };
+
+
+    const updatepli = (index) => (e) => {
+        newArray = pli.map((item, i) => {
+            if (index === i) {
+                return { ...item, [e.target.name]: e.target.value };
+            } else {
+                return item;
+            }
+        });
+        setpli(newArray);
+    };
+
+
+
 
     return (
         <div className='container pageCenter'>
@@ -489,68 +599,40 @@ const IRS = () => {
                         </tr>
                         <tr>
                             <td><p className='Details'>Name of The BO</p></td>
-                            <td><TextField id="standard-basic" label="BO Name" variant="standard" name='BO'
-                                onChange={(e) => updateTextbox(e,  setPage1)}
-
-                            /></td>
+                            <td><TextField id="standard-basic" label="BO Name" variant="standard" onChange={(e) => { page1.BO = e.target.value }} /></td>
                         </tr><tr>
                             <td><p className='Details'>Name of The AO</p></td>
-                            <td><TextField id="standard-basic" label="AO Name" variant="standard" name='AO'
-                                onChange={(e) => updateTextbox(e,  setPage1)}
-                            /></td>
+                            <td><TextField id="standard-basic" label="AO Name" variant="standard" onChange={(e) => { page1.AO = e.target.value }} /></td>
                         </tr><tr>
                             <td><p className='Details'>Name of The HO</p></td>
-                            <td><TextField id="standard-basic" label="HO Name" variant="standard" name='HO'
-                                onChange={(e) => updateTextbox(e,  setPage1)}
-                            /></td>
+                            <td><TextField id="standard-basic" label="HO Name" variant="standard" onChange={(e) => { page1.HO = e.target.value }} /></td>
                         </tr><tr>
                             <td><p className='Details'>Facility ID</p></td>
-                            <td><TextField id="standard-basic" label="Facility ID" variant="standard"
-                                name='facilityID'
-                                onChange={(e) => updateTextbox(e,  setPage1)}
-                            /></td>
+                            <td><TextField id="standard-basic" label="Facility ID" variant="standard" onChange={(e) => { page1.facilityID = e.target.value }} /></td>
                         </tr><tr>
                             <td><p className='Details'>Profit/Cost Center</p></td>
-                            <td><TextField id="standard-basic" label="Profit Center" variant="standard"
-                                name='profitCenter'
-                                onChange={(e) => updateTextbox(e,  setPage1)} /></td>
+                            <td><TextField id="standard-basic" label="Profit Center" variant="standard" onChange={(e) => { page1.profitCenter = e.target.value }} /></td>
                         </tr><tr>
                             <td><p className='Details'>Date of Opening of BO</p></td>
-                            <td><TextField id="standard-basic" label="BO Opening Date" variant="standard"
-                                name='BOopening'
-                                onChange={(e) => updateTextbox(e,  setPage1)}
-                            /></td>
+                            <td><TextField id="standard-basic" label="BO Opening Date" variant="standard" onChange={(e) => { page1.BOopening = e.target.value }} /></td>
                         </tr><tr>
                             <td><p className='Details'>Date of Last inspection by SSPOs/SPOs</p></td>
-                            <td><TextField id="standard-basic" label="DLI of SSPOs" variant="standard"
-                                name='DLISSP'
-                                onChange={(e) => updateTextbox(e,  setPage1)}
-                            /></td>
+                            <td><TextField id="standard-basic" label="DLI of SSPOs" variant="standard" onChange={(e) => { page1.DLISSP = e.target.value }} /></td>
                         </tr><tr>
                             <td><p className='Details'>Date of Last Inspection</p></td>
-                            <td><TextField id="standard-basic" label="DLI" variant="standard" name='DLI'
-                                onChange={(e) => updateTextbox(e,  setPage1)}
-                            /></td>
+                            <td><TextField id="standard-basic" label="DLI" variant="standard" onChange={(e) => { page1.DLI = e.target.value }} /></td>
                         </tr><tr>
                         </tr><tr>
                             <td><p className='Details'>Last Inspected By</p></td>
-                            <td><TextField id="standard-basic" label="Inspected By" variant="standard"
-                                name='DLIby'
-                                onChange={(e) => updateTextbox(e,  setPage1)}
-
-                            /></td>
+                            <td><TextField id="standard-basic" label="Inspected By" variant="standard" onChange={(e) => { page1.DLIby = e.target.value }} /></td>
                         </tr><tr>
                         </tr><tr>
                             <td><p className='Details'>Date of Subsequential Visits</p></td>
-                            <td><TextField id="standard-basic" label="Subsequential Visit" variant="standard"
-                                name='SubsequentVisit'
-                                onChange={(e) => updateTextbox(e,  setPage1)} /></td>
+                            <td><TextField id="standard-basic" label="Subsequential Visit" variant="standard" onChange={(e) => { page1.SubsequentVisit = e.target.value }} /></td>
                         </tr><tr>
                         </tr><tr>
                             <td><p className='Details'>Date of Visits by Mail Overseer</p></td>
-                            <td><TextField id="standard-basic" label="Mail Overseer Visit" variant="standard"
-                                name='MOVisit'
-                                onChange={(e) => updateTextbox(e,  setPage1)} /></td>
+                            <td><TextField id="standard-basic" label="Mail Overseer Visit" variant="standard" onChange={(e) => { page1.MOVisit = e.target.value }} /></td>
                         </tr>
                     </table>
                 </div>
@@ -562,63 +644,49 @@ const IRS = () => {
                     <table className='table'>
                         <tr>
                             <th>Information</th>
-                            <th colSpan="2">Details</th>
+                            <th colspan="2">Details</th>
                         </tr>
                         <tr>
                             <td><p className='Details'>Receipt of Mail</p></td>
-                            <td colSpan="2"><TextField id="standard-basic" variant="standard"
-                                name='rom'
-                                onChange={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.rom} /></td>
+                            <td colspan="2"><TextField id="standard-basic" variant="standard" onChange={(e) => { page2.rom = e.target.value }} defaultValue={page2.rom} /></td>
                         </tr>
                         <tr>
                             <td><p className='Details'>Delivery of Mail</p></td>
-                            <td colSpan="2"><TextField id="standard-basic" variant="standard"
-                                name='dom'
-                                onChange={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.dom} /></td>
+                            <td colspan="2"><TextField id="standard-basic" variant="standard" onChange={(e) => { page2.dom = e.target.value }} defaultValue={page2.dom} /></td>
                         </tr>
                         <tr>
                             <td><p className='Details'>LB Clearance</p></td>
-                            <td colSpan="2"><TextField id="standard-basic" variant="standard" name='lbc'
-                                onChange={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.lbc} /></td>
+                            <td colspan="2"><TextField id="standard-basic" variant="standard" onChange={(e) => { page2.lbc = e.target.value }} defaultValue={page2.lbc} /></td>
                         </tr>
                         <tr>
                             <td><p className='Details'>Despatch of Mails</p></td>
-                            <td colSpan="2"><TextField id="standard-basic" variant="standard" name='dispatch'
-                                onChange={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.dispatch} /></td>
+                            <td colspan="2"><TextField id="standard-basic" variant="standard" onChange={(e) => { page2.dispatch = e.target.value }} defaultValue={page2.dispatch} /></td>
                         </tr>
                         <tr>
                             <td><p className='Details'>Authorised Balance</p></td>
-                            <td><TextField id="standard-basic" variant="standard" name='MAB_min'
-                                onChange={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.MAB_min} /></td>
-                            <td><TextField id="standard-basic" variant="standard" name='MAB_max'
-                                onChange={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.MAB_max} /></td>
+                            <td><TextField id="standard-basic" variant="standard" onChange={(e) => { page2.MAB_min = e.target.value }} defaultValue={page2.MAB_min} /></td>
+                            <td><TextField id="standard-basic" variant="standard" onChange={(e) => { page2.MAB_max = e.target.value }} defaultValue={page2.MAB_max} /></td>
                         </tr>
                         <tr>
                             <td><p className='Details'>Postage Authorised Balance</p></td>
-                            <td><TextField id="standard-basic" variant="standard" name='PSAB_min'
-                                onChange={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.PSAB_min} /></td>
-                            <td><TextField id="standard-basic" variant="standard" name='PSAB_max'
-                                onChange={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.PSAB_max} /></td>
+                            <td><TextField id="standard-basic" variant="standard" onChange={(e) => { page2.PSAB_min = e.target.value }} defaultValue={page2.PSAB_min} /></td>
+                            <td><TextField id="standard-basic" variant="standard" onChange={(e) => { page2.PSAB_max = e.target.value }} defaultValue={page2.PSAB_max} /></td>
                         </tr>
                         <tr>
                             <td><p className='Details'>Location Of BO</p></td>
-                            <td colSpan="2"><TextField id="standard-basic" label="BO Location" variant="standard" name='location'
-                                onChange={(e) => updateTextbox(e,  setPage2)} /></td>
+                            <td colspan="2"><TextField id="standard-basic" label="BO Location" variant="standard" onChange={(e) => { page2.location = e.target.value }} /></td>
                         </tr>
                         <tr>
                             <td><p className='Details'>Villages Served</p></td>
-                            <td colSpan="2"><TextField id="standard-basic" label="Villages Details" variant="standard" name='village'
-                                onChange={(e) => updateTextbox(e,  setPage2)} /></td>
+                            <td colspan="2"><TextField id="standard-basic" label="Villages Details" variant="standard" onChange={(e) => { page2.village = e.target.value }} /></td>
                         </tr>
                         <tr>
                             <td><p className='Details'>Panchayat Headquarters</p></td>
-                            <td colSpan="2"><TextField id="standard-basic" label="Panchayat HQ" variant="standard" name='panchayat'
-                                onChange={(e) => updateTextbox(e,  setPage2)} /></td>
+                            <td colspan="2"><TextField id="standard-basic" label="Panchayat HQ" variant="standard" onChange={(e) => { page2.location = e.target.value }} /></td>
                         </tr>
                         <tr>
                             <td><p className='Details'>Mail Arrangement</p></td>
-                            <td colSpan="2"><TextField id="standard-basic" variant="standard" name='mailArrangement'
-                                onChange={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.mailArrangement} /></td>
+                            <td colspan="2"><TextField id="standard-basic" variant="standard" onChange={(e) => { page2.mailArrangement = e.target.value }} defaultValue={page2.mailArrangement} /></td>
                         </tr>
                     </table>
                 </div>
@@ -636,36 +704,33 @@ const IRS = () => {
                         <th>Date of Joining</th>
 
                     </tr>
-
-                    {page3.map((data, index) => {
-                        return <tr key={index}>
-                            <td><TextField id="standard-basic" variant="standard"
-                                name='Name'
-                                onBlur={(e) => updateArrayState(e, index,  setPage3)} /></td>
-                            <td><TextField id="standard-basic" placeholder='GDSBPM' variant="standard"
-                                name='Designation'
-                                onBlur={(e) => updateArrayState(e, index,  setPage3)} /></td>
-                            <td><TextField id="standard-basic" variant="standard"
-                                name='Community'
-                                onBlur={(e) => updateArrayState(e, index,  setPage3)} /></td>
-                            <td><TextField id="standard-basic" variant="standard"
-                                name='EmployeeId'
-                                onBlur={(e) => updateArrayState(e, index,  setPage3)} /></td>
-                            <td><TextField id="standard-basic" variant="standard"
-                                name='TRCA'
-                                onBlur={(e) => updateArrayState(e, index,  setPage3)} /></td>
-                            <td><TextField id="standard-basic" variant="standard"
-                                name='DOB'
-                                onBlur={(e) => updateArrayState(e, index,  setPage3)} /></td>
-                            <td><TextField id="standard-basic" variant="standard"
-                                name='DOJ'
-                                onBlur={(e) => updateArrayState(e, index,  setPage3)} /></td>
-
-                        </tr>
-                    })}
-
-
-
+                    <tr>
+                        <td><TextField id="standard-basic" variant="standard" onChange={(e) => page3[0].Name = e.target.value} /></td>
+                        <td><TextField id="standard-basic" placeholder='GDSBPM' variant="standard" onChange={(e) => page3[0].Designation = e.target.value} /></td>
+                        <td><TextField id="standard-basic" variant="standard" onChange={(e) => page3[0].Community = e.target.value} /></td>
+                        <td><TextField id="standard-basic" variant="standard" onChange={(e) => page3[0].EmployeeId = e.target.value} /></td>
+                        <td><TextField id="standard-basic" variant="standard" onChange={(e) => page3[0].TRCA = e.target.value} /></td>
+                        <td><TextField id="standard-basic" variant="standard" onChange={(e) => page3[0].DOB = e.target.value} /></td>
+                        <td><TextField id="standard-basic" variant="standard" onChange={(e) => page3[0].DOJ = e.target.value} /></td>
+                    </tr>
+                    <tr>
+                        <td><TextField id="standard-basic" variant="standard" onChange={(e) => page3[1].Name = e.target.value} /></td>
+                        <td><TextField id="standard-basic" placeholder='GDSMD' variant="standard" onChange={(e) => page3[1].Designation = e.target.value} /></td>
+                        <td><TextField id="standard-basic" variant="standard" onChange={(e) => page3[1].Community = e.target.value} /></td>
+                        <td><TextField id="standard-basic" variant="standard" onChange={(e) => page3[1].EmployeeId = e.target.value} /></td>
+                        <td><TextField id="standard-basic" variant="standard" onChange={(e) => page3[1].TRCA = e.target.value} /></td>
+                        <td><TextField id="standard-basic" variant="standard" onChange={(e) => page3[1].DOB = e.target.value} /></td>
+                        <td><TextField id="standard-basic" variant="standard" onChange={(e) => page3[1].DOJ = e.target.value} /></td>
+                    </tr>
+                    <tr>
+                        <td><TextField id="standard-basic" variant="standard" onChange={(e) => page3[2].Name = e.target.value} /></td>
+                        <td><TextField id="standard-basic" placeholder='GDSMC' variant="standard" onChange={(e) => page3[2].Designation = e.target.value} /></td>
+                        <td><TextField id="standard-basic" variant="standard" onChange={(e) => page3[2].Community = e.target.value} /></td>
+                        <td><TextField id="standard-basic" variant="standard" onChange={(e) => page3[2].EmployeeId = e.target.value} /></td>
+                        <td><TextField id="standard-basic" variant="standard" onChange={(e) => page3[2].TRCA = e.target.value} /></td>
+                        <td><TextField id="standard-basic" variant="standard" onChange={(e) => page3[2].DOB = e.target.value} /></td>
+                        <td><TextField id="standard-basic" variant="standard" onChange={(e) => page3[2].DOJ = e.target.value} /></td>
+                    </tr>
                 </table>
 
 
@@ -678,63 +743,35 @@ const IRS = () => {
                         </tr>
                         <tr>
                             <td>Complaint and Suggestion Book</td>
-                            <td><Checkbox label="Available" defaultChecked
-                                name='complaintAvailable'
-                                onChange={(e) => {updateCheckBox(e,setPage4)}} />
-                                <>Available in BO </>
-
-                                <Checkbox label="Maintained" defaultChecked
-                                    name='complaintMaintained'
-                                    onChange={(e) => {updateCheckBox(e,setPage4)}} /><>Maintained the document correctly</></td>
+                            <td><Checkbox label="Available" defaultChecked onChange={(e) => { if (e.target.checked) { page4.complaint[0] = true } else { page4.complaint[0] = false } }} /><>Available in BO </><Checkbox label="Maintained" defaultChecked onChange={(e) => { if (e.target.checked) { page4.complaint[1] = true } else { page4.complaint[1] = false } }} /><>Maintained the document correctly</></td>
                         </tr>
                         <tr>
                             <td>Book of Postmarks</td>
-                            <td><Checkbox label="Available" defaultChecked name='postmarksAvailable'
-                                onChange={(e) => {updateCheckBox(e,setPage4)}} /><>Available in BO </>
-                                <Checkbox label="Maintained" defaultChecked name='postmarksMaintained'
-                                onChange={(e) => {updateCheckBox(e,setPage4)}} /><>Maintained the document correctly</></td>
+                            <td><Checkbox label="Available" defaultChecked onChange={(e) => { if (e.target.checked) { page4.postmarks[0] = true } else { page4.postmarks[0] = false } }} /><>Available in BO </><Checkbox label="Maintained" defaultChecked onChange={(e) => { if (e.target.checked) { page4.postmarks[1] = true } else { page4.postmarks[1] = false } }} /><>Maintained the document correctly</></td>
                         </tr>
                         <tr>
                             <td>Stock Book</td>
-                            <td><Checkbox label="Available" defaultChecked name='stockAvailable'
-                                onChange={(e) => {updateCheckBox(e,setPage4)}} /><>Available in BO </>
-                                <Checkbox label="Maintained" defaultChecked name='stockMaintained'
-                                onChange={(e) => {updateCheckBox(e,setPage4)}} /><>Maintained the document correctly</></td>
+                            <td><Checkbox label="Available" defaultChecked onChange={(e) => { if (e.target.checked) { page4.stock[0] = true } else { page4.stock[0] = false } }} /><>Available in BO </><Checkbox label="Maintained" defaultChecked onChange={(e) => { if (e.target.checked) { page4.stock[1] = true } else { page4.stock[1] = false } }} /><>Maintained the document correctly</></td>
                         </tr>
                         <tr>
                             <td>Half Yearly Enumeration</td>
-                            <td><Checkbox label="Available" name='enumerationAvailable'
-                                onChange={(e) => {updateCheckBox(e,setPage4)}} /><>Available in BO </>
-                                <Checkbox label="Maintained" name='enumerationMaintained'
-                                onChange={(e) => {updateCheckBox(e,setPage4)}} /><>Maintained the document correctly</></td>
+                            <td><Checkbox label="Available" onChange={(e) => { if (e.target.checked) { page4.enumeration[0] = true } else { page4.enumeration[0] = false } }} /><>Available in BO </><Checkbox label="Maintained" onChange={(e) => { if (e.target.checked) { page4.enumeration[1] = true } else { page4.enumeration[1] = false } }} /><>Maintained the document correctly</></td>
                         </tr>
                         <tr>
                             <td>Yearly Value returns</td>
-                            <td><Checkbox label="Available" name='yearlyvaluereturnsAvailable'
-                                onChange={(e) => {updateCheckBox(e,setPage4)}} /><>Available in BO </>
-                                <Checkbox label="Maintained" name='yearlyvaluereturnsMaintained'
-                                onChange={(e) => {updateCheckBox(e,setPage4)}} /><>Maintained the document correctly</></td>
+                            <td><Checkbox label="Available" onChange={(e) => { if (e.target.checked) { page4.yearlyvaluereturns[0] = true } else { page4.yearlyvaluereturns[0] = false } }} /><>Available in BO </><Checkbox label="Maintained" onChange={(e) => { if (e.target.checked) { page4.yearlyvaluereturns[1] = true } else { page4.yearlyvaluereturns[1] = false } }} /><>Maintained the document correctly</></td>
                         </tr>
                         <tr>
                             <td>Error Book</td>
-                            <td><Checkbox label="Available" defaultChecked name='errorbookAvailable'
-                                onChange={(e) => {updateCheckBox(e,setPage4)}} /><>Available in BO </>
-                                <Checkbox label="Maintained" defaultChecked name='errorbookMaintained'
-                                onChange={(e) => {updateCheckBox(e,setPage4)}} /><>Maintained the document correctly</></td>
+                            <td><Checkbox label="Available" defaultChecked onChange={(e) => { if (e.target.checked) { page4.errorbook[0] = true } else { page4.errorbook[0] = false } }} /><>Available in BO </><Checkbox label="Maintained" defaultChecked onChange={(e) => { if (e.target.checked) { page4.errorbook[1] = true } else { page4.errorbook[1] = false } }} /><>Maintained the document correctly</></td>
                         </tr>
                         <tr>
                             <td>Village Sorting List</td>
-                            <td><Checkbox label="Available" name='villagesortinglistAvailable'
-                                onChange={(e) => {updateCheckBox(e,setPage4)}} /><>Available in BO </>
-                                <Checkbox label="Maintained" name='villagesortinglistMaintained'
-                                onChange={(e) => {updateCheckBox(e,setPage4)}} /><>Maintained the document correctly</></td>
+                            <td><Checkbox label="Available" onChange={(e) => { if (e.target.checked) { page4.villagesortinglist[0] = true } else { page4.villagesortinglist[0] = false } }} /><>Available in BO </><Checkbox label="Maintained" onChange={(e) => { if (e.target.checked) { page4.villagesortinglist[1] = true } else { page4.villagesortinglist[1] = false } }} /><>Maintained the document correctly</></td>
                         </tr>
                         <tr>
                             <td>Route list and Beat Map</td>
-                            <td><Checkbox label="Available" name='routelistAvailable'
-                                onChange={(e) => {updateCheckBox(e,setPage4)}} /><>Available in BO </>
-                                <Checkbox label="Maintained" name='routelistMaintained'
-                                onChange={(e) => {updateCheckBox(e,setPage4)}} /><>Maintained the document correctly</></td>
+                            <td><Checkbox label="Available" onChange={(e) => { if (e.target.checked) { page4.routelist[0] = true } else { page4.routelist[0] = false } }} /><>Available in BO </><Checkbox label="Maintained" onChange={(e) => { if (e.target.checked) { page4.routelist[1] = true } else { page4.routelist[1] = false } }} /><>Maintained the document correctly</></td>
                         </tr>
                     </table>
                 </div>
@@ -749,52 +786,31 @@ const IRS = () => {
                         </tr>
                         <tr>
                             <td>Main Computing Device (MCD)</td>
-                            <td><TextField id="standard-basic" variant="standard"
-                                name='mcd'
-                                onChange={(e) => updateTextbox(e,  setPage5)}
-                            /></td>
+                            <td><TextField id="standard-basic" variant="standard" onChange={(e) => page5.mcd = e.target.value} /></td>
                         </tr>
                         <tr>
                             <td>IMEI Number of MCD</td>
-                            <td><TextField id="standard-basic" variant="standard"
-                                name='imeiNumber'
-                                onChange={(e) => updateTextbox(e,  setPage5)}
-                            /></td>
+                            <td><TextField id="standard-basic" variant="standard" onChange={(e) => page5.imeiNumber = e.target.value} /></td>
                         </tr>
                         <tr>
                             <td>Kaifya/Sunyard Pin Pad (P-90)</td>
-                            <td><TextField id="standard-basic" variant="standard"
-                                name='kaifa'
-                                onChange={(e) => updateTextbox(e,  setPage5)}
-                            /></td>
+                            <td><TextField id="standard-basic" variant="standard" onChange={(e) => page5.kaifa = e.target.value} /></td>
                         </tr>
                         <tr>
                             <td>Barcode Scanner</td>
-                            <td><TextField id="standard-basic" variant="standard"
-                                name='barcode'
-                                onChange={(e) => updateTextbox(e,  setPage5)}
-                            /></td>
+                            <td><TextField id="standard-basic" variant="standard" onChange={(e) => page5.barcode = e.target.value} /></td>
                         </tr>
                         <tr>
                             <td>IPPB Smart phone supplied to the BPM / ABPM</td>
-                            <td><TextField id="standard-basic" variant="standard"
-                                name='ippbphone'
-                                onChange={(e) => updateTextbox(e,  setPage5)}
-                            /></td>
+                            <td><TextField id="standard-basic" variant="standard" onChange={(e) => page5.ippbphone = e.target.value} /></td>
                         </tr>
                         <tr>
                             <td>Solar UPS</td>
-                            <td><TextField id="standard-basic" variant="standard"
-                                name='solar'
-                                onChange={(e) => updateTextbox(e,  setPage5)}
-                            /></td>
+                            <td><TextField id="standard-basic" variant="standard" onChange={(e) => page5.solar = e.target.value} /></td>
                         </tr>
                         <tr>
                             <td>Type of the NSP SIM supplied and activated in the Device</td>
-                            <td><TextField id="standard-basic" variant="standard"
-                                name='sim'
-                                onChange={(e) => updateTextbox(e,  setPage5)}
-                            /></td>
+                            <td><TextField id="standard-basic" variant="standard" onChange={(e) => page5.sim = e.target.value} /></td>
                         </tr>
 
                     </table>
@@ -807,9 +823,7 @@ const IRS = () => {
                     <table className='table'>
                         <tr>
                             <td>Signal Strength</td>
-                            <td><TextField id="standard-basic" variant="standard" 
-                            name='signal'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
+                            <td><TextField id="standard-basic" variant="standard" onChange={(e) => page6.signal = e.target.value} /></td>
                         </tr>
                         <tr>
                             <td>Solar Panel Available</td>
@@ -818,13 +832,11 @@ const IRS = () => {
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
                                     name='solarAvailable'
-                                    value={page6Selects.solarAvailable}
-                                    defaultValue={false}
+                                    value={pageS6Selects.solarAvailable}
                                     onChange={(e) => {
-                                        setPage6Selects((prev) => {
-                                            return { ...prev, [e.target.name]: e.target.value }
-                                        })
-
+                                        var newArray = pageS6Selects;
+                                        newArray[e.target.name] = e.target.value;
+                                        setPageS6Selects(newArray);
                                     }}
                                 >
                                     <MenuItem value={true}>Available</MenuItem>
@@ -839,13 +851,11 @@ const IRS = () => {
                                 labelId="demo-simple-select-label"
                                 id="demo-simple-select"
                                 name='solarInstallationReport'
-                                value={page6Selects.solarInstallationReport}
-                                defaultValue={false}
+                                value={pageS6Selects.solarInstallationReport}
                                 onChange={(e) => {
-                                    setPage6Selects((prev) => {
-                                        return { ...prev, [e.target.name]: e.target.value }
-                                    })
-
+                                    var newArray = pageS6Selects;
+                                    newArray[e.target.name] = e.target.value;
+                                    setPageS6Selects(newArray);
                                 }}
                             >
                                 <MenuItem value={true}>Available</MenuItem>
@@ -860,35 +870,54 @@ const IRS = () => {
                                 labelId="demo-simple-select-label"
                                 id="demo-simple-select"
                                 name='solarworking'
-                                value={page6Selects.solarworking}
-                                defaultValue={false}
+                                value={pageS6Selects.solarworking}
                                 onChange={(e) => {
-                                    setPage6Selects((prev) => {
-                                        return { ...prev, [e.target.name]: e.target.value }
-                                    })
-
+                                    var newArray = pageS6Selects;
+                                    newArray[e.target.name] = e.target.value;
+                                    setPageS6Selects(newArray);
                                 }}
                             >
 
-                                <MenuItem value={true}>Working</MenuItem>
-                                <MenuItem value={false}>Not Working</MenuItem>
+                                <MenuItem value={true}>Available</MenuItem>
+                                <MenuItem value={false}>Not Available</MenuItem>
                             </Select>
                             </td>
                         </tr>
-
+                        <tr>
+                            <td>Article in deposit</td>
+                            <td><TextField id="standard-basic" variant="standard" onChange={(e) => page6.articleDeposit = e.target.value} /></td>
+                        </tr>
+                        <tr>
+                            <td>Article Beyond prescribed period</td>
+                            <td><TextField id="standard-basic" variant="standard" onChange={(e) => page6.articleBeyondPrescribedPeriod = e.target.value} /></td>
+                        </tr>
+                        <tr>
+                            <td>Missent Article</td>
+                            <td><TextField id="standard-basic" variant="standard" onChange={(e) => page6.Missent = e.target.value} /></td>
+                        </tr>
+                        <tr>
+                            <td>VP Article since DLI if any</td>
+                            <td><TextField id="standard-basic" variant="standard" onChange={(e) => page6.VParticle = e.target.value} /></td>
+                        </tr>
+                        <tr>
+                            <td>Number of Letterboxes</td>
+                            <td><TextField id="standard-basic" variant="standard" onChange={(e) => page6.noLetterBox = e.target.value} /></td>
+                        </tr>
+                        <tr>
+                            <td>Number of EMO Payments in year</td>
+                            <td><TextField id="standard-basic" variant="standard" onChange={(e) => page6.emoPayment = e.target.value} /></td>
+                        </tr>
                         <tr>
                             <td>DTR sent daily to BO</td>
                             <td><Select
                                 labelId="demo-simple-select-label"
                                 id="demo-simple-select"
                                 name='dtr'
-                                value={page6Selects.dtr}
-                                defaultValue={false}
+                                value={pageS6Selects.dtr}
                                 onChange={(e) => {
-                                    setPage6Selects((prev) => {
-                                        return { ...prev, [e.target.name]: e.target.value }
-                                    })
-
+                                    var newArray = pageS6Selects;
+                                    newArray[e.target.name] = e.target.value;
+                                    setPageS6Selects(newArray);
                                 }}
                             >
                                 <MenuItem value={true}>Yes</MenuItem>
@@ -902,13 +931,11 @@ const IRS = () => {
                                 labelId="demo-simple-select-label"
                                 id="demo-simple-select"
                                 name='rollout'
-                                value={page6Selects.rollout}
-                                defaultValue={false}
+                                value={pageS6Selects.rollout}
                                 onChange={(e) => {
-                                    setPage6Selects((prev) => {
-                                        return { ...prev, [e.target.name]: e.target.value }
-                                    })
-
+                                    var newArray = pageS6Selects;
+                                    newArray[e.target.name] = e.target.value;
+                                    setPageS6Selects(newArray);
                                 }}
                             >
                                 <MenuItem value={true}>Yes</MenuItem>
@@ -916,86 +943,30 @@ const IRS = () => {
                             </Select>
                             </td>
                         </tr>
-                        <tr>
-                            <td>Article in deposit</td>
-                            <td><TextField id="standard-basic" variant="standard" 
-                            name='articleDeposit'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
-                        </tr>
-                        <tr>
-                            <td>Article Beyond prescribed period</td>
-                            <td><TextField id="standard-basic" variant="standard" 
-                            name='articleBeyondPrescribedPeriod'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
-                        </tr>
-                        <tr>
-                            <td>Missent Article</td>
-                            <td><TextField id="standard-basic" variant="standard" 
-                            name='Missent'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
-                        </tr>
-                        <tr>
-                            <td>VP Article since DLI if any</td>
-                            <td><TextField id="standard-basic" variant="standard" 
-                            name='VParticle'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
-                        </tr>
-                        <tr>
-                            <td>Number of Letterboxes</td>
-                            <td><TextField id="standard-basic" variant="standard" 
-                            name='noLetterBox'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
-                        </tr>
-                        <tr>
-                            <td>Number of EMO Payments in year</td>
-                            <td><TextField id="standard-basic" variant="standard" 
-                            name='emoPayment'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
-                        </tr>
-
 
 
                     </table>
                     <table className='table'>
                         <tr>
                             <td>Articles in bag on Inspection day</td>
-                            <td><TextField id="standard-basic" label='SP' variant="standard" 
-                            name='sp'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
-                            <td><TextField id="standard-basic" label='RL' variant="standard" 
-                            name='rl'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
-                            <td><TextField id="standard-basic" label='PARCEL' variant="standard" 
-                            name='parcel'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
-                            <td><TextField id="standard-basic" label='EMO' variant="standard" 
-                            name='emo'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
-                            <td><TextField id="standard-basic" label='ORD' variant="standard" 
-                            name='ord'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
-                            <td><TextField id="standard-basic" label='VP/COD' variant="standard" 
-                            name='vpcod'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
+                            <td><TextField id="standard-basic" label='SP' variant="standard" onChange={(e) => page6.sp = e.target.value} /></td>
+                            <td><TextField id="standard-basic" label='RL' variant="standard" onChange={(e) => page6.rl = e.target.value} /></td>
+                            <td><TextField id="standard-basic" label='PARCEL' variant="standard" onChange={(e) => page6.parcel = e.target.value} /></td>
+                            <td><TextField id="standard-basic" label='EMO' variant="standard" onChange={(e) => page6.emo = e.target.value} /></td>
+                            <td><TextField id="standard-basic" label='ORD' variant="standard" onChange={(e) => page6.ord = e.target.value} /></td>
+                            <td><TextField id="standard-basic" label='VP/COD' variant="standard" onChange={(e) => page6.vpcod = e.target.value} /></td>
                         </tr>
                     </table>
                     <table className='table'>
                         <tr>
-                            <th>Cash<Checkbox label="Available" defaultChecked name='dtrTallied'
-                                onChange={(e) => {updateCheckBox(e,setPage6)}} /><>DTR Tallied </></th>
+                            <th>Cash<Checkbox label="Available" defaultChecked onChange={(e) => { if (e.target.checked) { page6.dtrTallied = true } else { page6.dtrTallied = false } }} /><>DTR Tallied </></th>
                             <th>Postage Stamp</th>
                             <th>Revenue Stamp</th>
                         </tr>
                         <tr>
-                            <td><TextField id="standard-basic" label='CASH' variant="standard" 
-                            name='cash'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
-                            <td><TextField id="standard-basic" label='PS' variant="standard" 
-                            name='ps'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
-                            <td><TextField id="standard-basic" label='RS' variant="standard" 
-                            name='rs'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
+                            <td><TextField id="standard-basic" label='CASH' variant="standard" onChange={(e) => page6.cash = e.target.value} /></td>
+                            <td><TextField id="standard-basic" label='PS' variant="standard" onChange={(e) => page6.ps = e.target.value} /></td>
+                            <td><TextField id="standard-basic" label='RS' variant="standard" onChange={(e) => page6.rs = e.target.value} /></td>
                         </tr>
                     </table>
                     <table className='table'>
@@ -1008,9 +979,9 @@ const IRS = () => {
                             return <><tr>
 
                                 <td><TextField id="standard-basic" label='Date' variant="standard" name="date"
-                                    onBlur={(e) => updateArrayState(e, index,  setPage6DTR)} /></td>
-                                <td><TextField id="standard-basic" label='BO Summary' variant="standard" name="boBal" onBlur={(e) => updateArrayState(e, index, page6DTR, setPage6DTR)} /></td>
-                                <td><TextField id="standard-basic" label='DTR' variant="standard" name="dtrBal" onBlur={(e) => updateArrayState(e, index,  setPage6DTR)} /></td>
+                                    onChange={updateState(index)} /></td>
+                                <td><TextField id="standard-basic" label='BO Summary' variant="standard" name="boBal" onChange={updateState(index)} /></td>
+                                <td><TextField id="standard-basic" label='DTR' variant="standard" name="dtrBal" onChange={updateState(index)} /></td>
                             </tr></>
                         })}
 
@@ -1040,13 +1011,13 @@ const IRS = () => {
                                     return (<tr key={index}>
 
                                         <td>SB26</td>
-                                        <td><TextField id="standard-basic" label='BOOK NUMBER' variant="standard" name='bookNo' onBlur={(e) => updateArrayState(e, index,  setsb26f)} /></td>
-                                        <td><TextField id="standard-basic" label='from RECEIPT NO' variant="standard" name='from' onBlur={(e) => updateArrayState(e, index,  setsb26f)} /></td>
-                                        <td><TextField id="standard-basic" label='DATE' variant="standard" name='fromdate' onBlur={(e) => updateArrayState(e, index,  setsb26f)} /></td>
-                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='fromamount' onBlur={(e) => updateArrayState(e, index,  setsb26f)} /></td>
-                                        <td><TextField id="standard-basic" label='to RECEIPT NO' variant="standard" name='to' onBlur={(e) => updateArrayState(e, index,  setsb26f)} /></td>
-                                        <td><TextField id="standard-basic" label='DATE' variant="standard" name='todate' onBlur={(e) => updateArrayState(e, index,  setsb26f)} /></td>
-                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='toamount' onBlur={(e) => updateArrayState(e, index,  setsb26f)} /></td>
+                                        <td><TextField id="standard-basic" label='BOOK NUMBER' variant="standard" name='bookNo' onChange={updateSB26(index)} /></td>
+                                        <td><TextField id="standard-basic" label='from RECEIPT NO' variant="standard" name='from' onChange={updateSB26(index)} /></td>
+                                        <td><TextField id="standard-basic" label='DATE' variant="standard" name='fromdate' onChange={updateSB26(index)} /></td>
+                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='fromamount' onChange={updateSB26(index)} /></td>
+                                        <td><TextField id="standard-basic" label='to RECEIPT NO' variant="standard" name='to' onChange={updateSB26(index)} /></td>
+                                        <td><TextField id="standard-basic" label='DATE' variant="standard" name='todate' onChange={updateSB26(index)} /></td>
+                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='toamount' onChange={updateSB26(index)} /></td>
                                     </tr>)
 
                                 })
@@ -1090,13 +1061,13 @@ const IRS = () => {
                                     return (<tr key={index}>
 
                                         <td>SB28</td>
-                                        <td><TextField id="standard-basic" label='BOOK NUMBER' variant="standard" name='bookNo' onBlur={(e) => updateArrayState(e, index,  setsb28f)} /></td>
-                                        <td><TextField id="standard-basic" label='from RECEIPT NO' variant="standard" name='from' onBlur={(e) => updateArrayState(e, index,  setsb28f)} /></td>
-                                        <td><TextField id="standard-basic" label='DATE' variant="standard" name='fromdate' onBlur={(e) => updateArrayState(e, index,  setsb28f)} /></td>
-                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='fromamount' onBlur={(e) => updateArrayState(e, index,  setsb28f)} /></td>
-                                        <td><TextField id="standard-basic" label='to RECEIPT NO' variant="standard" name='to' onBlur={(e) => updateArrayState(e, index,  setsb28f)} /></td>
-                                        <td><TextField id="standard-basic" label='DATE' variant="standard" name='todate' onBlur={(e) => updateArrayState(e, index,  setsb28f)} /></td>
-                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='toamount' onBlur={(e) => updateArrayState(e, index,  setsb28f)} /></td>
+                                        <td><TextField id="standard-basic" label='BOOK NUMBER' variant="standard" name='bookNo' onChange={updateSB28(index)} /></td>
+                                        <td><TextField id="standard-basic" label='from RECEIPT NO' variant="standard" name='from' onChange={updateSB28(index)} /></td>
+                                        <td><TextField id="standard-basic" label='DATE' variant="standard" name='fromdate' onChange={updateSB28(index)} /></td>
+                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='fromamount' onChange={updateSB28(index)} /></td>
+                                        <td><TextField id="standard-basic" label='to RECEIPT NO' variant="standard" name='to' onChange={updateSB28(index)} /></td>
+                                        <td><TextField id="standard-basic" label='DATE' variant="standard" name='todate' onChange={updateSB28(index)} /></td>
+                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='toamount' onChange={updateSB28(index)} /></td>
                                     </tr>)
 
                                 })
@@ -1142,25 +1113,25 @@ const IRS = () => {
                                         <td>PLI/RPLI</td>
                                         <td><TextField id="standard-basic" label='BOOK NUMBER' variant="standard"
                                             name='bookNo'
-                                            onBlur={(e) => updateArrayState(e, index,  setplif)} /></td>
+                                            onChange={updatePLI2(index)} /></td>
                                         <td><TextField id="standard-basic" label='from RECEIPT NO' variant="standard"
                                             name='from'
-                                            onBlur={(e) => updateArrayState(e, index,  setplif)} /></td>
+                                            onChange={updatePLI2(index)} /></td>
                                         <td><TextField id="standard-basic" label='DATE' variant="standard"
                                             name='fromdate'
-                                            onBlur={(e) => updateArrayState(e, index,  setplif)} /></td>
+                                            onChange={updatePLI2(index)} /></td>
                                         <td><TextField id="standard-basic" label='AMOUNT' variant="standard"
                                             name='fromamount'
-                                            onBlur={(e) => updateArrayState(e, index,  setplif)} /></td>
+                                            onChange={updatePLI2(index)} /></td>
                                         <td><TextField id="standard-basic" label='to RECEIPT NO' variant="standard"
                                             name='to'
-                                            onBlur={(e) => updateArrayState(e, index,  setplif)} /></td>
+                                            onChange={updatePLI2(index)} /></td>
                                         <td><TextField id="standard-basic" label='DATE' variant="standard"
                                             name='todate'
-                                            onBlur={(e) => updateArrayState(e, index,  setplif)} /></td>
+                                            onChange={updatePLI2(index)} /></td>
                                         <td><TextField id="standard-basic" label='AMOUNT' variant="standard"
                                             name='toamount'
-                                            onBlur={(e) => updateArrayState(e, index,  setplif)} /></td>
+                                            onChange={updatePLI2(index)} /></td>
                                     </tr>)
 
                                 })
@@ -1206,27 +1177,27 @@ const IRS = () => {
                                         <td>MS87</td>
                                         <td><TextField id="standard-basic" label='from RECEIPT NO' variant="standard"
                                             name='from'
-                                            onBlur={(e) => updateArrayState(e, index,  setms87f)}
+                                            onChange={updateMS87(index)}
                                         /></td>
                                         <td><TextField id="standard-basic" label='DATE' variant="standard"
                                             name='fromdate'
-                                            onBlur={(e) => updateArrayState(e, index,  setms87f)}
+                                            onChange={updateMS87(index)}
                                         /></td>
                                         <td><TextField id="standard-basic" label='AMOUNT' variant="standard"
                                             name='fromamount'
-                                            onBlur={(e) => updateArrayState(e, index,  setms87f)}
+                                            onChange={updateMS87(index)}
                                         /></td>
                                         <td><TextField id="standard-basic" label='to RECEIPT NO' variant="standard"
                                             name='to'
-                                            onBlur={(e) => updateArrayState(e, index,  setms87f)}
+                                            onChange={updateMS87(index)}
                                         /></td>
                                         <td><TextField id="standard-basic" label='DATE' variant="standard"
                                             name='todate'
-                                            onBlur={(e) => updateArrayState(e, index,  setms87f)}
+                                            onChange={updateMS87(index)}
                                         /></td>
                                         <td><TextField id="standard-basic" label='AMOUNT' variant="standard"
                                             name='toamount'
-                                            onBlur={(e) => updateArrayState(e, index,  setms87f)}
+                                            onChange={updateMS87(index)}
                                         /></td>
                                     </tr>)
 
@@ -1266,15 +1237,15 @@ const IRS = () => {
                                         <tr>
                                             <td><TextField id="standard-basic" label='AMOUNT' variant="standard"
                                                 name='accountNo'
-                                                onBlur={(e) => updateArrayState(e, index,  setSSBook)}
+                                                onChange={updateSSbook(index)}
                                             /></td>
                                             <td><TextField id="standard-basic" label='AMOUNT' variant="standard"
                                                 name='signature'
-                                                onBlur={(e) => updateArrayState(e, index,  setSSBook)}
+                                                onChange={updateSSbook(index)}
                                             /></td>
                                             <td><TextField id="standard-basic" label='AMOUNT' variant="standard"
                                                 name='photograph'
-                                                onBlur={(e) => updateArrayState(e, index,  setSSBook)}
+                                                onChange={updateSSbook(index)}
                                             /></td>
                                         </tr>
                                     </>
@@ -1308,12 +1279,12 @@ const IRS = () => {
                                 sbrd.map((data, index) => {
                                     return <>
                                         <tr>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='sbAccount' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='sbDLT' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='sbBAT' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='rdAccount' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='rdDLT' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='rdBAT' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='sbAccount' onChange={updatesbrd(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='sbDLT' onChange={updatesbrd(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='sbBAT' onChange={updatesbrd(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='rdAccount' onChange={updatesbrd(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='rdDLT' onChange={updatesbrd(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='rdBAT' onChange={updatesbrd(index)} /></td>
 
                                         </tr>
                                     </>
@@ -1340,12 +1311,12 @@ const IRS = () => {
                                 ssatd.map((data, index) => {
                                     return <>
                                         <tr>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='ssaAccount' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='ssaDLT' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='ssaBAT' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='tdAccount' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='tdDLT' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='tdBAT' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='ssaAccount' onChange={updatessatd(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='ssaDLT' onChange={updatessatd(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='ssaBAT' onChange={updatessatd(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='tdAccount' onChange={updatessatd(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='tdDLT' onChange={updatessatd(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='tdBAT' onChange={updatessatd(index)} /></td>
 
                                         </tr>
                                     </>
@@ -1377,16 +1348,16 @@ const IRS = () => {
                                 txn.map((data, index) => {
                                     return <>
                                         <tr>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='date' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='sbd' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='sbw' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='rdd' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='rdw' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='tdd' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='ssad' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='ippbd' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='celc' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='ippbw' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='date' onChange={updatetxn(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='sbd' onChange={updatetxn(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='sbw' onChange={updatetxn(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='rdd' onChange={updatetxn(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='rdw' onChange={updatetxn(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='tdd' onChange={updatetxn(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='ssad' onChange={updatetxn(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='ippbd' onChange={updatetxn(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='celc' onChange={updatetxn(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='ippbw' onChange={updatetxn(index)} /></td>
 
                                         </tr>
                                     </>
@@ -1411,9 +1382,9 @@ const IRS = () => {
                                 plipass.map((data, index) => {
                                     return <>
                                         <tr>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='policyNo' onBlur={(e) => updateArrayState(e, index,  setplipass)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='dlc' onBlur={(e) => updateArrayState(e, index,  setplipass)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='premium' onBlur={(e) => updateArrayState(e, index,  setplipass)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='policyNo' onChange={updateplipass(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='dlc' onChange={updateplipass(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='premium' onChange={updateplipass(index)} /></td>
 
 
                                         </tr>
@@ -1442,12 +1413,12 @@ const IRS = () => {
                                 pli.map((data, index) => {
                                     return <>
                                         <tr>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='date1' onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='amount1' onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='date2' onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='amount2' onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='date3' onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='amount3' onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='date1' onChange={updatepli(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='amount1' onChange={updatepli(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='date2' onChange={updatepli(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='amount2' onChange={updatepli(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='date3' onChange={updatepli(index)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='amount3' onChange={updatepli(index)} /></td>
 
                                         </tr>
                                     </>
@@ -1459,7 +1430,13 @@ const IRS = () => {
                 </div>
 
                 <button onClick={() => {
-
+                    setPageS1(page1);
+                    setPageS2(page2);
+                    setPageS3(page3);
+                    setPageS4(page4);
+                    setPageS5(page5);
+                    setPageS6(page6);
+                    setPageS6DTR(page6DTR);
                     setAbc(false);
                 }
 
@@ -1468,7 +1445,7 @@ const IRS = () => {
 
                 }>SUBMIT</button>
 
-            </div> : <IRFinal pageS1={page1} pageS2={page2} pageS3={page3} pageS4={page4} pageS5={page5} pageS6={page6} pageS6DTR={page6DTR} sb26f={sb26f} ms87f={ms87f} sb28f={sb28f} plif={plif} ssbook={ssbook} sbrd={sbrd} ssatd={ssatd} txn={txn} plipass={plipass} pli={pli} page6Selects={page6Selects}/>}
+            </div> : <IRFinal pageS1={pageS1} pageS2={pageS2} pageS3={pageS3} pageS4={pageS4} pageS5={pageS5} pageS6={pageS6} pageS6DTR={pageS6DTR} sb26f={sb26f} ms87f={ms87f} sb28f={sb28f} plif={plif} ssbook={ssbook} sbrd={sbrd} ssatd={ssatd} txn={txn} plipass={plipass} pli={pli} />}
         </div>
     )
 }
