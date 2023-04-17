@@ -1009,7 +1009,7 @@ const IRS = () => {
 
                                 <td><TextField id="standard-basic" label='Date' variant="standard" name="date"
                                     onBlur={(e) => updateArrayState(e, index,  setPage6DTR)} /></td>
-                                <td><TextField id="standard-basic" label='BO Summary' variant="standard" name="boBal" onBlur={(e) => updateArrayState(e, index, page6DTR, setPage6DTR)} /></td>
+                                <td><TextField id="standard-basic" label='BO Summary' variant="standard" name="boBal" onBlur={(e) => updateArrayState(e, index,  setPage6DTR)} /></td>
                                 <td><TextField id="standard-basic" label='DTR' variant="standard" name="dtrBal" onBlur={(e) => updateArrayState(e, index,  setPage6DTR)} /></td>
                             </tr></>
                         })}
