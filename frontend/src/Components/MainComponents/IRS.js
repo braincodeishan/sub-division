@@ -490,53 +490,53 @@ const IRS = () => {
                         <tr>
                             <td><p className='Details'>Name of The BO</p></td>
                             <td><TextField id="standard-basic" label="BO Name" variant="standard" name='BO'
-                                onChange={(e) => updateTextbox(e,  setPage1)}
+                                onBlur={(e) => updateTextbox(e,  setPage1)}
 
                             /></td>
                         </tr><tr>
                             <td><p className='Details'>Name of The AO</p></td>
                             <td><TextField id="standard-basic" label="AO Name" variant="standard" name='AO'
-                                onChange={(e) => updateTextbox(e,  setPage1)}
+                                onBlur={(e) => updateTextbox(e,  setPage1)}
                             /></td>
                         </tr><tr>
                             <td><p className='Details'>Name of The HO</p></td>
                             <td><TextField id="standard-basic" label="HO Name" variant="standard" name='HO'
-                                onChange={(e) => updateTextbox(e,  setPage1)}
+                                onBlur={(e) => updateTextbox(e,  setPage1)}
                             /></td>
                         </tr><tr>
                             <td><p className='Details'>Facility ID</p></td>
                             <td><TextField id="standard-basic" label="Facility ID" variant="standard"
                                 name='facilityID'
-                                onChange={(e) => updateTextbox(e,  setPage1)}
+                                onBlur={(e) => updateTextbox(e,  setPage1)}
                             /></td>
                         </tr><tr>
                             <td><p className='Details'>Profit/Cost Center</p></td>
                             <td><TextField id="standard-basic" label="Profit Center" variant="standard"
                                 name='profitCenter'
-                                onChange={(e) => updateTextbox(e,  setPage1)} /></td>
+                                onBlur={(e) => updateTextbox(e,  setPage1)} /></td>
                         </tr><tr>
                             <td><p className='Details'>Date of Opening of BO</p></td>
                             <td><TextField id="standard-basic" label="BO Opening Date" variant="standard"
                                 name='BOopening'
-                                onChange={(e) => updateTextbox(e,  setPage1)}
+                                onBlur={(e) => updateTextbox(e,  setPage1)}
                             /></td>
                         </tr><tr>
                             <td><p className='Details'>Date of Last inspection by SSPOs/SPOs</p></td>
                             <td><TextField id="standard-basic" label="DLI of SSPOs" variant="standard"
                                 name='DLISSP'
-                                onChange={(e) => updateTextbox(e,  setPage1)}
+                                onBlur={(e) => updateTextbox(e,  setPage1)}
                             /></td>
                         </tr><tr>
                             <td><p className='Details'>Date of Last Inspection</p></td>
                             <td><TextField id="standard-basic" label="DLI" variant="standard" name='DLI'
-                                onChange={(e) => updateTextbox(e,  setPage1)}
+                                onBlur={(e) => updateTextbox(e,  setPage1)}
                             /></td>
                         </tr><tr>
                         </tr><tr>
                             <td><p className='Details'>Last Inspected By</p></td>
                             <td><TextField id="standard-basic" label="Inspected By" variant="standard"
                                 name='DLIby'
-                                onChange={(e) => updateTextbox(e,  setPage1)}
+                                onBlur={(e) => updateTextbox(e,  setPage1)}
 
                             /></td>
                         </tr><tr>
@@ -544,13 +544,13 @@ const IRS = () => {
                             <td><p className='Details'>Date of Subsequential Visits</p></td>
                             <td><TextField id="standard-basic" label="Subsequential Visit" variant="standard"
                                 name='SubsequentVisit'
-                                onChange={(e) => updateTextbox(e,  setPage1)} /></td>
+                                onBlur={(e) => updateTextbox(e,  setPage1)} /></td>
                         </tr><tr>
                         </tr><tr>
                             <td><p className='Details'>Date of Visits by Mail Overseer</p></td>
                             <td><TextField id="standard-basic" label="Mail Overseer Visit" variant="standard"
                                 name='MOVisit'
-                                onChange={(e) => updateTextbox(e,  setPage1)} /></td>
+                                onBlur={(e) => updateTextbox(e,  setPage1)} /></td>
                         </tr>
                     </table>
                 </div>
@@ -568,57 +568,57 @@ const IRS = () => {
                             <td><p className='Details'>Receipt of Mail</p></td>
                             <td colSpan="2"><TextField id="standard-basic" variant="standard"
                                 name='rom'
-                                onChange={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.rom} /></td>
+                                onBlur={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.rom} /></td>
                         </tr>
                         <tr>
                             <td><p className='Details'>Delivery of Mail</p></td>
                             <td colSpan="2"><TextField id="standard-basic" variant="standard"
                                 name='dom'
-                                onChange={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.dom} /></td>
+                                onBlur={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.dom} /></td>
                         </tr>
                         <tr>
                             <td><p className='Details'>LB Clearance</p></td>
                             <td colSpan="2"><TextField id="standard-basic" variant="standard" name='lbc'
-                                onChange={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.lbc} /></td>
+                                onBlur={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.lbc} /></td>
                         </tr>
                         <tr>
                             <td><p className='Details'>Despatch of Mails</p></td>
                             <td colSpan="2"><TextField id="standard-basic" variant="standard" name='dispatch'
-                                onChange={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.dispatch} /></td>
+                                onBlur={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.dispatch} /></td>
                         </tr>
                         <tr>
                             <td><p className='Details'>Authorised Balance</p></td>
                             <td><TextField id="standard-basic" variant="standard" name='MAB_min'
-                                onChange={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.MAB_min} /></td>
+                                onBlur={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.MAB_min} /></td>
                             <td><TextField id="standard-basic" variant="standard" name='MAB_max'
-                                onChange={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.MAB_max} /></td>
+                                onBlur={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.MAB_max} /></td>
                         </tr>
                         <tr>
                             <td><p className='Details'>Postage Authorised Balance</p></td>
                             <td><TextField id="standard-basic" variant="standard" name='PSAB_min'
-                                onChange={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.PSAB_min} /></td>
+                                onBlur={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.PSAB_min} /></td>
                             <td><TextField id="standard-basic" variant="standard" name='PSAB_max'
-                                onChange={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.PSAB_max} /></td>
+                                onBlur={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.PSAB_max} /></td>
                         </tr>
                         <tr>
                             <td><p className='Details'>Location Of BO</p></td>
                             <td colSpan="2"><TextField id="standard-basic" label="BO Location" variant="standard" name='location'
-                                onChange={(e) => updateTextbox(e,  setPage2)} /></td>
+                                onBlur={(e) => updateTextbox(e,  setPage2)} /></td>
                         </tr>
                         <tr>
                             <td><p className='Details'>Villages Served</p></td>
                             <td colSpan="2"><TextField id="standard-basic" label="Villages Details" variant="standard" name='village'
-                                onChange={(e) => updateTextbox(e,  setPage2)} /></td>
+                                onBlur={(e) => updateTextbox(e,  setPage2)} /></td>
                         </tr>
                         <tr>
                             <td><p className='Details'>Panchayat Headquarters</p></td>
                             <td colSpan="2"><TextField id="standard-basic" label="Panchayat HQ" variant="standard" name='panchayat'
-                                onChange={(e) => updateTextbox(e,  setPage2)} /></td>
+                                onBlur={(e) => updateTextbox(e,  setPage2)} /></td>
                         </tr>
                         <tr>
                             <td><p className='Details'>Mail Arrangement</p></td>
                             <td colSpan="2"><TextField id="standard-basic" variant="standard" name='mailArrangement'
-                                onChange={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.mailArrangement} /></td>
+                                onBlur={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.mailArrangement} /></td>
                         </tr>
                     </table>
                 </div>
@@ -751,49 +751,49 @@ const IRS = () => {
                             <td>Main Computing Device (MCD)</td>
                             <td><TextField id="standard-basic" variant="standard"
                                 name='mcd'
-                                onChange={(e) => updateTextbox(e,  setPage5)}
+                                onBlur={(e) => updateTextbox(e,  setPage5)}
                             /></td>
                         </tr>
                         <tr>
                             <td>IMEI Number of MCD</td>
                             <td><TextField id="standard-basic" variant="standard"
                                 name='imeiNumber'
-                                onChange={(e) => updateTextbox(e,  setPage5)}
+                                onBlur={(e) => updateTextbox(e,  setPage5)}
                             /></td>
                         </tr>
                         <tr>
                             <td>Kaifya/Sunyard Pin Pad (P-90)</td>
                             <td><TextField id="standard-basic" variant="standard"
                                 name='kaifa'
-                                onChange={(e) => updateTextbox(e,  setPage5)}
+                                onBlur={(e) => updateTextbox(e,  setPage5)}
                             /></td>
                         </tr>
                         <tr>
                             <td>Barcode Scanner</td>
                             <td><TextField id="standard-basic" variant="standard"
                                 name='barcode'
-                                onChange={(e) => updateTextbox(e,  setPage5)}
+                                onBlur={(e) => updateTextbox(e,  setPage5)}
                             /></td>
                         </tr>
                         <tr>
                             <td>IPPB Smart phone supplied to the BPM / ABPM</td>
                             <td><TextField id="standard-basic" variant="standard"
                                 name='ippbphone'
-                                onChange={(e) => updateTextbox(e,  setPage5)}
+                                onBlur={(e) => updateTextbox(e,  setPage5)}
                             /></td>
                         </tr>
                         <tr>
                             <td>Solar UPS</td>
                             <td><TextField id="standard-basic" variant="standard"
                                 name='solar'
-                                onChange={(e) => updateTextbox(e,  setPage5)}
+                                onBlur={(e) => updateTextbox(e,  setPage5)}
                             /></td>
                         </tr>
                         <tr>
                             <td>Type of the NSP SIM supplied and activated in the Device</td>
                             <td><TextField id="standard-basic" variant="standard"
                                 name='sim'
-                                onChange={(e) => updateTextbox(e,  setPage5)}
+                                onBlur={(e) => updateTextbox(e,  setPage5)}
                             /></td>
                         </tr>
 
@@ -809,7 +809,7 @@ const IRS = () => {
                             <td>Signal Strength</td>
                             <td><TextField id="standard-basic" variant="standard" 
                             name='signal'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
+                            onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                         </tr>
                         <tr>
                             <td>Solar Panel Available</td>
@@ -920,37 +920,37 @@ const IRS = () => {
                             <td>Article in deposit</td>
                             <td><TextField id="standard-basic" variant="standard" 
                             name='articleDeposit'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
+                            onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                         </tr>
                         <tr>
                             <td>Article Beyond prescribed period</td>
                             <td><TextField id="standard-basic" variant="standard" 
                             name='articleBeyondPrescribedPeriod'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
+                            onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                         </tr>
                         <tr>
                             <td>Missent Article</td>
                             <td><TextField id="standard-basic" variant="standard" 
                             name='Missent'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
+                            onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                         </tr>
                         <tr>
                             <td>VP Article since DLI if any</td>
                             <td><TextField id="standard-basic" variant="standard" 
                             name='VParticle'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
+                            onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                         </tr>
                         <tr>
                             <td>Number of Letterboxes</td>
                             <td><TextField id="standard-basic" variant="standard" 
                             name='noLetterBox'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
+                            onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                         </tr>
                         <tr>
                             <td>Number of EMO Payments in year</td>
                             <td><TextField id="standard-basic" variant="standard" 
                             name='emoPayment'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
+                            onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                         </tr>
 
 
@@ -961,22 +961,22 @@ const IRS = () => {
                             <td>Articles in bag on Inspection day</td>
                             <td><TextField id="standard-basic" label='SP' variant="standard" 
                             name='sp'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
+                            onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                             <td><TextField id="standard-basic" label='RL' variant="standard" 
                             name='rl'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
+                            onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                             <td><TextField id="standard-basic" label='PARCEL' variant="standard" 
                             name='parcel'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
+                            onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                             <td><TextField id="standard-basic" label='EMO' variant="standard" 
                             name='emo'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
+                            onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                             <td><TextField id="standard-basic" label='ORD' variant="standard" 
                             name='ord'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
+                            onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                             <td><TextField id="standard-basic" label='VP/COD' variant="standard" 
                             name='vpcod'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
+                            onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                         </tr>
                     </table>
                     <table className='table'>
@@ -989,13 +989,13 @@ const IRS = () => {
                         <tr>
                             <td><TextField id="standard-basic" label='CASH' variant="standard" 
                             name='cash'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
+                            onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                             <td><TextField id="standard-basic" label='PS' variant="standard" 
                             name='ps'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
+                            onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                             <td><TextField id="standard-basic" label='RS' variant="standard" 
                             name='rs'
-                            onChange={(e) => updateTextbox(e,  setPage6)} /></td>
+                            onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                         </tr>
                     </table>
                     <table className='table'>
