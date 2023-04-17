@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import CandidateCopy from '../sub-component/Recruitment/CandidateCopy'
+import { BoardData } from '../../Assets/Data/BoardData';
 const Recruitment = () => {
+    // const [sscSelect, setSSCSelect]=useState({});
     const [data, setData] = useState({
         post: '',
         name: '',
@@ -36,14 +38,30 @@ const Recruitment = () => {
             return { ...prev, [name]: val }
         })
     }
-
+ 
+    const changeSSC= (val)=>{
+        const abc={
+            target:{
+                name:"sscAdd",
+                value:BoardData[val].Name+"\n"+BoardData[val].Address1+"\n"+BoardData[val].Address2+"\n"+BoardData[val].Address3,
+            }
+        }
+        change(abc);
+        const abc1={
+            target:{
+                name:"sscDivision",
+                value:BoardData[val].copyOffice1+"\n"+BoardData[val].copyOffice2+"\n"+BoardData[val].copyOffice3,
+            }
+        }
+        change(abc1);
+    }
 
     return (
         <>
             <div className='container pageCenter'>
                 {!showData ? <div>
                     <div style={{ border: '1px solid #000', padding: '20px', margin: '5px' }}>
-                        <h3 style={{textAlign:'center'}}>GENERATION OF VERIFICATION LETTER</h3>
+                        <h3 style={{ textAlign: 'center' }}>GENERATION OF VERIFICATION LETTER</h3>
                         <p style={{ color: 'red', fontSize: '10px' }}>Fill up the form and click on Generate report to get the printout.</p>
                         <div className="flex">
                             <TextField id="standard-basic" label='Post' variant="standard" name='post'
@@ -121,17 +139,29 @@ const Recruitment = () => {
                     <div style={{ border: '1px solid #000', padding: '20px', margin: '5px' }}>
 
                         <div className="flex">
+                            <select class="form-control form-control-lg" onChange={(e) => { changeSSC(e.target.value-1) }} >
+                                <option>Select...</option>
+                                {
+                                    BoardData.map((val) => {
+                                        return <option key={val.id} value={val.id}>{val.Name}</option>
+                                    })
+                                }
+
+
+                            </select>
+                        </div>
+                        <div className="flex">
 
                             <TextField
                                 id="standard-multiline-static"
                                 label="SSC Board Address"
                                 multiline
                                 name='sscAdd'
-                                rows={4}
+                                rows={6}
                                 variant="standard"
                                 onChange={(e) => { change(e) }}
                                 value={data.sscAdd}
-                                style={{ margin: '5px', width: '300px' }}
+                                style={{ margin: '5px', width: '500px' }}
                             />
 
 
@@ -140,11 +170,11 @@ const Recruitment = () => {
                                 label="Copy to Division"
                                 multiline
                                 name='sscDivision'
-                                rows={4}
+                                rows={6}
                                 variant="standard"
                                 onChange={(e) => { change(e) }}
                                 value={data.sscDivision}
-                                style={{ margin: '5px', width: '300px' }}
+                                style={{ margin: '5px', width: '500px' }}
                             />
                         </div>
 

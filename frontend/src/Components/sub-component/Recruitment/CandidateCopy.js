@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Header, Signatory } from '../MiniComponent/MiniComponent';
 import CloseIcon from '@mui/icons-material/Close';
+import LoginContext from '../../../Contexts/LoginContext';
 const CandidateCopy = ({ data, setShowData }) => {
+  const Login=useContext(LoginContext);
   var currentTime = new Date()
   var month = currentTime.getMonth() + 1
   var day = currentTime.getDate()
@@ -18,7 +20,7 @@ const CandidateCopy = ({ data, setShowData }) => {
 
   const caseMark = () => {
     return (
-      <p style={{ fontWeight: '600' }} className='text_center'>NO: IP/Phoolpur/{data.post}/Cycle - dated at Phoolpur the {/*date*/} 22.02.2023</p>
+      <p style={{ fontWeight: '600' }} className='text_center'>NO: IP/{Login.subDivision}/{data.post}/Cycle - dated at {Login.subDivision} the {date} </p>
 
     )
   }

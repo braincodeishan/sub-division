@@ -29,8 +29,12 @@ import Navbar from "./Components/Navbars/Navbar";
 import Recruitment from "./Components/MainComponents/Recruitment";
 import UpdateData from "./Components/sub-component/Data Upload/UpdateData";
 import PostData from "./Components/sub-component/PostData/PostData";
+import RegisterSetting from "./Components/sub-component/RegisterSetting/RegisterSetting";
 import Loading from "./Components/sub-component/Loading";
 import { SnackbarAlert } from "./Components/sub-component/Alert";
+
+// PLI cmponents
+import PLIRPLICommissionCalculator from "./PliComponents/PLIRPLICommissionCalculator";
 
 function MainApp() {
   const {alert, setAlert, loading}= useMisc();
@@ -47,8 +51,10 @@ function MainApp() {
           <Navbar />
 
           <Routes>
+            <Route exact path="/" element={<Login />} />
             <Route exact path="/Login" element={<Login />} />
             <Route exact path="/Register" element={<Register />} />
+            <Route exact path="/PLICommissions" element={<PLIRPLICommissionCalculator />} />
             <Route element={<ProtectedRoutes />}>
               <Route exact path="/Dashboard" element={<Dashboard />} />
               <Route exact path="/Diary" element={<Diary />} />
@@ -69,6 +75,8 @@ function MainApp() {
               <Route exact path="/AdditionalCharge" element={<AdditionalCharge />} />
               <Route exact path="/ChargeReport" element={<ChargeReport />} />
               <Route exact path="/PostData" element={<PostData />} />
+              <Route exact path="/RegisterSetting" element={<RegisterSetting />} />
+              
 
               <Route path="*" element={<Notfound />} />
             </Route>

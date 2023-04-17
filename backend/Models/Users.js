@@ -38,6 +38,10 @@ const Myschema=new mongoose.Schema({
         RH:Number,
         halfPayLeave:Number
     },
+    registerSetting:{
+        type:Boolean,
+        default:false,
+    },
     password:String
 })
 

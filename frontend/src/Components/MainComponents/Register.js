@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useMisc } from '../../Contexts/LoginProvider'
 import { useNavigate } from 'react-router'
 
+
 const Register = () => {
 
     const navigate = useNavigate();

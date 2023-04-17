@@ -1,0 +1,41 @@
+.RS_leftpane{
+    min-width: 200px;
+    min-height: 100vh;
+    /* box-shadow: 1px 1px 5px rgba(235, 235, 235 , 0.7); */
+    /* border-radius: 10px 10px 0 0; */
+}
+.RS_options{
+    min-height: 70px;
+    min-width: 100px;
+    background-color: rgb(255, 255, 255);
+    /* margin-bottom:1px ; */
+    border: 0.001px solid rgba(88, 88, 88,0.5);
+    /* box-shadow: 1px 1px 5px rgba(235, 235, 235 , 1); */
+}
+.RS_options:first-of-type{
+    /* margin-top: 1%; */
+    min-height: 35px;
+    /* border-radius: 10px 10px 0 0; */
+    /* background-color: rgb(227, 236, 255); */
+}
+.RS_options:first-of-type:hover{
+    
+    transform: scale(1);
+}
+.RS_options:hover{
+    background-color: rgb(227, 236, 255);
+    /* background-color: rgb(233, 233, 233); */
+    
+}
+.RS_options:hover p{
+transform: scale(1.1);
+}
+.RS_options p{
+    margin: 0;
+}
+.RS_right_margin{
+    /* margin-left: 5px; */
+    background-color: rgb(247, 247, 247);
+    width: 80%;
+    
+}

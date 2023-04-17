@@ -14,7 +14,9 @@ const AdditionalCharge = () => {
     const [attach, setAttach] = useState([{id:0}])
     const [showData, setShowData] = useState(true);
     const [discharge, setDischarge] = React.useState('');
-    const [post, setPost] = React.useState('');
+    const [data, setData] = React.useState({
+        post:""
+    });
     const handleChange = (e) => {
         setDischarge(e.target.value);
     };
@@ -107,7 +109,7 @@ const AdditionalCharge = () => {
                                                     <Select
                                                         labelId="demo-simple-select-standard-label"
                                                         id="demo-simple-select-standard"
-                                                        value={post}
+                                                        value={data.post}
                                                         label="Reason for Vacancy"
                                                         onChange={handleChange}
                                                         sx={{ minWidth: 120 }}
@@ -147,7 +149,7 @@ const AdditionalCharge = () => {
                     >Generate Order</Button>
 
                     </div>
-                </div>:<ShowAdditionalChargeOrder/>}
+                </div>:<ShowAdditionalChargeOrder data={data} setShowData={setShowData} />}
 
             </div>
         </>

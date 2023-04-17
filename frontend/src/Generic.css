@@ -52,6 +52,11 @@ background-color: rgb(255, 255, 255);
   text-decoration: underline;
 }
 
+.cursorPointer{
+  cursor: pointer;
+}
+
+
 .font10{
   font-size: 10pt;
 }

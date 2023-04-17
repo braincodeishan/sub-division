@@ -207,6 +207,16 @@ app.post('/register', async (req, res) => {
   }
 })
 
+app.post('/registerSetting', async (req, res) => {
+
+
+})
+
+
+
+
+
+
 app.get("/",(req,res)=>{
   res.send("Hello world, let's go Cloud");
 })

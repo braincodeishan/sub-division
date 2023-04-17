@@ -1,12 +1,19 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 import { IndiapostHeader, CopyToSPOs, CopyToPM } from '../MiniComponent/MiniComponent'
-const ShowChargeReport = ({data}) => {
+import CloseIcon from '@mui/icons-material/Close';
+const ShowChargeReport = ({data, setShowData}) => {
+  const [st,setst]=useState("none");
   useEffect(() => {
     window.print();
+    setst("block")
+    
   }, [])
 
   return (
     <div className='container'>
+      <div className='printNone' style={{ display: 'flex', justifyContent: 'right', alignItems: 'flex-end', cursor: 'pointer' }}>
+        <CloseIcon onClick={() => { setShowData(true) }} style={{display:st}}/>
+      </div>
       <p>ACG - 61</p>
       <IndiapostHeader />
       <p className='text_center'>(See Rule 267, Posts and Telegraphs Financial Hand book, Volume 1, Second Edition)</p>

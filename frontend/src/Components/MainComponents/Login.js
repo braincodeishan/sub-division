@@ -21,10 +21,18 @@ const Login = () => {
 
     useEffect(() => {
         if (Login.isLoggedin) {
-            setTimeout(() => {
-                setLoading(false)
-                navigate('/Dashboard')
-            }, 2000);
+            if(Login.isFirstLogIn){
+                setTimeout(() => {
+                    setLoading(false)
+                    navigate('/Dashboard')
+                }, 2000);
+            }else{
+                setTimeout(() => {
+                    setLoading(false)
+                    navigate('/RegisterSetting')
+                }, 2000);
+            }
+            
         }
     }, [Login.isLoggedin])
 
@@ -72,6 +80,7 @@ const Login = () => {
             if (result.data.status === 200) {
                 alertSuccess('Welcome ' + result.data.userData.personalInfo.name.toUpperCase()+" !");
                 Login.changelogin(true)
+                Login.setisFirstLogIn(result.data.userData.registerSetting)
                 Login.setName(result.data.userData.personalInfo.name)
                 Login.setPost(result.data.userData.personalInfo.post)
                 Login.setCircle(result.data.userData.office.circle)
