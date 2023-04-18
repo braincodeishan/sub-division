@@ -333,56 +333,48 @@ const IRS = () => {
             date: "",
             sbd: "",
             sbw: "",
+            date2:"",
             rdd: "",
-            rdw: "",
+            date3:"",
             tdd: "",
+            date4:"",
             ssad: "",
-            ippbd: "",
-            celc: "",
-            csc: "",
-            ippbw: "",
+            
+        },
+        {
+            date: "",
+            sbd: "",
+            sbw: "",
+            date2:"",
+            rdd: "",
+            date3:"",
+            tdd: "",
+            date4:"",
+            ssad: "",
 
         },
         {
             date: "",
             sbd: "",
             sbw: "",
+            date2:"",
             rdd: "",
-            rdw: "",
+            date3:"",
             tdd: "",
+            date4:"",
             ssad: "",
-            ippbd: "",
-            celc: "",
-            csc: "",
-            ippbw: "",
 
         },
         {
             date: "",
             sbd: "",
             sbw: "",
+            date2:"",
             rdd: "",
-            rdw: "",
+            date3:"",
             tdd: "",
+            date4:"",
             ssad: "",
-            ippbd: "",
-            celc: "",
-            csc: "",
-            ippbw: "",
-
-        },
-        {
-            date: "",
-            sbd: "",
-            sbw: "",
-            rdd: "",
-            rdw: "",
-            tdd: "",
-            ssad: "",
-            ippbd: "",
-            celc: "",
-            csc: "",
-            ippbw: "",
 
         }
 
@@ -1272,15 +1264,15 @@ const IRS = () => {
                                 ssbook.map((data, index) => {
                                     return <>
                                         <tr>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard"
+                                            <td><TextField id="standard-basic" label='Acc Number' variant="standard"
                                                 name='accountNo'
                                                 onBlur={(e) => updateArrayState(e, index,  setSSBook)}
                                             /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard"
+                                            <td><TextField id="standard-basic" label='Available/Not Available' variant="standard"
                                                 name='signature'
                                                 onBlur={(e) => updateArrayState(e, index,  setSSBook)}
                                             /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard"
+                                            <td><TextField id="standard-basic" label='Available/Not Available' variant="standard"
                                                 name='photograph'
                                                 onBlur={(e) => updateArrayState(e, index,  setSSBook)}
                                             /></td>
@@ -1316,12 +1308,12 @@ const IRS = () => {
                                 sbrd.map((data, index) => {
                                     return <>
                                         <tr>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='sbAccount' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='sbDLT' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='sbBAT' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='rdAccount' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='rdDLT' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='rdBAT' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
+                                            <td><TextField id="standard-basic" label='Acc No' variant="standard" name='sbAccount' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
+                                            <td><TextField id="standard-basic" label='DLT' variant="standard" name='sbDLT' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
+                                            <td><TextField id="standard-basic" label='Balance' variant="standard" name='sbBAT' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
+                                            <td><TextField id="standard-basic" label='Acc No' variant="standard" name='rdAccount' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
+                                            <td><TextField id="standard-basic" label='DLT' variant="standard" name='rdDLT' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
+                                            <td><TextField id="standard-basic" label='Balance' variant="standard" name='rdBAT' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
 
                                         </tr>
                                     </>
@@ -1348,12 +1340,12 @@ const IRS = () => {
                                 ssatd.map((data, index) => {
                                     return <>
                                         <tr>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='ssaAccount' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='ssaDLT' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='ssaBAT' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='tdAccount' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='tdDLT' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='tdBAT' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
+                                            <td><TextField id="standard-basic" label='Acc No' variant="standard" name='ssaAccount' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
+                                            <td><TextField id="standard-basic" label='DLT' variant="standard" name='ssaDLT' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
+                                            <td><TextField id="standard-basic" label='Balance' variant="standard" name='ssaBAT' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
+                                            <td><TextField id="standard-basic" label='Acc No' variant="standard" name='tdAccount' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
+                                            <td><TextField id="standard-basic" label='DLT' variant="standard" name='tdDLT' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
+                                            <td><TextField id="standard-basic" label='Balance' variant="standard" name='tdBAT' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
 
                                         </tr>
                                     </>
@@ -1372,29 +1364,29 @@ const IRS = () => {
                                 <th>Date</th>
                                 <th>SB Dep</th>
                                 <th>SB Wdl</th>
+                                <th>Date</th>
                                 <th>RD Dep</th>
+                                <th>Date</th>
                                 <th>TD Dep</th>
+                                <th>Date</th>
                                 <th>SSA Dep</th>
-                                <th>IPPB Dep</th>
-                                <th>CELC Dep</th>
-                                <th>CSC Dep</th>
-                                <th>IPPB Wdl</th>
+                               
 
                             </tr>
                             {
                                 txn.map((data, index) => {
                                     return <>
                                         <tr>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='date' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='sbd' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='sbw' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='rdd' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='rdw' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='tdd' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='ssad' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='ippbd' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='celc' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='ippbw' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
+                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
+                                            <td><TextField id="standard-basic" label='SB Dep' variant="standard" name='sbd' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
+                                            <td><TextField id="standard-basic" label='SB Wid' variant="standard" name='sbw' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
+                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date2' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
+                                            <td><TextField id="standard-basic" label='RD Dep' variant="standard" name='rdd' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
+                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date3' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
+                                            <td><TextField id="standard-basic" label='TD Dep' variant="standard" name='tdd' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
+                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date4' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
+                                            <td><TextField id="standard-basic" label='SSA Dep' variant="standard" name='ssad' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
+                                            
 
                                         </tr>
                                     </>
@@ -1410,7 +1402,7 @@ const IRS = () => {
 
                             <tr>
                                 <th>Policy Number</th>
-                                <th>Name of Policy holder</th>
+                                
                                 <th>DLC</th>
                                 <th>Premium</th>
                             </tr>
@@ -1419,9 +1411,9 @@ const IRS = () => {
                                 plipass.map((data, index) => {
                                     return <>
                                         <tr>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='policyNo' onBlur={(e) => updateArrayState(e, index,  setplipass)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='dlc' onBlur={(e) => updateArrayState(e, index,  setplipass)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='premium' onBlur={(e) => updateArrayState(e, index,  setplipass)} /></td>
+                                            <td><TextField id="standard-basic" label='Policy Number' variant="standard" name='policyNo' onBlur={(e) => updateArrayState(e, index,  setplipass)} /></td>
+                                            <td><TextField id="standard-basic" label='DLC' variant="standard" name='dlc' onBlur={(e) => updateArrayState(e, index,  setplipass)} /></td>
+                                            <td><TextField id="standard-basic" label='Premium' variant="standard" name='premium' onBlur={(e) => updateArrayState(e, index,  setplipass)} /></td>
 
 
                                         </tr>
@@ -1438,11 +1430,11 @@ const IRS = () => {
                         <p>PLI/RPLI Transactions</p>
                         <table className='table'>
                             <tr>
-                                <th>Data</th>
+                                <th>Date</th>
                                 <th>Amount</th>
-                                <th>Data</th>
+                                <th>Date</th>
                                 <th>Amount</th>
-                                <th>Data</th>
+                                <th>Date</th>
                                 <th>Amount</th>
                             </tr>
 
@@ -1450,11 +1442,11 @@ const IRS = () => {
                                 pli.map((data, index) => {
                                     return <>
                                         <tr>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='date1' onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
+                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date1' onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
                                             <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='amount1' onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='date2' onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
+                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date2' onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
                                             <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='amount2' onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='date3' onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
+                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date3' onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
                                             <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='amount3' onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
 
                                         </tr>
@@ -1476,7 +1468,7 @@ const IRS = () => {
 
                 }>SUBMIT</button>
 
-            </div> : <IRFinal pageS1={page1} pageS2={page2} pageS3={page3} pageS4={page4} pageS5={page5} pageS6={page6} pageS6DTR={page6DTR} sb26f={sb26f} ms87f={ms87f} sb28f={sb28f} plif={plif} ssbook={ssbook} sbrd={sbrd} ssatd={ssatd} txn={txn} plipass={plipass} pli={pli} page6Selects={page6Selects}/>}
+            </div> : <IRFinal pageS1={page1} pageS2={page2} pageS3={page3} pageS4={page4} pageS5={page5} pageS6={page6} pageS6DTR={page6DTR} sb26f={sb26f} ms87f={ms87f} sb28f={sb28f} plif={plif} ssbook={ssbook} sbrd={sbrd} ssatd={ssatd} txn={txn} plipass={plipass} pli={pli} page6Selects={page6Selects} setAbc={setAbc}/>}
         </div>
     )
 }
