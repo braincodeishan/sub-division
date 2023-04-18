@@ -554,15 +554,15 @@ top:20px; */
   font-size: 14px;
 }
 @media (max-width: 900px) {
-  /* .sidebar.close .nav-links li .sub-menu{
+  .sidebar.close .nav-links li .sub-menu{
     display: none;
-  } */
-  /* .sidebar{
+  } 
+   .sidebar{
       display: none;
-  } */
-  /* .bx-menu{
+  } 
+  .bx-menu{
 display: block;  
-} */
+} 
 .blob-dashboard{
   display: none;
 }
