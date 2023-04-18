@@ -482,59 +482,59 @@ const IRS = () => {
                         </tr>
                         <tr>
                             <td><p className='Details'>Inspection date</p></td>
-                            <td><TextField id="standard-basic" label="Inspection date" variant="standard" name='inspectionDate'
+                            <td><TextField id="standard-basic" label="Inspection date" variant="standard" name='inspectionDate' defaultValue={page1.inspectionDate}
                                 onBlur={(e) => updateTextbox(e,  setPage1)}
 
                             /></td>
                             </tr>
                         <tr>
                             <td><p className='Details'>Name of The BO</p></td>
-                            <td><TextField id="standard-basic" label="BO Name" variant="standard" name='BO'
+                            <td><TextField id="standard-basic" label="BO Name" variant="standard" name='BO' defaultValue={page1.BO}
                                 onBlur={(e) => updateTextbox(e,  setPage1)}
 
                             /></td>
                         </tr><tr>
                             <td><p className='Details'>Name of The AO</p></td>
-                            <td><TextField id="standard-basic" label="AO Name" variant="standard" name='AO'
+                            <td><TextField id="standard-basic" label="AO Name" variant="standard" name='AO' defaultValue={page1.AO}
                                 onBlur={(e) => updateTextbox(e,  setPage1)}
                             /></td>
                         </tr><tr>
                             <td><p className='Details'>Name of The HO</p></td>
-                            <td><TextField id="standard-basic" label="HO Name" variant="standard" name='HO'
+                            <td><TextField id="standard-basic" label="HO Name" variant="standard" name='HO' defaultValue={page1.HO}
                                 onBlur={(e) => updateTextbox(e,  setPage1)}
                             /></td>
                         </tr><tr>
                             <td><p className='Details'>Facility ID</p></td>
-                            <td><TextField id="standard-basic" label="Facility ID" variant="standard"
+                            <td><TextField id="standard-basic" label="Facility ID" variant="standard" defaultValue={page1.facilityID}
                                 name='facilityID'
                                 onBlur={(e) => updateTextbox(e,  setPage1)}
                             /></td>
                         </tr><tr>
                             <td><p className='Details'>Profit/Cost Center</p></td>
-                            <td><TextField id="standard-basic" label="Profit Center" variant="standard"
+                            <td><TextField id="standard-basic" label="Profit Center" variant="standard" defaultValue={page1.profitCenter}
                                 name='profitCenter'
                                 onBlur={(e) => updateTextbox(e,  setPage1)} /></td>
                         </tr><tr>
                             <td><p className='Details'>Date of Opening of BO</p></td>
-                            <td><TextField id="standard-basic" label="BO Opening Date" variant="standard"
+                            <td><TextField id="standard-basic" label="BO Opening Date" variant="standard" defaultValue={page1.BOopening}
                                 name='BOopening'
                                 onBlur={(e) => updateTextbox(e,  setPage1)}
                             /></td>
                         </tr><tr>
                             <td><p className='Details'>Date of Last inspection by SSPOs/SPOs</p></td>
-                            <td><TextField id="standard-basic" label="DLI of SSPOs" variant="standard"
+                            <td><TextField id="standard-basic" label="DLI of SSPOs" variant="standard" defaultValue={page1.DLISSP}
                                 name='DLISSP'
                                 onBlur={(e) => updateTextbox(e,  setPage1)}
                             /></td>
                         </tr><tr>
                             <td><p className='Details'>Date of Last Inspection</p></td>
-                            <td><TextField id="standard-basic" label="DLI" variant="standard" name='DLI'
+                            <td><TextField id="standard-basic" label="DLI" variant="standard" name='DLI' defaultValue={page1.DLI}
                                 onBlur={(e) => updateTextbox(e,  setPage1)}
                             /></td>
                         </tr><tr>
                         </tr><tr>
                             <td><p className='Details'>Last Inspected By</p></td>
-                            <td><TextField id="standard-basic" label="Inspected By" variant="standard"
+                            <td><TextField id="standard-basic" label="Inspected By" variant="standard" defaultValue={page1.DLIby}
                                 name='DLIby'
                                 onBlur={(e) => updateTextbox(e,  setPage1)}
 
@@ -542,13 +542,13 @@ const IRS = () => {
                         </tr><tr>
                         </tr><tr>
                             <td><p className='Details'>Date of Subsequential Visits</p></td>
-                            <td><TextField id="standard-basic" label="Subsequential Visit" variant="standard"
+                            <td><TextField id="standard-basic" label="Subsequential Visit" variant="standard" defaultValue={page1.SubsequentVisit}
                                 name='SubsequentVisit'
                                 onBlur={(e) => updateTextbox(e,  setPage1)} /></td>
                         </tr><tr>
                         </tr><tr>
                             <td><p className='Details'>Date of Visits by Mail Overseer</p></td>
-                            <td><TextField id="standard-basic" label="Mail Overseer Visit" variant="standard"
+                            <td><TextField id="standard-basic" label="Mail Overseer Visit" variant="standard" defaultValue={page1.MOVisit}
                                 name='MOVisit'
                                 onBlur={(e) => updateTextbox(e,  setPage1)} /></td>
                         </tr>
@@ -566,8 +566,8 @@ const IRS = () => {
                         </tr>
                         <tr>
                             <td><p className='Details'>Receipt of Mail</p></td>
-                            <td colSpan="2"><TextField id="standard-basic" variant="standard"
-                                name='rom'
+                            <td colSpan="2"><TextField id="standard-basic" variant="standard" 
+                                name='rom' 
                                 onBlur={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.rom} /></td>
                         </tr>
                         <tr>
@@ -602,22 +602,22 @@ const IRS = () => {
                         </tr>
                         <tr>
                             <td><p className='Details'>Location Of BO</p></td>
-                            <td colSpan="2"><TextField id="standard-basic" label="BO Location" variant="standard" name='location'
+                            <td colSpan="2"><TextField id="standard-basic" label="BO Location" variant="standard" name='location' defaultValue={page2.location}
                                 onBlur={(e) => updateTextbox(e,  setPage2)} /></td>
                         </tr>
                         <tr>
                             <td><p className='Details'>Villages Served</p></td>
-                            <td colSpan="2"><TextField id="standard-basic" label="Villages Details" variant="standard" name='village'
-                                onBlur={(e) => updateTextbox(e,  setPage2)} /></td>
+                            <td colSpan="2"><TextField id="standard-basic" label="Villages Details" variant="standard" name='village' defaultValue={page2.village}
+                                onBlur={(e) => updateTextbox(e,  setPage2)} /></td> 
                         </tr>
                         <tr>
                             <td><p className='Details'>Panchayat Headquarters</p></td>
-                            <td colSpan="2"><TextField id="standard-basic" label="Panchayat HQ" variant="standard" name='panchayat'
+                            <td colSpan="2"><TextField id="standard-basic" label="Panchayat HQ" variant="standard" name='panchayat' defaultValue={page2.panchayat}
                                 onBlur={(e) => updateTextbox(e,  setPage2)} /></td>
                         </tr>
                         <tr>
                             <td><p className='Details'>Mail Arrangement</p></td>
-                            <td colSpan="2"><TextField id="standard-basic" variant="standard" name='mailArrangement'
+                            <td colSpan="2"><TextField id="standard-basic" variant="standard" name='mailArrangement' 
                                 onBlur={(e) => updateTextbox(e,  setPage2)} defaultValue={page2.mailArrangement} /></td>
                         </tr>
                     </table>
@@ -639,25 +639,25 @@ const IRS = () => {
 
                     {page3.map((data, index) => {
                         return <tr key={index}>
-                            <td><TextField id="standard-basic" variant="standard"
+                            <td><TextField id="standard-basic" variant="standard" defaultValue={data.Name}
                                 name='Name'
                                 onBlur={(e) => updateArrayState(e, index,  setPage3)} /></td>
-                            <td><TextField id="standard-basic" placeholder='GDSBPM' variant="standard"
+                            <td><TextField id="standard-basic" placeholder='GDSBPM' variant="standard" defaultValue={data.Designation}
                                 name='Designation'
                                 onBlur={(e) => updateArrayState(e, index,  setPage3)} /></td>
-                            <td><TextField id="standard-basic" variant="standard"
+                            <td><TextField id="standard-basic" variant="standard"  defaultValue={data.Community}
                                 name='Community'
                                 onBlur={(e) => updateArrayState(e, index,  setPage3)} /></td>
-                            <td><TextField id="standard-basic" variant="standard"
+                            <td><TextField id="standard-basic" variant="standard" defaultValue={data.EmployeeId}
                                 name='EmployeeId'
                                 onBlur={(e) => updateArrayState(e, index,  setPage3)} /></td>
-                            <td><TextField id="standard-basic" variant="standard"
+                            <td><TextField id="standard-basic" variant="standard" defaultValue={data.TRCA}
                                 name='TRCA'
                                 onBlur={(e) => updateArrayState(e, index,  setPage3)} /></td>
-                            <td><TextField id="standard-basic" variant="standard"
+                            <td><TextField id="standard-basic" variant="standard" defaultValue={data.DOB}
                                 name='DOB'
                                 onBlur={(e) => updateArrayState(e, index,  setPage3)} /></td>
-                            <td><TextField id="standard-basic" variant="standard"
+                            <td><TextField id="standard-basic" variant="standard" defaultValue={data.DOJ}
                                 name='DOJ'
                                 onBlur={(e) => updateArrayState(e, index,  setPage3)} /></td>
 
@@ -749,49 +749,49 @@ const IRS = () => {
                         </tr>
                         <tr>
                             <td>Main Computing Device (MCD)</td>
-                            <td><TextField id="standard-basic" variant="standard"
+                            <td><TextField id="standard-basic" variant="standard" defaultValue={page5.mcd}
                                 name='mcd'
                                 onBlur={(e) => updateTextbox(e,  setPage5)}
                             /></td>
                         </tr>
                         <tr>
                             <td>IMEI Number of MCD</td>
-                            <td><TextField id="standard-basic" variant="standard"
+                            <td><TextField id="standard-basic" variant="standard" defaultValue={page5.imeiNumber}
                                 name='imeiNumber'
                                 onBlur={(e) => updateTextbox(e,  setPage5)}
                             /></td>
                         </tr>
                         <tr>
-                            <td>Kaifya/Sunyard Pin Pad (P-90)</td>
-                            <td><TextField id="standard-basic" variant="standard"
+                            <td>Kaifya/Sunyard Pin Pad (P-90)</td> 
+                            <td><TextField id="standard-basic" variant="standard" defaultValue={page5.kaifa}
                                 name='kaifa'
                                 onBlur={(e) => updateTextbox(e,  setPage5)}
                             /></td>
                         </tr>
                         <tr>
                             <td>Barcode Scanner</td>
-                            <td><TextField id="standard-basic" variant="standard"
+                            <td><TextField id="standard-basic" variant="standard" defaultValue={page5.barcode}
                                 name='barcode'
                                 onBlur={(e) => updateTextbox(e,  setPage5)}
                             /></td>
                         </tr>
                         <tr>
                             <td>IPPB Smart phone supplied to the BPM / ABPM</td>
-                            <td><TextField id="standard-basic" variant="standard"
+                            <td><TextField id="standard-basic" variant="standard" defaultValue={page5.ippbphone}
                                 name='ippbphone'
                                 onBlur={(e) => updateTextbox(e,  setPage5)}
                             /></td>
                         </tr>
                         <tr>
                             <td>Solar UPS</td>
-                            <td><TextField id="standard-basic" variant="standard"
+                            <td><TextField id="standard-basic" variant="standard" defaultValue={page5.solar}
                                 name='solar'
                                 onBlur={(e) => updateTextbox(e,  setPage5)}
                             /></td>
                         </tr>
                         <tr>
                             <td>Type of the NSP SIM supplied and activated in the Device</td>
-                            <td><TextField id="standard-basic" variant="standard"
+                            <td><TextField id="standard-basic" variant="standard" defaultValue={page5.sim}
                                 name='sim'
                                 onBlur={(e) => updateTextbox(e,  setPage5)}
                             /></td>
@@ -807,7 +807,7 @@ const IRS = () => {
                     <table className='table'>
                         <tr>
                             <td>Signal Strength</td>
-                            <td><TextField id="standard-basic" variant="standard" 
+                            <td><TextField id="standard-basic" variant="standard"  defaultValue={page6.signal}
                             name='signal'
                             onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                         </tr>
@@ -918,37 +918,37 @@ const IRS = () => {
                         </tr>
                         <tr>
                             <td>Article in deposit</td>
-                            <td><TextField id="standard-basic" variant="standard" 
+                            <td><TextField id="standard-basic" variant="standard" defaultValue={page6.articleDeposit}
                             name='articleDeposit'
                             onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                         </tr>
                         <tr>
                             <td>Article Beyond prescribed period</td>
-                            <td><TextField id="standard-basic" variant="standard" 
+                            <td><TextField id="standard-basic" variant="standard" defaultValue={page6.articleBeyondPrescribedPeriod}
                             name='articleBeyondPrescribedPeriod'
                             onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                         </tr>
                         <tr>
                             <td>Missent Article</td>
-                            <td><TextField id="standard-basic" variant="standard" 
+                            <td><TextField id="standard-basic" variant="standard" defaultValue={page6.Missent}
                             name='Missent'
                             onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                         </tr>
                         <tr>
                             <td>VP Article since DLI if any</td>
-                            <td><TextField id="standard-basic" variant="standard" 
+                            <td><TextField id="standard-basic" variant="standard" defaultValue={page6.VParticle}
                             name='VParticle'
                             onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                         </tr>
                         <tr>
                             <td>Number of Letterboxes</td>
-                            <td><TextField id="standard-basic" variant="standard" 
+                            <td><TextField id="standard-basic" variant="standard" defaultValue={page6.noLetterBox}
                             name='noLetterBox'
                             onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                         </tr>
                         <tr>
                             <td>Number of EMO Payments in year</td>
-                            <td><TextField id="standard-basic" variant="standard" 
+                            <td><TextField id="standard-basic" variant="standard" defaultValue={page6.emoPayment}
                             name='emoPayment'
                             onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                         </tr>
@@ -959,41 +959,41 @@ const IRS = () => {
                     <table className='table'>
                         <tr>
                             <td>Articles in bag on Inspection day</td>
-                            <td><TextField id="standard-basic" label='SP' variant="standard" 
+                            <td><TextField id="standard-basic" label='SP' variant="standard"  defaultValue={page6.sp}
                             name='sp'
                             onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
-                            <td><TextField id="standard-basic" label='RL' variant="standard" 
+                            <td><TextField id="standard-basic" label='RL' variant="standard" defaultValue={page6.rl}
                             name='rl'
                             onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
-                            <td><TextField id="standard-basic" label='PARCEL' variant="standard" 
+                            <td><TextField id="standard-basic" label='PARCEL' variant="standard" defaultValue={page6.parcel}
                             name='parcel'
                             onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
-                            <td><TextField id="standard-basic" label='EMO' variant="standard" 
+                            <td><TextField id="standard-basic" label='EMO' variant="standard" defaultValue={page6.emo}
                             name='emo'
                             onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
-                            <td><TextField id="standard-basic" label='ORD' variant="standard" 
+                            <td><TextField id="standard-basic" label='ORD' variant="standard" defaultValue={page6.ord}
                             name='ord'
                             onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
-                            <td><TextField id="standard-basic" label='VP/COD' variant="standard" 
+                            <td><TextField id="standard-basic" label='VP/COD' variant="standard" defaultValue={page6.vpcod}
                             name='vpcod'
                             onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                         </tr>
                     </table>
                     <table className='table'>
                         <tr>
-                            <th>Cash<Checkbox label="Available" defaultChecked name='dtrTallied'
+                            <th>Cash<Checkbox label="Available" defaultChecked name='dtrTallied' defaultValue={page6.dtrTallied}
                                 onChange={(e) => {updateCheckBox(e,setPage6)}} /><>DTR Tallied </></th>
                             <th>Postage Stamp</th>
                             <th>Revenue Stamp</th>
                         </tr>
                         <tr>
-                            <td><TextField id="standard-basic" label='CASH' variant="standard" 
+                            <td><TextField id="standard-basic" label='CASH' variant="standard"  defaultValue={page6.cash}
                             name='cash'
                             onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
-                            <td><TextField id="standard-basic" label='PS' variant="standard" 
+                            <td><TextField id="standard-basic" label='PS' variant="standard" defaultValue={page6.ps}
                             name='ps'
                             onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
-                            <td><TextField id="standard-basic" label='RS' variant="standard" 
+                            <td><TextField id="standard-basic" label='RS' variant="standard" defaultValue={page6.rs}
                             name='rs'
                             onBlur={(e) => updateTextbox(e,  setPage6)} /></td>
                         </tr>
@@ -1007,10 +1007,10 @@ const IRS = () => {
                         {page6DTR.map((data, index) => {
                             return <><tr>
 
-                                <td><TextField id="standard-basic" label='Date' variant="standard" name="date"
+                                <td><TextField id="standard-basic" label='Date' variant="standard" name="date" defaultValue={page6.date}
                                     onBlur={(e) => updateArrayState(e, index,  setPage6DTR)} /></td>
-                                <td><TextField id="standard-basic" label='BO Summary' variant="standard" name="boBal" onBlur={(e) => updateArrayState(e, index,  setPage6DTR)} /></td>
-                                <td><TextField id="standard-basic" label='DTR' variant="standard" name="dtrBal" onBlur={(e) => updateArrayState(e, index,  setPage6DTR)} /></td>
+                                <td><TextField id="standard-basic" label='BO Summary' variant="standard" name="boBal" defaultValue={page6.boBal} onBlur={(e) => updateArrayState(e, index,  setPage6DTR)} /></td>
+                                <td><TextField id="standard-basic" label='DTR' variant="standard" name="dtrBal" defaultValue={page6.dtrBal} onBlur={(e) => updateArrayState(e, index,  setPage6DTR)} /></td>
                             </tr></>
                         })}
 
@@ -1040,13 +1040,13 @@ const IRS = () => {
                                     return (<tr key={index}>
 
                                         <td>SB26</td>
-                                        <td><TextField id="standard-basic" label='BOOK NUMBER' variant="standard" name='bookNo' onBlur={(e) => updateArrayState(e, index,  setsb26f)} /></td>
-                                        <td><TextField id="standard-basic" label='from RECEIPT NO' variant="standard" name='from' onBlur={(e) => updateArrayState(e, index,  setsb26f)} /></td>
-                                        <td><TextField id="standard-basic" label='DATE' variant="standard" name='fromdate' onBlur={(e) => updateArrayState(e, index,  setsb26f)} /></td>
-                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='fromamount' onBlur={(e) => updateArrayState(e, index,  setsb26f)} /></td>
-                                        <td><TextField id="standard-basic" label='to RECEIPT NO' variant="standard" name='to' onBlur={(e) => updateArrayState(e, index,  setsb26f)} /></td>
-                                        <td><TextField id="standard-basic" label='DATE' variant="standard" name='todate' onBlur={(e) => updateArrayState(e, index,  setsb26f)} /></td>
-                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='toamount' onBlur={(e) => updateArrayState(e, index,  setsb26f)} /></td>
+                                        <td><TextField id="standard-basic" label='BOOK NUMBER' variant="standard" name='bookNo'  defaultValue={data.bookNo} onBlur={(e) => updateArrayState(e, index,  setsb26f)} /></td>
+                                        <td><TextField id="standard-basic" label='from RECEIPT NO' variant="standard" name='from'  defaultValue={data.from} onBlur={(e) => updateArrayState(e, index,  setsb26f)} /></td>
+                                        <td><TextField id="standard-basic" label='DATE' variant="standard" name='fromdate'  defaultValue={data.fromdate} onBlur={(e) => updateArrayState(e, index,  setsb26f)} /></td>
+                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='fromamount'  defaultValue={data.fromamount} onBlur={(e) => updateArrayState(e, index,  setsb26f)} /></td>
+                                        <td><TextField id="standard-basic" label='to RECEIPT NO' variant="standard" name='to' defaultValue={data.to}  onBlur={(e) => updateArrayState(e, index,  setsb26f)} /></td>
+                                        <td><TextField id="standard-basic" label='DATE' variant="standard" name='todate' defaultValue={data.todate}  onBlur={(e) => updateArrayState(e, index,  setsb26f)} /></td>
+                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='toamount' defaultValue={data.toamount}  onBlur={(e) => updateArrayState(e, index,  setsb26f)} /></td>
                                     </tr>)
 
                                 })
@@ -1090,13 +1090,13 @@ const IRS = () => {
                                     return (<tr key={index}>
 
                                         <td>SB28</td>
-                                        <td><TextField id="standard-basic" label='BOOK NUMBER' variant="standard" name='bookNo' onBlur={(e) => updateArrayState(e, index,  setsb28f)} /></td>
-                                        <td><TextField id="standard-basic" label='from RECEIPT NO' variant="standard" name='from' onBlur={(e) => updateArrayState(e, index,  setsb28f)} /></td>
-                                        <td><TextField id="standard-basic" label='DATE' variant="standard" name='fromdate' onBlur={(e) => updateArrayState(e, index,  setsb28f)} /></td>
-                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='fromamount' onBlur={(e) => updateArrayState(e, index,  setsb28f)} /></td>
-                                        <td><TextField id="standard-basic" label='to RECEIPT NO' variant="standard" name='to' onBlur={(e) => updateArrayState(e, index,  setsb28f)} /></td>
-                                        <td><TextField id="standard-basic" label='DATE' variant="standard" name='todate' onBlur={(e) => updateArrayState(e, index,  setsb28f)} /></td>
-                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='toamount' onBlur={(e) => updateArrayState(e, index,  setsb28f)} /></td>
+                                        <td><TextField id="standard-basic" label='BOOK NUMBER' variant="standard" name='bookNo'  defaultValue={data.bookNo} onBlur={(e) => updateArrayState(e, index,  setsb28f)} /></td>
+                                        <td><TextField id="standard-basic" label='from RECEIPT NO' variant="standard" name='from'  defaultValue={data.from} onBlur={(e) => updateArrayState(e, index,  setsb28f)} /></td>
+                                        <td><TextField id="standard-basic" label='DATE' variant="standard" name='fromdate'  defaultValue={data.fromdate} onBlur={(e) => updateArrayState(e, index,  setsb28f)} /></td>
+                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='fromamount'  defaultValue={data.fromamount} onBlur={(e) => updateArrayState(e, index,  setsb28f)} /></td>
+                                        <td><TextField id="standard-basic" label='to RECEIPT NO' variant="standard" name='to'  defaultValue={data.to} onBlur={(e) => updateArrayState(e, index,  setsb28f)} /></td>
+                                        <td><TextField id="standard-basic" label='DATE' variant="standard" name='todate'  defaultValue={data.todate} onBlur={(e) => updateArrayState(e, index,  setsb28f)} /></td>
+                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='toamount' defaultValue={data.toamount}  onBlur={(e) => updateArrayState(e, index,  setsb28f)} /></td>
                                     </tr>)
 
                                 })
@@ -1140,25 +1140,25 @@ const IRS = () => {
                                     return (<tr key={index}>
 
                                         <td>PLI/RPLI</td>
-                                        <td><TextField id="standard-basic" label='BOOK NUMBER' variant="standard"
+                                        <td><TextField id="standard-basic" label='BOOK NUMBER' variant="standard" defaultValue={data.bookNo}
                                             name='bookNo'
                                             onBlur={(e) => updateArrayState(e, index,  setplif)} /></td>
-                                        <td><TextField id="standard-basic" label='from RECEIPT NO' variant="standard"
+                                        <td><TextField id="standard-basic" label='from RECEIPT NO' variant="standard" defaultValue={data.from}
                                             name='from'
                                             onBlur={(e) => updateArrayState(e, index,  setplif)} /></td>
-                                        <td><TextField id="standard-basic" label='DATE' variant="standard"
+                                        <td><TextField id="standard-basic" label='DATE' variant="standard" defaultValue={data.fromdate}
                                             name='fromdate'
                                             onBlur={(e) => updateArrayState(e, index,  setplif)} /></td>
-                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard"
+                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard" defaultValue={data.fromamount}
                                             name='fromamount'
                                             onBlur={(e) => updateArrayState(e, index,  setplif)} /></td>
-                                        <td><TextField id="standard-basic" label='to RECEIPT NO' variant="standard"
+                                        <td><TextField id="standard-basic" label='to RECEIPT NO' variant="standard" defaultValue={data.to}
                                             name='to'
                                             onBlur={(e) => updateArrayState(e, index,  setplif)} /></td>
-                                        <td><TextField id="standard-basic" label='DATE' variant="standard"
+                                        <td><TextField id="standard-basic" label='DATE' variant="standard" defaultValue={data.todate}
                                             name='todate'
                                             onBlur={(e) => updateArrayState(e, index,  setplif)} /></td>
-                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard"
+                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard" defaultValue={data.toamount}
                                             name='toamount'
                                             onBlur={(e) => updateArrayState(e, index,  setplif)} /></td>
                                     </tr>)
@@ -1204,27 +1204,27 @@ const IRS = () => {
                                     return (<tr key={index}>
 
                                         <td>MS87</td>
-                                        <td><TextField id="standard-basic" label='from RECEIPT NO' variant="standard"
+                                        <td><TextField id="standard-basic" label='from RECEIPT NO' variant="standard" defaultValue={data.from}
                                             name='from'
                                             onBlur={(e) => updateArrayState(e, index,  setms87f)}
                                         /></td>
-                                        <td><TextField id="standard-basic" label='DATE' variant="standard"
+                                        <td><TextField id="standard-basic" label='DATE' variant="standard" defaultValue={data.fromdate}
                                             name='fromdate'
                                             onBlur={(e) => updateArrayState(e, index,  setms87f)}
                                         /></td>
-                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard"
+                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard" defaultValue={data.fromamount}
                                             name='fromamount'
                                             onBlur={(e) => updateArrayState(e, index,  setms87f)}
                                         /></td>
-                                        <td><TextField id="standard-basic" label='to RECEIPT NO' variant="standard"
+                                        <td><TextField id="standard-basic" label='to RECEIPT NO' variant="standard" defaultValue={data.to}
                                             name='to'
                                             onBlur={(e) => updateArrayState(e, index,  setms87f)}
                                         /></td>
-                                        <td><TextField id="standard-basic" label='DATE' variant="standard"
+                                        <td><TextField id="standard-basic" label='DATE' variant="standard" defaultValue={data.todate}
                                             name='todate'
                                             onBlur={(e) => updateArrayState(e, index,  setms87f)}
                                         /></td>
-                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard"
+                                        <td><TextField id="standard-basic" label='AMOUNT' variant="standard" defaultValue={data.toamount}
                                             name='toamount'
                                             onBlur={(e) => updateArrayState(e, index,  setms87f)}
                                         /></td>
@@ -1264,15 +1264,15 @@ const IRS = () => {
                                 ssbook.map((data, index) => {
                                     return <>
                                         <tr>
-                                            <td><TextField id="standard-basic" label='Acc Number' variant="standard"
+                                            <td><TextField id="standard-basic" label='Acc Number' variant="standard" defaultValue={data.accountNo}
                                                 name='accountNo'
                                                 onBlur={(e) => updateArrayState(e, index,  setSSBook)}
                                             /></td>
-                                            <td><TextField id="standard-basic" label='Available/Not Available' variant="standard"
+                                            <td><TextField id="standard-basic" label='Available/Not Available' variant="standard" defaultValue={data.accountNo}
                                                 name='signature'
                                                 onBlur={(e) => updateArrayState(e, index,  setSSBook)}
                                             /></td>
-                                            <td><TextField id="standard-basic" label='Available/Not Available' variant="standard"
+                                            <td><TextField id="standard-basic" label='Available/Not Available' variant="standard" defaultValue={data.accountNo}
                                                 name='photograph'
                                                 onBlur={(e) => updateArrayState(e, index,  setSSBook)}
                                             /></td>
@@ -1308,12 +1308,12 @@ const IRS = () => {
                                 sbrd.map((data, index) => {
                                     return <>
                                         <tr>
-                                            <td><TextField id="standard-basic" label='Acc No' variant="standard" name='sbAccount' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
-                                            <td><TextField id="standard-basic" label='DLT' variant="standard" name='sbDLT' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
-                                            <td><TextField id="standard-basic" label='Balance' variant="standard" name='sbBAT' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
-                                            <td><TextField id="standard-basic" label='Acc No' variant="standard" name='rdAccount' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
-                                            <td><TextField id="standard-basic" label='DLT' variant="standard" name='rdDLT' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
-                                            <td><TextField id="standard-basic" label='Balance' variant="standard" name='rdBAT' onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
+                                            <td><TextField id="standard-basic" label='Acc No' variant="standard" name='sbAccount' defaultValue={data.sbAccount} onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
+                                            <td><TextField id="standard-basic" label='DLT' variant="standard" name='sbDLT' defaultValue={data.sbDLT} onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
+                                            <td><TextField id="standard-basic" label='Balance' variant="standard" name='sbBAT' defaultValue={data.sbBAT} onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
+                                            <td><TextField id="standard-basic" label='Acc No' variant="standard" name='rdAccount' defaultValue={data.rdAccount} onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
+                                            <td><TextField id="standard-basic" label='DLT' variant="standard" name='rdDLT' defaultValue={data.rdDLT} onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
+                                            <td><TextField id="standard-basic" label='Balance' variant="standard" name='rdBAT' defaultValue={data.rdBAT} onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
 
                                         </tr>
                                     </>
@@ -1340,12 +1340,12 @@ const IRS = () => {
                                 ssatd.map((data, index) => {
                                     return <>
                                         <tr>
-                                            <td><TextField id="standard-basic" label='Acc No' variant="standard" name='ssaAccount' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
-                                            <td><TextField id="standard-basic" label='DLT' variant="standard" name='ssaDLT' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
-                                            <td><TextField id="standard-basic" label='Balance' variant="standard" name='ssaBAT' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
-                                            <td><TextField id="standard-basic" label='Acc No' variant="standard" name='tdAccount' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
-                                            <td><TextField id="standard-basic" label='DLT' variant="standard" name='tdDLT' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
-                                            <td><TextField id="standard-basic" label='Balance' variant="standard" name='tdBAT' onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
+                                            <td><TextField id="standard-basic" label='Acc No' variant="standard" name='ssaAccount' defaultValue={data.ssaAccount} onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
+                                            <td><TextField id="standard-basic" label='DLT' variant="standard" name='ssaDLT' defaultValue={data.ssaDLT} onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
+                                            <td><TextField id="standard-basic" label='Balance' variant="standard" name='ssaBAT' defaultValue={data.ssaBAT} onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
+                                            <td><TextField id="standard-basic" label='Acc No' variant="standard" name='tdAccount' defaultValue={data.tdAccount} onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
+                                            <td><TextField id="standard-basic" label='DLT' variant="standard" name='tdDLT' defaultValue={data.tdDLT} onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
+                                            <td><TextField id="standard-basic" label='Balance' variant="standard" name='tdBAT' defaultValue={data.tdBAT} onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
 
                                         </tr>
                                     </>
@@ -1377,15 +1377,15 @@ const IRS = () => {
                                 txn.map((data, index) => {
                                     return <>
                                         <tr>
-                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='SB Dep' variant="standard" name='sbd' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='SB Wid' variant="standard" name='sbw' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date2' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='RD Dep' variant="standard" name='rdd' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date3' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='TD Dep' variant="standard" name='tdd' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date4' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='SSA Dep' variant="standard" name='ssad' onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
+                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date' defaultValue={data.date} onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
+                                            <td><TextField id="standard-basic" label='SB Dep' variant="standard" name='sbd' defaultValue={data.sbd} onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
+                                            <td><TextField id="standard-basic" label='SB Wid' variant="standard" name='sbw' defaultValue={data.sbw} onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
+                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date2' defaultValue={data.date2} onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
+                                            <td><TextField id="standard-basic" label='RD Dep' variant="standard" name='rdd' defaultValue={data.rdd} onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
+                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date3' defaultValue={data.date3} onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
+                                            <td><TextField id="standard-basic" label='TD Dep' variant="standard" name='tdd' defaultValue={data.tdd} onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
+                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date4' defaultValue={data.date4} onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
+                                            <td><TextField id="standard-basic" label='SSA Dep' variant="standard" name='ssad' defaultValue={data.ssad} onBlur={(e) => updateArrayState(e, index,  setTXN)} /></td>
                                             
 
                                         </tr>
@@ -1411,9 +1411,9 @@ const IRS = () => {
                                 plipass.map((data, index) => {
                                     return <>
                                         <tr>
-                                            <td><TextField id="standard-basic" label='Policy Number' variant="standard" name='policyNo' onBlur={(e) => updateArrayState(e, index,  setplipass)} /></td>
-                                            <td><TextField id="standard-basic" label='DLC' variant="standard" name='dlc' onBlur={(e) => updateArrayState(e, index,  setplipass)} /></td>
-                                            <td><TextField id="standard-basic" label='Premium' variant="standard" name='premium' onBlur={(e) => updateArrayState(e, index,  setplipass)} /></td>
+                                            <td><TextField id="standard-basic" label='Policy Number' variant="standard" name='policyNo' defaultValue={data.policyNo} onBlur={(e) => updateArrayState(e, index,  setplipass)} /></td>
+                                            <td><TextField id="standard-basic" label='DLC' variant="standard" name='dlc' defaultValue={data.dlc} onBlur={(e) => updateArrayState(e, index,  setplipass)} /></td>
+                                            <td><TextField id="standard-basic" label='Premium' variant="standard" name='premium' defaultValue={data.premium} onBlur={(e) => updateArrayState(e, index,  setplipass)} /></td>
 
 
                                         </tr>
@@ -1442,12 +1442,12 @@ const IRS = () => {
                                 pli.map((data, index) => {
                                     return <>
                                         <tr>
-                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date1' onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='amount1' onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
-                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date2' onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='amount2' onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
-                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date3' onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
-                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='amount3' onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
+                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date1' defaultValue={data.date1} onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='amount1' defaultValue={data.amount1} onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
+                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date2' defaultValue={data.date2} onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='amount2' defaultValue={data.amount2} onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
+                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date3' defaultValue={data.date3} onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
+                                            <td><TextField id="standard-basic" label='AMOUNT' variant="standard" name='amount3' defaultValue={data.amount3} onBlur={(e) => updateArrayState(e, index,  setpli)} /></td>
 
                                         </tr>
                                     </>
