@@ -118,33 +118,33 @@ const IRS = () => {
     const [page6DTR, setPage6DTR] = useState([
         {
             date: "",
-            boBal: "",
-            dtrBal: ""
+            boBal: "उपलब्ध है",
+            dtrBal: "उपलब्ध है"
         },
         {
             date: "",
-            boBal: "",
-            dtrBal: ""
+            boBal: "उपलब्ध है",
+            dtrBal: "उपलब्ध है"
         },
         {
             date: "",
-            boBal: "",
-            dtrBal: ""
+            boBal: "उपलब्ध है",
+            dtrBal: "उपलब्ध है"
         },
         {
             date: "",
-            boBal: "",
-            dtrBal: ""
+            boBal: "उपलब्ध है",
+            dtrBal: "उपलब्ध है"
         },
         {
             date: "",
-            boBal: "",
-            dtrBal: ""
+            boBal: "उपलब्ध है",
+            dtrBal: "उपलब्ध है"
         },
         {
             date: "",
-            boBal: "",
-            dtrBal: ""
+            boBal: "उपलब्ध है",
+            dtrBal: "उपलब्ध है"
         }
     ]);
     const [abc, setAbc] = useState(true);
@@ -468,8 +468,8 @@ const IRS = () => {
     }
 
     return (
-        <div className='container pageCenter'>
-            {abc ? <div>
+        <div className='container '>
+            {abc ? <div className='d-flex-column-center'>
 
                 {/* <IRPage1 /> */}
 
@@ -670,7 +670,7 @@ const IRS = () => {
 
 
                 {/* <IRPage4 /> */}
-                <div style={{ width: '70%' }}>
+                <div >
                     <table className='table'>
                         <tr>
                             <th>Name of the Record</th>
@@ -1291,16 +1291,14 @@ const IRS = () => {
                         <table className='table'>
                             <tr>
                                 <th colSpan={3}>SB</th>
-                                <th colSpan={3}>RD</th>
+                                
                             </tr>
                             <tr>
                                 <th>Account Number</th>
                                 <th>Date of Last Transaction</th>
                                 <th>Balance after transaction</th>
 
-                                <th>Account Number</th>
-                                <th>Date of Last Transaction</th>
-                                <th>Balance after transaction</th>
+                                
 
 
                             </tr>
@@ -1311,6 +1309,31 @@ const IRS = () => {
                                             <td><TextField id="standard-basic" label='Acc No' variant="standard" name='sbAccount' defaultValue={data.sbAccount} onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
                                             <td><TextField id="standard-basic" label='DLT' variant="standard" name='sbDLT' defaultValue={data.sbDLT} onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
                                             <td><TextField id="standard-basic" label='Balance' variant="standard" name='sbBAT' defaultValue={data.sbBAT} onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
+                                            {/* <td><TextField id="standard-basic" label='Acc No' variant="standard" name='rdAccount' defaultValue={data.rdAccount} onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td> */}
+                                            {/* <td><TextField id="standard-basic" label='DLT' variant="standard" name='rdDLT' defaultValue={data.rdDLT} onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td> */}
+                                            {/* <td><TextField id="standard-basic" label='Balance' variant="standard" name='rdBAT' defaultValue={data.rdBAT} onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td> */}
+
+                                        </tr>
+                                    </>
+                                })
+                            }
+                        </table>
+                        <table className='table'>
+                            <tr>
+                                <th colSpan={3}>RD</th>
+                                
+                            </tr>
+                            <tr>
+                                <th>Account Number</th>
+                                <th>Date of Last Transaction</th>
+                                <th>Balance after transaction</th>
+
+                            </tr>
+                            {
+                                sbrd.map((data, index) => {
+                                    return <>
+                                        <tr>
+                                            
                                             <td><TextField id="standard-basic" label='Acc No' variant="standard" name='rdAccount' defaultValue={data.rdAccount} onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
                                             <td><TextField id="standard-basic" label='DLT' variant="standard" name='rdDLT' defaultValue={data.rdDLT} onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
                                             <td><TextField id="standard-basic" label='Balance' variant="standard" name='rdBAT' defaultValue={data.rdBAT} onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td>
@@ -1324,16 +1347,14 @@ const IRS = () => {
                         <table className='table'>
                             <tr>
                                 <th colSpan={3}>SSA</th>
-                                <th colSpan={3}>TD</th>
+                                
                             </tr>
                             <tr>
                                 <th>Account Number</th>
                                 <th>Date of Last Transaction</th>
                                 <th>Balance after transaction</th>
 
-                                <th>Account Number</th>
-                                <th>Date of Last Transaction</th>
-                                <th>Balance after transaction</th>
+                               
 
                             </tr>
                             {
@@ -1343,6 +1364,34 @@ const IRS = () => {
                                             <td><TextField id="standard-basic" label='Acc No' variant="standard" name='ssaAccount' defaultValue={data.ssaAccount} onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
                                             <td><TextField id="standard-basic" label='DLT' variant="standard" name='ssaDLT' defaultValue={data.ssaDLT} onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
                                             <td><TextField id="standard-basic" label='Balance' variant="standard" name='ssaBAT' defaultValue={data.ssaBAT} onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
+                                            {/* <td><TextField id="standard-basic" label='Acc No' variant="standard" name='tdAccount' defaultValue={data.tdAccount} onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td> */}
+                                            {/* <td><TextField id="standard-basic" label='DLT' variant="standard" name='tdDLT' defaultValue={data.tdDLT} onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td> */}
+                                            {/* <td><TextField id="standard-basic" label='Balance' variant="standard" name='tdBAT' defaultValue={data.tdBAT} onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td> */}
+
+                                        </tr>
+                                    </>
+                                })
+                            }
+
+
+                        </table>
+                        <table className='table'>
+                            <tr>
+                                <th colSpan={3}>TD</th>
+                                
+                            </tr>
+                            <tr>
+                                <th>Account Number</th>
+                                <th>Date of Last Transaction</th>
+                                <th>Balance after transaction</th>
+
+                               
+
+                            </tr>
+                            {
+                                ssatd.map((data, index) => {
+                                    return <>
+                                        <tr>
                                             <td><TextField id="standard-basic" label='Acc No' variant="standard" name='tdAccount' defaultValue={data.tdAccount} onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
                                             <td><TextField id="standard-basic" label='DLT' variant="standard" name='tdDLT' defaultValue={data.tdDLT} onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
                                             <td><TextField id="standard-basic" label='Balance' variant="standard" name='tdBAT' defaultValue={data.tdBAT} onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td>
