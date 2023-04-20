@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import TextField from '@mui/material/TextField';
@@ -6,9 +6,13 @@ import IRFinal from '../sub-component/IR/Report/IRFinal';
 import Checkbox from '@mui/material/Checkbox';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
+import { useMisc } from '../../Contexts/LoginProvider';
+import Button from '@mui/material/Button';
 
 const IRS = () => {
-    var newArray;
+
+    const { setLoading } = useMisc();
+    const [newFileData, setNewFileData] = useState({});
     const [page1, setPage1] = useState({
         inspectionDate: "",
         BO: "",
@@ -39,28 +43,28 @@ const IRS = () => {
     });
     const [page3, setPage3] = useState([{
         Name: "",
-        Designation: "",
+        Designation: "शाखा डाकपाल",
         Community: "",
         EmployeeId: "",
-        TRCA: "",
+        TRCA: "1st",
         DOB: "",
         DOJ: ""
     },
     {
         Name: "",
-        Designation: "",
+        Designation: "डाक वितरक",
         Community: "",
         EmployeeId: "",
-        TRCA: "",
+        TRCA: "1st",
         DOB: "",
         DOJ: ""
     },
     {
         Name: "",
-        Designation: "",
+        Designation: "डाक वाहक",
         Community: "",
         EmployeeId: "",
-        TRCA: "",
+        TRCA: "1st",
         DOB: "",
         DOJ: ""
     }]);
@@ -118,36 +122,37 @@ const IRS = () => {
     const [page6DTR, setPage6DTR] = useState([
         {
             date: "",
-            boBal: "उपलब्ध है",
-            dtrBal: "उपलब्ध है"
+            boBal: "",
+            dtrBal: ""
         },
         {
             date: "",
-            boBal: "उपलब्ध है",
-            dtrBal: "उपलब्ध है"
+            boBal: "",
+            dtrBal: ""
         },
         {
             date: "",
-            boBal: "उपलब्ध है",
-            dtrBal: "उपलब्ध है"
+            boBal: "",
+            dtrBal: ""
         },
         {
             date: "",
-            boBal: "उपलब्ध है",
-            dtrBal: "उपलब्ध है"
+            boBal: "",
+            dtrBal: ""
         },
         {
             date: "",
-            boBal: "उपलब्ध है",
-            dtrBal: "उपलब्ध है"
+            boBal: "",
+            dtrBal: ""
         },
         {
             date: "",
-            boBal: "उपलब्ध है",
-            dtrBal: "उपलब्ध है"
+            boBal: "",
+            dtrBal: ""
         }
     ]);
     const [abc, setAbc] = useState(true);
+    const [abc1, setAbc1] = useState(true);
     const [sb26f, setsb26f] = useState([{
         bookNo: "",
         from: "",
@@ -186,33 +191,33 @@ const IRS = () => {
     const [ssbook, setSSBook] = useState([
         {
             accountNo: "",
-            signature: "",
-            photograph: ""
+            signature: "उपलब्ध है",
+            photograph: "उपलब्ध है"
         },
         {
             accountNo: "",
-            signature: "",
-            photograph: ""
+            signature: "उपलब्ध है",
+            photograph: "उपलब्ध है"
         },
         {
             accountNo: "",
-            signature: "",
-            photograph: ""
+            signature: "उपलब्ध है",
+            photograph: "उपलब्ध है"
         },
         {
             accountNo: "",
-            signature: "",
-            photograph: ""
+            signature: "उपलब्ध है",
+            photograph: "उपलब्ध है"
         },
         {
             accountNo: "",
-            signature: "",
-            photograph: ""
+            signature: "उपलब्ध है",
+            photograph: "उपलब्ध है"
         },
         {
             accountNo: "",
-            signature: "",
-            photograph: ""
+            signature: "उपलब्ध है",
+            photograph: "उपलब्ध है"
         }
 
     ])
@@ -467,9 +472,50 @@ const IRS = () => {
         })
     }
 
+    const downloadFile = () => {
+        const myData = {
+            page1,
+            page2,
+            page3,
+            page4,
+            page5,
+            page6,
+            page6DTR,
+            sb26f, ms87f, sb28f, plif, ssbook, sbrd, ssatd, txn, plipass, pli, page6Selects
+        };
+
+        // create file in browser
+        const fileName = `${page1.BO}` + " BO";
+        const json = JSON.stringify(myData, null, 2);
+        const blob = new Blob([json], { type: "application/json" });
+        const href = URL.createObjectURL(blob);
+
+        // create "a" HTLM element with href to file
+        const link = document.createElement("a");
+        link.href = href;
+        link.download = fileName + ".json";
+        document.body.appendChild(link);
+        link.click();
+
+        // clean up "a" element & remove ObjectURL
+        document.body.removeChild(link);
+        URL.revokeObjectURL(href);
+    }
+
+    const showFile = async (e) => {
+        e.preventDefault()
+        const reader = new FileReader()
+        reader.onload = async (e) => {
+            setNewFileData(JSON.parse(e.target.result));
+
+
+        };
+        reader.readAsText(e.target.files[0])
+    }
+
     return (
         <div className='container '>
-            {abc ? <div className='d-flex-column-center'>
+            {abc ? abc1 && <div className='d-flex-column-center'>
 
                 {/* <IRPage1 /> */}
 
@@ -671,10 +717,10 @@ const IRS = () => {
                 <div><TextField id="standard-basic" variant="standard" defaultValue={page6.estRemarks} label="Remark of Part 3"
                     name='estRemarks'
                     onBlur={(e) => updateTextbox(e, setPage6)}
-                    style={{width:'500px'}}
+                    style={{ width: '500px' }}
                 /></div>
 
-<br/>
+                <br />
                 {/* <IRPage4 /> */}
                 <div >
                     <table className='table'>
@@ -684,62 +730,88 @@ const IRS = () => {
                         </tr>
                         <tr>
                             <td>Complaint and Suggestion Book</td>
-                            <td><Checkbox label="Available" defaultChecked
+                            <td><Checkbox label="Available" 
                                 name='complaintAvailable'
+                                defaultChecked={page4.complaintAvailable}
                                 onChange={(e) => { updateCheckBox(e, setPage4) }} />
                                 <>Available in BO </>
 
-                                <Checkbox label="Maintained" defaultChecked
+                                <Checkbox label="Maintained" 
                                     name='complaintMaintained'
+                                    defaultChecked={page4.complaintMaintained}
                                     onChange={(e) => { updateCheckBox(e, setPage4) }} /><>Maintained the document correctly</></td>
                         </tr>
                         <tr>
                             <td>Book of Postmarks</td>
-                            <td><Checkbox label="Available" defaultChecked name='postmarksAvailable'
+                            <td><Checkbox label="Available"  name='postmarksAvailable'
+                                defaultChecked={page4.postmarksAvailable}
                                 onChange={(e) => { updateCheckBox(e, setPage4) }} /><>Available in BO </>
-                                <Checkbox label="Maintained" defaultChecked name='postmarksMaintained'
+
+                                <Checkbox label="Maintained" defaultChecked={page4.postmarksMaintained} name='postmarksMaintained'
                                     onChange={(e) => { updateCheckBox(e, setPage4) }} /><>Maintained the document correctly</></td>
                         </tr>
                         <tr>
                             <td>Stock Book</td>
-                            <td><Checkbox label="Available" defaultChecked name='stockAvailable'
+                            <td><Checkbox label="Available"  name='stockAvailable'
+                                defaultChecked={page4.stockAvailable}
                                 onChange={(e) => { updateCheckBox(e, setPage4) }} /><>Available in BO </>
-                                <Checkbox label="Maintained" defaultChecked name='stockMaintained'
+
+                                <Checkbox label="Maintained" defaultChecked={page4.stockMaintained}name='stockMaintained'
                                     onChange={(e) => { updateCheckBox(e, setPage4) }} /><>Maintained the document correctly</></td>
                         </tr>
                         <tr>
                             <td>Half Yearly Enumeration</td>
                             <td><Checkbox label="Available" name='enumerationAvailable'
+                                defaultChecked={page4.enumerationAvailable}
                                 onChange={(e) => { updateCheckBox(e, setPage4) }} /><>Available in BO </>
+
+
                                 <Checkbox label="Maintained" name='enumerationMaintained'
+                                defaultChecked={page4.enumerationMaintained}
                                     onChange={(e) => { updateCheckBox(e, setPage4) }} /><>Maintained the document correctly</></td>
                         </tr>
                         <tr>
                             <td>Yearly Value returns</td>
                             <td><Checkbox label="Available" name='yearlyvaluereturnsAvailable'
+                                defaultChecked={page4.yearlyvaluereturnsAvailable}
                                 onChange={(e) => { updateCheckBox(e, setPage4) }} /><>Available in BO </>
+
+
                                 <Checkbox label="Maintained" name='yearlyvaluereturnsMaintained'
+                                defaultChecked={page4.yearlyvaluereturnsMaintained}
                                     onChange={(e) => { updateCheckBox(e, setPage4) }} /><>Maintained the document correctly</></td>
                         </tr>
                         <tr>
                             <td>Error Book</td>
-                            <td><Checkbox label="Available" defaultChecked name='errorbookAvailable'
+                            <td><Checkbox label="Available" name='errorbookAvailable'
+                                defaultChecked={page4.errorbookAvailable}
                                 onChange={(e) => { updateCheckBox(e, setPage4) }} /><>Available in BO </>
-                                <Checkbox label="Maintained" defaultChecked name='errorbookMaintained'
+
+
+                                <Checkbox label="Maintained"  name='errorbookMaintained'
+                                defaultChecked={page4.errorbookMaintained}
                                     onChange={(e) => { updateCheckBox(e, setPage4) }} /><>Maintained the document correctly</></td>
                         </tr>
                         <tr>
                             <td>Village Sorting List</td>
                             <td><Checkbox label="Available" name='villagesortinglistAvailable'
+                                defaultChecked={page4.villagesortinglistAvailable}
                                 onChange={(e) => { updateCheckBox(e, setPage4) }} /><>Available in BO </>
+
+
                                 <Checkbox label="Maintained" name='villagesortinglistMaintained'
+                                defaultChecked={page4.villagesortinglistMaintained}
                                     onChange={(e) => { updateCheckBox(e, setPage4) }} /><>Maintained the document correctly</></td>
                         </tr>
                         <tr>
                             <td>Route list and Beat Map</td>
                             <td><Checkbox label="Available" name='routelistAvailable'
+                            defaultChecked={page4.routelistAvailable}
                                 onChange={(e) => { updateCheckBox(e, setPage4) }} /><>Available in BO </>
+
+
                                 <Checkbox label="Maintained" name='routelistMaintained'
+                                defaultChecked={page4.routelistMaintained}
                                     onChange={(e) => { updateCheckBox(e, setPage4) }} /><>Maintained the document correctly</></td>
                         </tr>
                     </table>
@@ -1013,10 +1085,10 @@ const IRS = () => {
                         {page6DTR.map((data, index) => {
                             return <><tr>
 
-                                <td><TextField id="standard-basic" label='Date' variant="standard" name="date" defaultValue={page6.date}
+                                <td><TextField id="standard-basic" label='Date' variant="standard" name="date" defaultValue={page6DTR.date}
                                     onBlur={(e) => updateArrayState(e, index, setPage6DTR)} /></td>
-                                <td><TextField id="standard-basic" label='BO Summary' variant="standard" name="boBal" defaultValue={page6.boBal} onBlur={(e) => updateArrayState(e, index, setPage6DTR)} /></td>
-                                <td><TextField id="standard-basic" label='DTR' variant="standard" name="dtrBal" defaultValue={page6.dtrBal} onBlur={(e) => updateArrayState(e, index, setPage6DTR)} /></td>
+                                <td><TextField id="standard-basic" label='BO Summary' variant="standard" name="boBal" defaultValue={page6DTR.boBal} onBlur={(e) => updateArrayState(e, index, setPage6DTR)} /></td>
+                                <td><TextField id="standard-basic" label='DTR' variant="standard" name="dtrBal" defaultValue={page6DTR.dtrBal} onBlur={(e) => updateArrayState(e, index, setPage6DTR)} /></td>
                             </tr></>
                         })}
 
@@ -1274,11 +1346,11 @@ const IRS = () => {
                                                 name='accountNo'
                                                 onBlur={(e) => updateArrayState(e, index, setSSBook)}
                                             /></td>
-                                            <td><TextField id="standard-basic" label='Available/Not Available' variant="standard" defaultValue={data.accountNo}
+                                            <td><TextField id="standard-basic" label='Available/Not Available' variant="standard" defaultValue={data.signature}
                                                 name='signature'
                                                 onBlur={(e) => updateArrayState(e, index, setSSBook)}
                                             /></td>
-                                            <td><TextField id="standard-basic" label='Available/Not Available' variant="standard" defaultValue={data.accountNo}
+                                            <td><TextField id="standard-basic" label='Available/Not Available' variant="standard" defaultValue={data.photograph}
                                                 name='photograph'
                                                 onBlur={(e) => updateArrayState(e, index, setSSBook)}
                                             /></td>
@@ -1315,9 +1387,7 @@ const IRS = () => {
                                             <td><TextField id="standard-basic" label='Acc No' variant="standard" name='sbAccount' defaultValue={data.sbAccount} onBlur={(e) => updateArrayState(e, index, setSBRD)} /></td>
                                             <td><TextField id="standard-basic" label='DLT' variant="standard" name='sbDLT' defaultValue={data.sbDLT} onBlur={(e) => updateArrayState(e, index, setSBRD)} /></td>
                                             <td><TextField id="standard-basic" label='Balance' variant="standard" name='sbBAT' defaultValue={data.sbBAT} onBlur={(e) => updateArrayState(e, index, setSBRD)} /></td>
-                                            {/* <td><TextField id="standard-basic" label='Acc No' variant="standard" name='rdAccount' defaultValue={data.rdAccount} onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td> */}
-                                            {/* <td><TextField id="standard-basic" label='DLT' variant="standard" name='rdDLT' defaultValue={data.rdDLT} onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td> */}
-                                            {/* <td><TextField id="standard-basic" label='Balance' variant="standard" name='rdBAT' defaultValue={data.rdBAT} onBlur={(e) => updateArrayState(e, index,  setSBRD)} /></td> */}
+
 
                                         </tr>
                                     </>
@@ -1370,9 +1440,7 @@ const IRS = () => {
                                             <td><TextField id="standard-basic" label='Acc No' variant="standard" name='ssaAccount' defaultValue={data.ssaAccount} onBlur={(e) => updateArrayState(e, index, setSSATD)} /></td>
                                             <td><TextField id="standard-basic" label='DLT' variant="standard" name='ssaDLT' defaultValue={data.ssaDLT} onBlur={(e) => updateArrayState(e, index, setSSATD)} /></td>
                                             <td><TextField id="standard-basic" label='Balance' variant="standard" name='ssaBAT' defaultValue={data.ssaBAT} onBlur={(e) => updateArrayState(e, index, setSSATD)} /></td>
-                                            {/* <td><TextField id="standard-basic" label='Acc No' variant="standard" name='tdAccount' defaultValue={data.tdAccount} onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td> */}
-                                            {/* <td><TextField id="standard-basic" label='DLT' variant="standard" name='tdDLT' defaultValue={data.tdDLT} onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td> */}
-                                            {/* <td><TextField id="standard-basic" label='Balance' variant="standard" name='tdBAT' defaultValue={data.tdBAT} onBlur={(e) => updateArrayState(e, index,  setSSATD)} /></td> */}
+
 
                                         </tr>
                                     </>
@@ -1414,40 +1482,95 @@ const IRS = () => {
                     {/* Transaction details */}
                     <div>
                         <p>TRANSACTIONS OF THE BO</p>
-                        <table className='table'>
-                            <tr>
-                                <th>Date</th>
-                                <th>SB Dep</th>
-                                <th>SB Wdl</th>
-                                <th>Date</th>
-                                <th>RD Dep</th>
-                                <th>Date</th>
-                                <th>TD Dep</th>
-                                <th>Date</th>
-                                <th>SSA Dep</th>
+                        <div className='d-flex flex-row'>
+                            <table className='table'>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>SB Dep</th>
+                                    <th>SB Wdl</th>
 
 
-                            </tr>
-                            {
-                                txn.map((data, index) => {
-                                    return <>
-                                        <tr>
-                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date' defaultValue={data.date} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='SB Dep' variant="standard" name='sbd' defaultValue={data.sbd} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='SB Wid' variant="standard" name='sbw' defaultValue={data.sbw} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date2' defaultValue={data.date2} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='RD Dep' variant="standard" name='rdd' defaultValue={data.rdd} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date3' defaultValue={data.date3} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='TD Dep' variant="standard" name='tdd' defaultValue={data.tdd} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='Date' variant="standard" name='date4' defaultValue={data.date4} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
-                                            <td><TextField id="standard-basic" label='SSA Dep' variant="standard" name='ssad' defaultValue={data.ssad} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
+
+                                </tr>
+                                {
+                                    txn.map((data, index) => {
+                                        return <>
+                                            <tr>
+                                                <td><TextField id="standard-basic" label='Date' variant="standard" name='date' defaultValue={data.date} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
+                                                <td><TextField id="standard-basic" label='SB Dep' variant="standard" name='sbd' defaultValue={data.sbd} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
+                                                <td><TextField id="standard-basic" label='SB Wid' variant="standard" name='sbw' defaultValue={data.sbw} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
 
 
-                                        </tr>
-                                    </>
-                                })
-                            }
-                        </table>
+
+                                            </tr>
+                                        </>
+                                    })
+                                }
+                            </table>
+                            <table className='table'>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>RD Dep</th>
+
+                                </tr>
+                                {
+                                    txn.map((data, index) => {
+                                        return <>
+                                            <tr>
+
+                                                <td><TextField id="standard-basic" label='Date' variant="standard" name='date2' defaultValue={data.date2} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
+                                                <td><TextField id="standard-basic" label='RD Dep' variant="standard" name='rdd' defaultValue={data.rdd} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
+
+
+
+                                            </tr>
+                                        </>
+                                    })
+                                }
+                            </table>
+                            <table className='table'>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>TD Dep</th>
+
+                                </tr>
+                                {
+                                    txn.map((data, index) => {
+                                        return <>
+                                            <tr>
+
+                                                <td><TextField id="standard-basic" label='Date' variant="standard" name='date3' defaultValue={data.date3} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
+                                                <td><TextField id="standard-basic" label='TD Dep' variant="standard" name='tdd' defaultValue={data.tdd} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
+
+
+
+                                            </tr>
+                                        </>
+                                    })
+                                }
+                            </table>
+                            <table className='table'>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>SSA Dep</th>
+
+                                </tr>
+                                {
+                                    txn.map((data, index) => {
+                                        return <>
+                                            <tr>
+                                                <td><TextField id="standard-basic" label='Date' variant="standard" name='date4' defaultValue={data.date4} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
+                                                <td><TextField id="standard-basic" label='SSA Dep' variant="standard" name='ssad' defaultValue={data.ssad} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
+
+
+                                            </tr>
+                                        </>
+                                    })
+                                }
+                            </table>
+                        </div>
+
+
                     </div>
 
                     {/* PLI passbook */}
@@ -1512,18 +1635,53 @@ const IRS = () => {
                     </div>
 
                 </div>
+                <div>
 
-                <button onClick={() => {
+                    <Button variant="contained" onClick={() => { setAbc(false); }}>SUBMIT</Button>
+                </div>
+                <div style={{ padding: '20px', marging: '15px' }} className="d-flex-column-center">
+                    <div>
+                        <Button variant="contained"
+                            style={{ padding: '5px', marging: '15px' }}
+                            onClick={() => downloadFile()} >Download Data</Button>
+                    </div>
+                    <div style={{ margin: '15px' }}>
+                        <input type="file" onChange={(e) => showFile(e)} />
+                        <Button variant="contained" style={{ padding: '5px' }}
+                            onClick={() => {
+                                setLoading(true);
+                                setPage1(newFileData.page1)
+                                setPage2(newFileData.page2)
+                                setPage3(newFileData.page3)
+                                setPage4(newFileData.page4)
+                                setPage5(newFileData.page5)
+                                setPage6(newFileData.page6)
+                                setPage6DTR(newFileData.page6DTR)
+                                setPage6Selects(newFileData.page6Selects)
+                                setsb26f(newFileData.sb26f)
+                                setms87f(newFileData.ms87f)
+                                setplif(newFileData.plif)
+                                setSSBook(newFileData.ssbook)
+                                setSBRD(newFileData.sbrd)
+                                setSSATD(newFileData.ssatd)
+                                setTXN(newFileData.txn)
+                                setplipass(newFileData.plipass)
+                                setpli(newFileData.pli)
+                                setAbc1(false);
+                                setTimeout(() => {
+                                    setAbc1(true)
+                                    setLoading(false);
+                                }, 2000);
 
-                    setAbc(false);
-                }
+                            }}>Submit</Button></div>
+                </div>
 
 
 
-
-                }>SUBMIT</button>
 
             </div> : <IRFinal pageS1={page1} pageS2={page2} pageS3={page3} pageS4={page4} pageS5={page5} pageS6={page6} pageS6DTR={page6DTR} sb26f={sb26f} ms87f={ms87f} sb28f={sb28f} plif={plif} ssbook={ssbook} sbrd={sbrd} ssatd={ssatd} txn={txn} plipass={plipass} pli={pli} page6Selects={page6Selects} setAbc={setAbc} />}
+
+
         </div>
     )
 }
