@@ -20,11 +20,11 @@ const IRS = () => {
         HO: "",
         facilityID: "",
         profitCenter: "",
-        BOopening: "",
-        DLISSP: "",
+        BOopening: "उपलब्ध नहीं है",
+        DLISSP: "उपलब्ध नहीं है",
         DLI: "",
         DLIby: "",
-        SubsequentVisit: "",
+        SubsequentVisit: "विजिट नहीं किया गया",
         MOVisit: ""
     });
     const [page2, setPage2] = useState({
@@ -99,11 +99,11 @@ const IRS = () => {
     const [page6, setPage6] = useState({
         signal: 0,
         estRemarks: "",
-        articleDeposit: "",
-        articleBeyondPrescribedPeriod: "",
-        Missent: "",
-        VParticle: "",
-        noLetterBox: "",
+        articleDeposit: "0",
+        articleBeyondPrescribedPeriod: "0",
+        Missent: "0",
+        VParticle: "0",
+        noLetterBox: "1",
         sp: "",
         rl: "",
         parcel: "",
@@ -115,7 +115,7 @@ const IRS = () => {
         ps: 0,
         rs: 0,
         dtrTallied: true,
-        emoPayment: "",
+        emoPayment: "0",
 
 
     });
