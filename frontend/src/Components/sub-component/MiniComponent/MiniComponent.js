@@ -16,7 +16,7 @@ const Signatory = () => {
     <div style={{ marginTop: '40px' }} >
       <p className='text_right' style={{ margin: '0px' }}>Inspector Post</p>
       <p className='text_right' style={{ margin: '0px' }}>{Login.subDivision} Sub Division</p>
-      <p className='text_right' style={{ margin: '0px' }}>{Login.subDivision} - 276304</p>
+      <p className='text_right' style={{ margin: '0px' }}>{Login.division}</p>
     </div>
   )
 }
@@ -42,5 +42,10 @@ const CopyToPM=()=>{
     <span>The Senior PM/HPM, {Login.division} HO, </span>
   )
 }
-
-export { Header, Signatory, IndiapostHeader, CopyToSPOs, CopyToPM }
+const CopyToSPOsHindi=()=>{
+  const Login=useContext(LoginContext);
+  return(
+    <span> श्रीमान  प्रवर अधीक्षक डाकघर/अधीक्षक डाकघर, मंडलीय कार्यालय, {Login.division}  </span>
+  )
+}
+export { Header, Signatory, IndiapostHeader, CopyToSPOs, CopyToPM, CopyToSPOsHindi }

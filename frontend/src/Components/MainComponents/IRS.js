@@ -17,7 +17,7 @@ const IRS = () => {
         inspectionDate: "",
         BO: "",
         AO: "",
-        HO: "आजमगढ़",
+        HO: "",
         facilityID: "",
         profitCenter: "",
         BOopening: "उपलब्ध नहीं है",
