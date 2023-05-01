@@ -1509,7 +1509,7 @@ const IRS = () => {
                             </table>
                             <table className='table'>
                                 <tr>
-                                    <th>Date</th>
+                                    {/* <th>Date</th> */}
                                     <th>RD Dep</th>
 
                                 </tr>
@@ -1530,7 +1530,7 @@ const IRS = () => {
                             </table>
                             <table className='table'>
                                 <tr>
-                                    <th>Date</th>
+                                    {/* <th>Date</th> */}
                                     <th>TD Dep</th>
 
                                 </tr>
@@ -1551,7 +1551,7 @@ const IRS = () => {
                             </table>
                             <table className='table'>
                                 <tr>
-                                    <th>Date</th>
+                                    {/* <th>Date</th> */}
                                     <th>SSA Dep</th>
 
                                 </tr>
