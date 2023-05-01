@@ -1085,10 +1085,10 @@ const IRS = () => {
                         {page6DTR.map((data, index) => {
                             return <><tr>
 
-                                <td><TextField id="standard-basic" label='Date' variant="standard" name="date" defaultValue={page6DTR.date}
+                                <td><TextField id="standard-basic" label='Date' variant="standard" name="date" defaultValue={data.date}
                                     onBlur={(e) => updateArrayState(e, index, setPage6DTR)} /></td>
-                                <td><TextField id="standard-basic" label='BO Summary' variant="standard" name="boBal" defaultValue={page6DTR.boBal} onBlur={(e) => updateArrayState(e, index, setPage6DTR)} /></td>
-                                <td><TextField id="standard-basic" label='DTR' variant="standard" name="dtrBal" defaultValue={page6DTR.dtrBal} onBlur={(e) => updateArrayState(e, index, setPage6DTR)} /></td>
+                                <td><TextField id="standard-basic" label='BO Summary' variant="standard" name="boBal" defaultValue={data.boBal} onBlur={(e) => updateArrayState(e, index, setPage6DTR)} /></td>
+                                <td><TextField id="standard-basic" label='DTR' variant="standard" name="dtrBal" defaultValue={data.dtrBal} onBlur={(e) => updateArrayState(e, index, setPage6DTR)} /></td>
                             </tr></>
                         })}
 

@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const env = require('dotenv').config();
 const app = express();
 const Office = require('./Models/Office')
-const {Region} = require('./Models/Dependency')
+const { Circle, Region, Division, SubDivision } = require('./Models/Dependency')
 const Offices = require('./json')
 const SO = require('./Models/SO')
 const cookieParser = require("cookie-parser");
@@ -28,33 +28,28 @@ mongoose.connect(uri)
   })
 
 
-// const myRegion = new Region({
-//   circle:"Andhra Pradesh",
-//     region:"Visakhapatnam",
-// })
-// myOffice.save()
-// .then((res)=>{
-//   console.log(res)
-// })
-// .catch((err)=>{
-//   console.log(err);
-// })
 
-// myRegion.save()
-//   .then((res) => {
-//     console.log(res);
-    
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   })
+const circle = "Uttar Pradesh"
+const region = "Gorakhpur"
+const division = "Azamgarh"
+const subDivision = "Phoolpur"
+const facilityID="CS000000001"
+const HindiCircle="उत्तर प्रदेश"
 
-app.get("/",(req,res)=>{
-  const {circle,region,division,subdivision}=req.body;
-  console.log(circle,region,division,subdivision);
+const mycircle = new Circle({
+  facilityId: facilityID,
+  name: circle,
+  hindiName: HindiCircle,
+  region:[]
+})
+mycircle.save()
+.then((res)=>{
+  console.log(res)
+})
+.catch((err)=>{
+  console.log(err);
 })
 
 
-app.listen(3002, () => {
-  console.log(`Example app listening at http://localhost:3002`)
-})
+
+
