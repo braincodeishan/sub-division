@@ -791,21 +791,21 @@ const IRFinal = ({ pageS1, pageS2, pageS3, pageS4, pageS5, pageS6, pageS6DTR, sb
                     <tr>
                         <th colSpan={'1'}>SERIAL</th>
                         <th colSpan={'3'}>SB</th>
-                        <th colSpan={'1'}>RD</th>
-                        <th colSpan={'1'}>TD</th>
-                        <th colSpan={'1'}>SSA</th>
+                        <th colSpan={'2'}>RD</th>
+                        <th colSpan={'2'}>TD</th>
+                        <th colSpan={'2'}>SSA</th>
                     </tr>
                     <tr>
                         <td></td>
                         <td>दिनांक </td>
                         <td>जमा </td>
                         <td>निकासी </td>
-                        {/* <td>दिनांक </td> */}
+                        <td>दिनांक </td>
                         <td>जमा </td>
-                        {/* <td>दिनांक </td> */}
+                        <td>दिनांक </td>
 
                         <td>जमा </td>
-                        {/* <td>दिनांक </td> */}
+                        <td>दिनांक </td>
 
                         <td>जमा </td>
 
@@ -817,11 +817,11 @@ const IRFinal = ({ pageS1, pageS2, pageS3, pageS4, pageS5, pageS6, pageS6DTR, sb
                             <td>{data.date}</td>
                             <td>{data.sbd}</td>
                             <td>{data.sbw}</td>
-                            {/* <td>{data.date2}</td> */}
+                            <td>{data.date2}</td>
                             <td>{data.rdd}</td>
-                            {/* <td>{data.date3}</td> */}
+                            <td>{data.date3}</td>
                             <td>{data.tdd}</td>
-                            {/* <td>{data.date4}</td> */}
+                            <td>{data.date4}</td>
                             <td>{data.ssad}</td>
 
 

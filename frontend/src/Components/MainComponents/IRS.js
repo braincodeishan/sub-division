@@ -1509,7 +1509,7 @@ const IRS = () => {
                             </table>
                             <table className='table'>
                                 <tr>
-                                    {/* <th>Date</th> */}
+                                    <th>Date</th>
                                     <th>RD Dep</th>
 
                                 </tr>
@@ -1518,7 +1518,7 @@ const IRS = () => {
                                         return <>
                                             <tr>
 
-                                                {/* <td><TextField id="standard-basic" label='Date' variant="standard" name='date2' defaultValue={data.date2} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td> */}
+                                                <td><TextField id="standard-basic" label='Date' variant="standard" name='date2' defaultValue={data.date2} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
                                                 <td><TextField id="standard-basic" label='RD Dep' variant="standard" name='rdd' defaultValue={data.rdd} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
 
 
@@ -1530,7 +1530,7 @@ const IRS = () => {
                             </table>
                             <table className='table'>
                                 <tr>
-                                    {/* <th>Date</th> */}
+                                    <th>Date</th>
                                     <th>TD Dep</th>
 
                                 </tr>
@@ -1539,7 +1539,7 @@ const IRS = () => {
                                         return <>
                                             <tr>
 
-                                                {/* <td><TextField id="standard-basic" label='Date' variant="standard" name='date3' defaultValue={data.date3} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td> */}
+                                                <td><TextField id="standard-basic" label='Date' variant="standard" name='date3' defaultValue={data.date3} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
                                                 <td><TextField id="standard-basic" label='TD Dep' variant="standard" name='tdd' defaultValue={data.tdd} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
 
 
@@ -1551,7 +1551,7 @@ const IRS = () => {
                             </table>
                             <table className='table'>
                                 <tr>
-                                    {/* <th>Date</th> */}
+                                    <th>Date</th>
                                     <th>SSA Dep</th>
 
                                 </tr>
@@ -1559,7 +1559,7 @@ const IRS = () => {
                                     txn.map((data, index) => {
                                         return <>
                                             <tr>
-                                                {/* <td><TextField id="standard-basic" label='Date' variant="standard" name='date4' defaultValue={data.date4} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td> */}
+                                                <td><TextField id="standard-basic" label='Date' variant="standard" name='date4' defaultValue={data.date4} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
                                                 <td><TextField id="standard-basic" label='SSA Dep' variant="standard" name='ssad' defaultValue={data.ssad} onBlur={(e) => updateArrayState(e, index, setTXN)} /></td>
 
 
