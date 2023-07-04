@@ -10,6 +10,7 @@ const IRFinal = ({ pageS1, pageS2, pageS3, pageS4, pageS5, pageS6, pageS6DTR, sb
         
       }, [])
     return (
+        <>
         <div className='IRFinal'>
             <div className='printNone' style={{ display: 'flex', justifyContent: 'right', alignItems: 'flex-end', cursor: 'pointer' }}>
                 <CloseIcon onClick={() => { setAbc(true) }} style={{ display: st }} />
@@ -1094,6 +1095,10 @@ const IRFinal = ({ pageS1, pageS2, pageS3, pageS4, pageS5, pageS6, pageS6DTR, sb
 
 
         </div>
+        <div>
+
+        </div>
+        </>
     )
 }
 
