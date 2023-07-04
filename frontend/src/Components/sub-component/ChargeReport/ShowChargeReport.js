@@ -58,8 +58,8 @@ const ShowChargeReport = ({data, setShowData}) => {
         <p className='m-0'>(2) {data.reliever}</p>
         <p className='m-0'>(3-4) PF of the offcials</p>
         <p className='m-0'>(5) Office Copy</p>
-        <div className='m-0'>(6){<CopyToSPOs />}</div>
-        <div className='m-0'>(7){<CopyToPM />}</div>
+        <div className='m-0'>(6)The SSPOs/SPOs,__________________ Division</div>
+        <div className='m-0'>(7)The Senior PM/HPM,______________________HO,</div>
       </div>
     </div>
   )
