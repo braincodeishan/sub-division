@@ -1095,8 +1095,8 @@ const IRFinal = ({ pageS1, pageS2, pageS3, pageS4, pageS5, pageS6, pageS6DTR, sb
 
 
         </div>
-        <div>
-
+        <div className=''>
+                    
         </div>
         </>
     )

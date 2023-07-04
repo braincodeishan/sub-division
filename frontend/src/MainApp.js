@@ -55,6 +55,7 @@ function MainApp() {
             <Route exact path="/Login" element={<Login />} />
             <Route exact path="/Register" element={<Register />} />
             <Route exact path="/PLICommissions" element={<PLIRPLICommissionCalculator />} />
+            <Route exact path="/ChargeReport" element={<ChargeReport />} />
             <Route element={<ProtectedRoutes />}>
               <Route exact path="/Dashboard" element={<Dashboard />} />
               <Route exact path="/Diary" element={<Diary />} />
@@ -73,7 +74,7 @@ function MainApp() {
               <Route exact path="/Loading" element={<Loading />} />
               <Route exact path="/UpdateData" element={<UpdateData />} />
               <Route exact path="/AdditionalCharge" element={<AdditionalCharge />} />
-              <Route exact path="/ChargeReport" element={<ChargeReport />} />
+              
               <Route exact path="/PostData" element={<PostData />} />
               <Route exact path="/RegisterSetting" element={<RegisterSetting />} />
               
